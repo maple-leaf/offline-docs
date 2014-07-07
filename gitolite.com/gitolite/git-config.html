@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>&quot;git-config&quot; keys and values</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style>
+      body        { background: #fff; text-color: #000; margin-left:  40px;   font-size:  0.9em;  font-family: arial; }
+  
+      code        { font-size:    1.1em;  background:  #ddf; text-color: #000; }
+      pre         { margin-left:  2em;    background:  #ddf; text-color: #000; }
+      pre code    { font-size:    1.1em;  background:  #ddf; text-color: #000; }
+  
+      td          { vertical-align: top }
+  
+      .red        { color: red }
+      .blue       { color: blue }
+      .green      { color: green }
+      .gray       { color: gray }
+  
+      .box        { background-color:#e0e0e0 }
+      .bg-red     { background-color:#ffe0e0 }
+      .bg-green   { background-color:#e0ffe0 }
+      .bg-blue    { background-color:#e0e0ff }
+  
+      /* couldn't resist the name! */
+      .wd40       { width: 40% !important }
+  
+      .box-l      { float: left;  padding: 0px 0.5em; background-color: #e0e0e0; width:25% }
+      .box-r      { float: right; padding: 0px 0.5em; background-color: #e0e0e0; width:25% }
+  </style>
+  <style>
+      h1          { background: #ffb; text-color: #000; margin-left: -30px;   border-top:    5px  solid #ccc; }
+      h2          { background: #ffb; text-color: #000; margin-left: -20px;   border-top:    3px  solid #ddd; }
+      h3          { background: #ffb; text-color: #000; margin-left: -10px; }
+      h4          { background: #ffb; text-color: #000; }
+  </style>
+</head>
+<body>
+<p style="text-align:center">
+    <a href="master-toc.html">master TOC</a>
+|
+    <a href="index.html">main page</a>
+|
+    <a href="gitolite.html">single-page</a>
+|
+    <a href="index.html#license">license</a>
+|
+<font color="green"><b>New: <a style="color: green" href="http://www.packtpub.com/gitolite-essentials/book">Gitolite Essentials</a> book</b></font>
+</p>
+<p style="text-align:center">
+<font color="gray">This is for gitolite &quot;g3&quot;; for older (v2.x) documentation click <a href="http://sitaramc.github.com/gitolite/g2/master-toc.html">here</a></font>
+</p>
+<div id="header">
+<h1 class="title">&quot;git-config&quot; keys and values</h1>
+</div>
+<div id="TOC">
+<ul>
+<li><a href="#basic-syntax"><span class="toc-section-number">1</span> basic syntax</a><ul>
+<li><a href="#an-important-warning-about-deleting-a-config-line"><span class="toc-section-number">1.1</span> an important warning about <strong>deleting</strong> a config line</a></li>
+</ul></li>
+<li><a href="#substituting-the-repo-name-and-the-creator-name"><span class="toc-section-number">2</span> substituting the repo name and the creator name</a></li>
+<li><a href="#override_conf"><span class="toc-section-number">3</span> overriding config values</a></li>
+<li><a href="#unsafe-patt"><span class="toc-section-number">4</span> compensating for UNSAFE_PATT</a></li>
+</ul>
+</div>
+<p>Here's all you want to know about setting repo-specific git-config values.</p>
+<p>(Original version thanks to teemu dot matilainen at iki dot fi)</p>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<p><strong>Note</strong>: this won't work unless the rc file has the right settings; please see <code>$GIT_CONFIG_KEYS</code> in the <a href="rc.html">rc file doc</a>.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<h1 id="basic-syntax"><span class="header-section-number">1</span> basic syntax</h1>
+<p>The syntax is simple:</p>
+<pre><code>config sectionname.keyname = value</code></pre>
+<p>For example:</p>
+<pre><code>repo gitolite
+    config hooks.mailinglist = gitolite-commits@example.tld
+    config hooks.emailprefix = &quot;[gitolite] &quot;
+    config foo.bar = &quot;&quot;</code></pre>
+<p>This does either a plain &quot;git config section.key value&quot; (for the first 2 examples above) or &quot;git config --unset-all section.key&quot; (for the last example). Other forms of the <code>git config</code> command (<code>--add</code>, the <code>value_regex</code>, etc) are not supported.</p>
+<h2 id="an-important-warning-about-deleting-a-config-line"><span class="header-section-number">1.1</span> an important warning about <strong>deleting</strong> a config line</h2>
+<blockquote>
+<hr />
+</blockquote>
+<blockquote>
+<p><strong>WARNING</strong>: simply deleting the config line from the <code>conf/gitolite.conf</code> file will <em>not</em> delete the variable from <code>repo.git/config</code>. You have to use the syntax in the last example to make gitolite execute a <code>--unset-all</code> operation on the given key.</p>
+</blockquote>
+<blockquote>
+<hr />
+</blockquote>
+<h1 id="substituting-the-repo-name-and-the-creator-name"><span class="header-section-number">2</span> substituting the repo name and the creator name</h1>
+<p>You can also use the special values <code>%GL_REPO</code> and <code>%GL_CREATOR</code> in the string. The former is available to all repos, while the latter is only available to <a href="wild.html">wild</a> repos.</p>
+<pre><code>repo foo bar baz
+    config hooks.mailinglist = %GL_REPO-commits@example.tld
+    config hooks.emailprefix = &quot;[%GL_REPO] &quot;</code></pre>
+<h1 id="override_conf"><span class="header-section-number">3</span> overriding config values</h1>
+<p>You can repeat the 'config' line as many times as you like, and the <em>last</em> occurrence will be the one in effect. This allows you to override settings just for one project, as in this example:</p>
+<pre><code>repo @all
+    config hooks.mailinglist = %GL_REPO-commits@example.tld
+    config hooks.emailprefix = &quot;[%GL_REPO] &quot;
+
+repo customer-project
+    # different mailing list
+    config hooks.mailinglist = announce@customer.tld</code></pre>
+<p>The &quot;delete config variable&quot; syntax can also be used, if you wish:</p>
+<pre><code>repo secret     # no emails for this one please
+    config hooks.mailinglist = &quot;&quot;
+    config hooks.emailprefix = &quot;&quot;</code></pre>
+<p>As you can see, the general idea is to place the most generic ones (<code>repo @all</code>, or repo patterns like <code>repo foo.*</code>) first, and place more specific ones later to override the generic settings.</p>
+<h1 id="unsafe-patt"><span class="header-section-number">4</span> compensating for UNSAFE_PATT</h1>
+<p>Gitolite, by default, does not allow the following characters in the value of a config variable: <code>` ~ # $ &amp; ( ) | ; &lt; &gt;</code>. This is due to unspecified paranoia (and arguably only applies if your gitolite admin folks do not, and should not, have shell access to the server); see <a href="https://groups.google.com/d/topic/gitolite/9WNsA-Axmg4/discussion">this discussion</a> for some context. This restriction is enforced by a regex called <code>UNSAFE_PATT</code>, whose default value is <code>[`~#\$\&amp;()|;&lt;&gt;]</code>.</p>
+<p>You can override this by placing a modified version in the rc file. For example, if you wanted to allow this (which contais a semicolon):</p>
+<pre><code>config hooks.showrev = &quot;git show -C %s; echo&quot;</code></pre>
+<p>you'd put the follwing line at the end of your rc file (notice there is no semicolon in the pattern here):</p>
+<pre><code>$UNSAFE_PATT          = qr([`~#\$\&amp;()|&lt;&gt;]);</code></pre>
+<p>Now, while this is fine for sites where the repo admins already have shell access to the server, it is too generous othewise, and may lead to a future compromise somewhere else that you did not anticipate.</p>
+<p>Here's a better way:</p>
+<ul>
+<li><p>in the rc file, add the following within the '%RC' hash (for example, just after the UMASK line would do fine):</p>
+<pre><code>SAFE_CONFIG =&gt; {
+    SHOWREV         =&gt;  &quot;git show -C %s; echo&quot;
+},</code></pre></li>
+<li><p>in your gitolite.conf file, add this instead of the line we saw earlier:</p>
+<pre><code>config hooks.showrev = %SHOWREV</code></pre></li>
+</ul>
+<p>This mechanism allows you to add any number of <strong>specific</strong> violations to the <code>UNSAFE_PATT</code> rule instead of denaturing the pattern itself and potentially allowing something that could be used by a repo admin to obtain shell access at some later point in time.</p>
+<p>A similar problem arises with email addresses, which contain the <code>&lt;</code> and <code>&gt;</code> characters. Here's how to deal with that easily:</p>
+<ul>
+<li><p>in the rc file:</p>
+<pre><code>SAFE_CONFIG =&gt; {
+    LT              =&gt;  '&lt;',
+    GT              =&gt;  '&gt;',
+},</code></pre></li>
+<li><p>in the gitolite.conf file:</p>
+<pre><code>config hooks.mailinglist = &quot;Sitaram Chamarty %LTsitaramc@gmail.com%GT&quot;</code></pre></li>
+</ul>
+<p>Admittedly, that looks a wee bit ugly, but it gets the job done without having to remove angle brackets from UNSAFE_PATT.</p>
+</body>
+</html>

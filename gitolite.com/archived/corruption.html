@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>corruption in a git repository</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style>
+      body        { background: #fff; text-color: #000; margin-left:  40px;   font-size:  0.9em;  font-family: arial; }
+  
+      code        { font-size:    1.1em;  background:  #ddf; text-color: #000; }
+      pre         { margin-left:  2em;    background:  #ddf; text-color: #000; }
+      pre code    { font-size:    1.1em;  background:  #ddf; text-color: #000; }
+  
+      td          { vertical-align: top }
+  
+      .red        { color: red }
+      .blue       { color: blue }
+      .green      { color: green }
+      .gray       { color: gray }
+  
+      .box        { background-color:#e0e0e0 }
+      .bg-red     { background-color:#ffe0e0 }
+      .bg-green   { background-color:#e0ffe0 }
+      .bg-blue    { background-color:#e0e0ff }
+  
+      /* couldn't resist the name! */
+      .wd40       { width: 40% !important }
+  
+      .box-l      { float: left;  padding: 0px 0.5em; background-color: #e0e0e0; width:25% }
+      .box-r      { float: right; padding: 0px 0.5em; background-color: #e0e0e0; width:25% }
+  </style>
+  <style>
+      h1          { background: #ffb; text-color: #000; margin-left: -30px;   border-top:    5px  solid #ccc; }
+      h2          { background: #ffb; text-color: #000; margin-left: -20px;   border-top:    3px  solid #ddd; }
+      h3          { background: #ffb; text-color: #000; margin-left: -10px; }
+      h4          { background: #ffb; text-color: #000; }
+  </style>
+</head>
+<body>
+<p style="text-align:center">
+    <a href="index.html">git notes main page</a>
+|
+<a href="gitolite/index.html"><strong>gitolite</strong> main page</a>
+|
+    <a href="license.html">license</a>
+</p>
+<div id="header">
+<h1 class="title">corruption in a git repository</h1>
+</div>
+<p>For now, this is just loosely formatted text, maybe like a series of case studies.</p>
+<p>IMPORTANT NOTE: <code>git fsck --full</code> is needed to reliably find repo corruption</p>
+<h1 id="case-1-kolkata-korruption----2-missing-tree-objects"><span class="header-section-number">1</span> case 1: Kolkata Korruption -- 2 missing tree objects</h1>
+<p>what finally worked:</p>
+<pre><code># on some good repo
+TYPE=$(git cat-file -t $BADOBJSHA)
+git cat-file $TYPE $BADOBJSHA &gt; file
+
+# copy file to bad repo
+git hash-object -t $TYPE -w --stdin &lt; file</code></pre>
+<p>However, this may not always work; it is not certain that hash-object will <em>replace</em> a corrupted object (as opposed to creating a <em>missing</em> object). So try that, <em>as well as</em> this (generic object):</p>
+<pre><code># on some good repo
+echo $object | git pack-objects --revs pack
+# will create two files named pack-*.{idx,pack}</code></pre>
+<p>confirm:</p>
+<pre><code>git verify-pack -v pack-*.idx | grep $object
+# should also contain all sub objects</code></pre>
+<p>copy:</p>
+<pre><code>pack* to $bad_repo/[.git?]/objects/pack</code></pre>
+<p>repack:</p>
+<pre><code>repack -a -d</code></pre>
+<p>(you could also do &quot;unpack-objects&quot; I guess)</p>
+</body>
+</html>

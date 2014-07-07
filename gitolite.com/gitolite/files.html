@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>files involved in gitolite</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style>
+      body        { background: #fff; text-color: #000; margin-left:  40px;   font-size:  0.9em;  font-family: arial; }
+  
+      code        { font-size:    1.1em;  background:  #ddf; text-color: #000; }
+      pre         { margin-left:  2em;    background:  #ddf; text-color: #000; }
+      pre code    { font-size:    1.1em;  background:  #ddf; text-color: #000; }
+  
+      td          { vertical-align: top }
+  
+      .red        { color: red }
+      .blue       { color: blue }
+      .green      { color: green }
+      .gray       { color: gray }
+  
+      .box        { background-color:#e0e0e0 }
+      .bg-red     { background-color:#ffe0e0 }
+      .bg-green   { background-color:#e0ffe0 }
+      .bg-blue    { background-color:#e0e0ff }
+  
+      /* couldn't resist the name! */
+      .wd40       { width: 40% !important }
+  
+      .box-l      { float: left;  padding: 0px 0.5em; background-color: #e0e0e0; width:25% }
+      .box-r      { float: right; padding: 0px 0.5em; background-color: #e0e0e0; width:25% }
+  </style>
+  <style>
+      h1          { background: #ffb; text-color: #000; margin-left: -30px;   border-top:    5px  solid #ccc; }
+      h2          { background: #ffb; text-color: #000; margin-left: -20px;   border-top:    3px  solid #ddd; }
+      h3          { background: #ffb; text-color: #000; margin-left: -10px; }
+      h4          { background: #ffb; text-color: #000; }
+  </style>
+</head>
+<body>
+<p style="text-align:center">
+    <a href="master-toc.html">master TOC</a>
+|
+    <a href="index.html">main page</a>
+|
+    <a href="gitolite.html">single-page</a>
+|
+    <a href="index.html#license">license</a>
+|
+<font color="green"><b>New: <a style="color: green" href="http://www.packtpub.com/gitolite-essentials/book">Gitolite Essentials</a> book</b></font>
+</p>
+<p style="text-align:center">
+<font color="gray">This is for gitolite &quot;g3&quot;; for older (v2.x) documentation click <a href="http://sitaramc.github.com/gitolite/g2/master-toc.html">here</a></font>
+</p>
+<div id="header">
+<h1 class="title">files involved in gitolite</h1>
+</div>
+<p>Gitolite creates and uses the following files and directories:</p>
+<ul>
+<li><code>~/repositories</code> -- the actual (bare) repositories are here</li>
+<li><code>~/.gitolite.rc</code> -- configuration parameters that must be done directly on the server</li>
+<li><code>~/.gitolite</code> -- gitolite's &quot;working&quot; directory. This contains everything else that gitolite needs. (Warning: you're not supposed to fiddle with the files and directories within; instead, make changes in a clone of the gitolite-admin repository and push, and those appear magically here).</li>
+</ul>
+<p>Once the install/setup is done, any (or all) of these may be moved elsewhere and replaced by symlinks. The most common reason for locating <code>~/repositories</code> somewhere else is disk space, but FHS compliance could also be a reason.</p>
+<p>In addition, the following are of interest:</p>
+<ul>
+<li><code>~/.ssh</code> -- if you're using ssh (as opposed to http), since this is where the <code>authorized_keys</code> file is kept</li>
+</ul>
+<h1 id="special-files"><span class="header-section-number">1</span> special files</h1>
+<p>You may want to backup the contents of <code>~/.gitolite/logs</code> if you care about auditability etc.</p>
+<h1 id="gitolite-software"><span class="header-section-number">2</span> gitolite software</h1>
+<p>The above list does not include the gitolite software itself.</p>
+<p>Gitolite offers you 3 ways to install software. After cloning the gitolite sources, run the install command in it with a <code>-h</code> argument to see what they are. Where the actual software is found depends on that.</p>
+<h1 id="inside-a-gitolite-repo"><span class="header-section-number">3</span> inside a &quot;gitolite repo&quot;</h1>
+<p>A gitolite repo is just like a normal bare repo on any normal git server. There are a few extra files placed in the repo directory whose names start with &quot;gl-&quot;, and there is also an update hook placed in the hooks subdirectory, but that's about it, for the most part.</p>
+<p>In other words, you can treat a gitolite-managed repo just like any other bare repo as long as you leave those files alone.</p>
+</body>
+</html>
