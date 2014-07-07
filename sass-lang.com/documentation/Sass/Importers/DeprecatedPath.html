@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Sass::Importers::DeprecatedPath
+  
+    &mdash; Sass Documentation
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style-d9a989df.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../assets/css/docs-7a6c4a12.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../../';
+  framesUrl = "../../frames.html#!" + escape(window.location.href);
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery-eb68cd33.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app-f07ff2e5.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (D)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../Sass.html" title="Sass (module)">Sass</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Importers.html" title="Sass::Importers (module)">Importers</a></span></span>
+     &raquo; 
+    <span class="title">DeprecatedPath</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Sass::Importers::DeprecatedPath
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Filesystem.html" title="Sass::Importers::Filesystem (class)">Filesystem</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Base.html" title="Sass::Importers::Base (class)">Base</a></span></li>
+          
+            <li class="next"><span class='object_link'><a href="Filesystem.html" title="Sass::Importers::Filesystem (class)">Filesystem</a></span></li>
+          
+            <li class="next">Sass::Importers::DeprecatedPath</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">/usr/local/google-old/home/code/sass-site/.sass/lib/sass/importers/deprecated_path.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>This importer emits a deprecation warning the first time it is used to import a file. It is used to deprecate the current working directory from the list of automatic sass load paths.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  <h2>Constant Summary</h2>
+  
+
+
+
+
+
+
+  <h2>Instance Attribute Summary</h2>
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="Filesystem.html" title="Sass::Importers::Filesystem (class)">Filesystem</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Filesystem.html#root-instance_method" title="Sass::Importers::Filesystem#root (method)">#root</a></span></p>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="protected ">
+  <span class="summary_signature">
+    
+      <a href="#deprecation_warning-instance_method" title="#deprecation_warning (instance method)">- (String) <strong>deprecation_warning</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  <span class="note title protected">protected</span>
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>The deprecation warning that will be printed the first time an import occurs.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#directories_to_watch-instance_method" title="#directories_to_watch (instance method)">- <strong>directories_to_watch</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find-instance_method" title="#find (instance method)">- <strong>find</strong>(*args) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (DeprecatedPath) <strong>initialize</strong>(root) </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of DeprecatedPath.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- <strong>to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Filesystem.html" title="Sass::Importers::Filesystem (class)">Filesystem</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Filesystem.html#eql%3F-instance_method" title="Sass::Importers::Filesystem#eql? (method)">#eql?</a></span>, <span class='object_link'><a href="Filesystem.html#escape_glob_characters-instance_method" title="Sass::Importers::Filesystem#escape_glob_characters (method)">#escape_glob_characters</a></span>, <span class='object_link'><a href="Filesystem.html#extensions-instance_method" title="Sass::Importers::Filesystem#extensions (method)">#extensions</a></span>, <span class='object_link'><a href="Filesystem.html#find_real_file-instance_method" title="Sass::Importers::Filesystem#find_real_file (method)">#find_real_file</a></span>, <span class='object_link'><a href="Filesystem.html#find_relative-instance_method" title="Sass::Importers::Filesystem#find_relative (method)">#find_relative</a></span>, <span class='object_link'><a href="Filesystem.html#hash-instance_method" title="Sass::Importers::Filesystem#hash (method)">#hash</a></span>, <span class='object_link'><a href="Filesystem.html#key-instance_method" title="Sass::Importers::Filesystem#key (method)">#key</a></span>, <span class='object_link'><a href="Filesystem.html#mtime-instance_method" title="Sass::Importers::Filesystem#mtime (method)">#mtime</a></span>, <span class='object_link'><a href="Filesystem.html#possible_files-instance_method" title="Sass::Importers::Filesystem#possible_files (method)">#possible_files</a></span>, <span class='object_link'><a href="Filesystem.html#public_url-instance_method" title="Sass::Importers::Filesystem#public_url (method)">#public_url</a></span>, <span class='object_link'><a href="Filesystem.html#remove_root-instance_method" title="Sass::Importers::Filesystem#remove_root (method)">#remove_root</a></span>, <span class='object_link'><a href="Filesystem.html#split-instance_method" title="Sass::Importers::Filesystem#split (method)">#split</a></span>, <span class='object_link'><a href="Filesystem.html#warn_about_public_url-instance_method" title="Sass::Importers::Filesystem#warn_about_public_url (method)">#warn_about_public_url</a></span>, <span class='object_link'><a href="Filesystem.html#watched_file%3F-instance_method" title="Sass::Importers::Filesystem#watched_file? (method)">#watched_file?</a></span></p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Base.html" title="Sass::Importers::Base (class)">Base</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Base.html#find_relative-instance_method" title="Sass::Importers::Base#find_relative (method)">#find_relative</a></span>, <span class='object_link'><a href="Base.html#key-instance_method" title="Sass::Importers::Base#key (method)">#key</a></span>, <span class='object_link'><a href="Base.html#mtime-instance_method" title="Sass::Importers::Base#mtime (method)">#mtime</a></span>, <span class='object_link'><a href="Base.html#public_url-instance_method" title="Sass::Importers::Base#public_url (method)">#public_url</a></span>, <span class='object_link'><a href="Base.html#watched_file%3F-instance_method" title="Sass::Importers::Base#watched_file? (method)">#watched_file?</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Sass::Importers::DeprecatedPath (class)">DeprecatedPath</a></span></tt>) <strong>initialize</strong>(root) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new instance of DeprecatedPath</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>root</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The absolute, expanded path to the folder that is deprecated.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/usr/local/google-old/home/code/sass-site/.sass/lib/sass/importers/deprecated_path.rb', line 8</span>
+
+def initialize(root)
+  @specified_root = root
+  @warning_given = false
+  super
+end</pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="deprecation_warning-instance_method">
+  
+    - (<tt>String</tt>) <strong>deprecation_warning</strong>  <span class="extras">(protected)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns The deprecation warning that will be printed the first time an import occurs.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The deprecation warning that will be printed the first time an import occurs.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/usr/local/google-old/home/code/sass-site/.sass/lib/sass/importers/deprecated_path.rb', line 40</span>
+
+def deprecation_warning
+  path = @specified_root == &quot;.&quot; ? &quot;the current working directory&quot; : @specified_root
+  &lt;&lt;WARNING
+DEPRECATION WARNING: Importing from #{path} will not be
+automatic in future versions of Sass.  To avoid future errors, you can add it
+to your environment explicitly by setting `SASS_PATH=#{@specified_root}`, by using the -I command
+line option, or by changing your Sass configuration options.
+WARNING
+end</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="directories_to_watch-instance_method">
+  
+    - <strong>directories_to_watch</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Base.html#directories_to_watch-instance_method" title="Sass::Importers::Base#directories_to_watch (method)">Base#directories_to_watch</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/usr/local/google-old/home/code/sass-site/.sass/lib/sass/importers/deprecated_path.rb', line 25</span>
+
+def directories_to_watch
+  # The current working directory was not watched in Sass 3.2,
+  # so we continue not to watch it while it&#39;s deprecated.
+  []
+end</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="find-instance_method">
+  
+    - <strong>find</strong>(*args) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Base.html#find-instance_method" title="Sass::Importers::Base#find (method)">Base#find</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21
+22</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/usr/local/google-old/home/code/sass-site/.sass/lib/sass/importers/deprecated_path.rb', line 15</span>
+
+def find(*args)
+  found = super
+  if found &amp;&amp; !@warning_given
+    @warning_given = true
+    Sass::Util.sass_warn deprecation_warning
+  end
+  found
+end</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    - <strong>to_s</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Base.html#to_s-instance_method" title="Sass::Importers::Base#to_s (method)">Base#to_s</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File '/usr/local/google-old/home/code/sass-site/.sass/lib/sass/importers/deprecated_path.rb', line 32</span>
+
+def to_s
+  &quot;#{@root} (DEPRECATED)&quot;
+end</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Fri May 30 17:37:36 2014 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.2 (ruby-2.0.0).
+</div>
+
+
+
+  </body>
+</html>
