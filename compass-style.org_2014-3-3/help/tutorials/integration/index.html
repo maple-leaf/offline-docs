@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<title>
+Application Integration | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/fixups.js' type='text/javascript'></script>
+
+</head>
+<body class='site tutorial' id='help-tutorials-integration'>
+<div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='module-nav'>
+<ul>
+<li class='getting-started'>
+<a href='../../index.html' rel='getting started'><span>Getting Started</span></a>
+</li>
+<li class='tutorials'>
+<a href='../index.html' rel='getting started'><span>Tutorials</span></a>
+</li>
+<li class='support'>
+<a href='http://groups.google.com/group/compass-users' rel='support'><span>Support</span></a>
+</li>
+<li>
+<a href='http://github.com/chriseppstein/compass/issues' rel='bugs'><span>Bugs</span></a>
+</li>
+</ul>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<aside role='sidebar'>
+<nav id='local-nav'>
+<ul><li class='selected'>
+<h2>
+<a class='selected' href='../index.html'>Tutorials</a>
+</h2>
+</li>
+<ul><li class='selected'>
+<h3>
+<a class='selected' href='index.html'>Application Integration</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../best_practices/index.html'>Best practices</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../blueprint/index.html'>Blueprint Framework</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../command-line/index.html'>Compass Command Line Documentation</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../configuration-reference/index.html'>Configuration Reference</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../contributing.html'>Contributing</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../extensions.html'>Creating Compass Extensions</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../extending.1.html'>Extending Compass</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../production-css/index.html'>Production Stylesheets</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../exclude_vendor_prefixes/index.html'>Removing Vendor Prefixes from Compass</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../spriting/index.html'>Spriting</a>
+</h3>
+</li>
+<ul><li class=''>
+<a class='' href='../spriting/customization-options.1.html'>
+<span>Customization</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../spriting/magic-selectors.1.html'>
+<span>Magic Selectors</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../spriting/sprite-layouts.1.html'>
+<span>Sprite layouts</span>
+</a>
+</li>
+</ul>
+<li>
+<h3>
+<a href='../testing/index.html'>Testing</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../upgrading/index.html'>Upgrading</a>
+</h3>
+</li>
+<ul><li class=''>
+<a class='' href='../upgrading/lemonade_upgrade_guide/index.html'>
+<span>Lemonade Upgrade</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../upgrading/im-scared/index.html'>
+<span>Scared to Upgrade?</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../upgrading/antares/index.html'>
+<span>Upgrading to v0.11</span>
+</a>
+</li>
+</ul>
+<li>
+<h3>
+<a href='../configurable-variables/index.html'>Working with Configurable Variables</a>
+</h3>
+</li>
+</ul>
+</ul>
+</nav>
+</aside>
+<article><h1>Application Integration</h1>
+
+<h2>Ruby on Rails</h2>
+
+<h3>Rails 3.1</h3>
+
+<p>Just add compass to your Gemfile like so:</p>
+
+<pre><code>gem 'compass'
+</code></pre>
+
+<p>Also checkout this <a href="https://gist.github.com/1184843">gist</a></p>
+
+<h3>Rails 3</h3>
+
+<pre><code>compass init rails /path/to/myrailsproject
+</code></pre>
+
+<h3>Rails 2.3</h3>
+
+<pre><code>rake rails:template LOCATION=http://compass-style.org/rails/installer
+</code></pre>
+
+<h2>Sinatra</h2>
+
+<pre><code>require 'compass'
+require 'sinatra'
+require 'haml'
+
+configure do
+  set :haml, {:format =&gt; :html5}
+  set :scss, {:style =&gt; :compact, :debug_info =&gt; false}
+  Compass.add_project_configuration(File.join(Sinatra::Application.root, 'config', 'compass.rb'))
+end
+
+get '/stylesheets/:name.css' do
+  content_type 'text/css', :charset =&gt; 'utf-8'
+  scss :"stylesheets/#{params[:name]}", Compass.sass_engine_options
+end
+
+get '/' do
+  haml :index
+end
+</code></pre>
+
+<p>This assumes you keep your Compass config file in <code>config/compass.rb</code>. If you keep your stylesheets in “views/stylesheets/” directory instead of just “views/”, remember to update <code>sass_dir</code> configuration accordingly.
+Check out this <a href="http://github.com/chriseppstein/compass-sinatra">sample compass-sinatra project</a> to get up and running in no time!</p>
+
+<p><a href="http://github.com/adamstac/sinatra-bootstrap">Sinatra Bootstrap</a> - a base Sinatra project with support for Haml, Sass, Compass, jQuery and more.</p>
+
+<h2>nanoc</h2>
+
+<h3>Minimal integration: just drop it in</h3>
+
+<p>One simple route for lightweight integration is to simply install compass inside nanoc. Then edit <code>config.rb</code> to point to the stylesheets you want to use. This means you have to have the Compass watch command running in a separate window from the Nanoc compilation process.</p>
+
+<p>Example project that works this way: <a href="http://github.com/unthinkingly/unthinkingly-blog">unthinkingly</a>.</p>
+
+<h3>More formal integration</h3>
+
+<p>At the top of the Nanoc Rules file, load the Compass configuration, like this:</p>
+
+<pre><code>require 'compass'
+
+Compass.add_project_configuration 'compass.rb'        # when using Compass &gt; 0.10
+sass_options = Compass.sass_engine_options            # when using Compass &gt; 0.10
+
+Compass.configuration.parse 'compass.rb'              # when using Compass &lt; 0.10
+sass_options = Compass.config.to_sass_engine_options  # when using Compass &lt; 0.10
+</code></pre>
+
+<p>Then create a <code>compass.rb</code> file in your site's root folder and add your Compass configuration. An example configuration could look like this:</p>
+
+<pre><code>http_path = "/"
+project_path = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+css_dir = "output/stylesheets"
+sass_dir = "content/stylesheets"
+images_dir = "assets/images"
+javascripts_dir = "assets/javascripts"
+fonts_dir = "assets/fonts"
+http_javascripts_dir = "javascripts"
+http_stylesheets_dir = "stylesheets"
+http_images_dir = "images"
+http_fonts_dir = "fonts"
+</code></pre>
+
+<p>You may need to change the path to some directories depending on your directory structure and the setup in your Rules file.</p>
+
+<p>To filter the stylesheets using Sass and Compass, call the sass filter with Sass engine options taken from Compass, like this:</p>
+
+<pre><code>compile '/stylesheets/*' do
+  filter :sass, sass_options.merge(:syntax =&gt; item[:extension].to_sym)
+end
+</code></pre>
+
+<h3>nanoc projects using the formal approach</h3>
+
+<ul>
+<li><a href="https://github.com/chriseppstein/compass/tree/master/doc-src">This Site</a></li>
+</ul>
+
+</article>
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+</body>
+</html>

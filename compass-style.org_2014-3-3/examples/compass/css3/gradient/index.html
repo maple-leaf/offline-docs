@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../../blog/atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Background Gradients | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+<style type='text/css'>.ex {
+  width: 48%;
+  margin-right: 2%;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.gradient-example {
+  width: 80px;
+  height: 80px;
+  background: red;
+  float: left;
+  margin: 1em 1em 0 0;
+}
+
+#radial-gradient {
+  background-image: -webkit-gradient(radial, 45px 45px, 0, 45px 45px, 30, color-stop(33.33333%, #00ffff), color-stop(100%, #1e90ff));
+  background-image: -webkit-radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+  background-image: -moz-radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+  background-image: -o-radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+  background-image: radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+}
+
+#linear-gradient {
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(left top, #ffffff, #dddddd);
+  background-image: -moz-linear-gradient(left top, #ffffff, #dddddd);
+  background-image: -o-linear-gradient(left top, #ffffff, #dddddd);
+  background-image: linear-gradient(left top, #ffffff, #dddddd);
+}
+
+#v-gradient {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #aaaaaa));
+  background-image: -webkit-linear-gradient(#ffffff, #aaaaaa);
+  background-image: -moz-linear-gradient(#ffffff, #aaaaaa);
+  background-image: -o-linear-gradient(#ffffff, #aaaaaa);
+  background-image: linear-gradient(#ffffff, #aaaaaa);
+}
+
+#v-gradient-2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(50%, #cccccc), color-stop(100%, #aaaaaa));
+  background-image: -webkit-linear-gradient(#ffffff, #cccccc, #aaaaaa);
+  background-image: -moz-linear-gradient(#ffffff, #cccccc, #aaaaaa);
+  background-image: -o-linear-gradient(#ffffff, #cccccc, #aaaaaa);
+  background-image: linear-gradient(#ffffff, #cccccc, #aaaaaa);
+}
+
+#v-gradient-3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(30%, #cccccc), color-stop(70%, #bbbbbb), color-stop(100%, #aaaaaa));
+  background-image: -webkit-linear-gradient(#ffffff, #cccccc 30%, #bbbbbb 70%, #aaaaaa);
+  background-image: -moz-linear-gradient(#ffffff, #cccccc 30%, #bbbbbb 70%, #aaaaaa);
+  background-image: -o-linear-gradient(#ffffff, #cccccc 30%, #bbbbbb 70%, #aaaaaa);
+  background-image: linear-gradient(#ffffff, #cccccc 30%, #bbbbbb 70%, #aaaaaa);
+}
+
+#h-gradient {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(left, #ffffff, #dddddd);
+  background-image: -moz-linear-gradient(left, #ffffff, #dddddd);
+  background-image: -o-linear-gradient(left, #ffffff, #dddddd);
+  background-image: linear-gradient(left, #ffffff, #dddddd);
+}
+
+#svg-gradient {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iNTAlIiB4Mj0iMTAwJSIgeTI9IjUwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJhYzM2MyIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjY2Q4YzE0Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOWM0Y2MyIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #2ac363), color-stop(50%, #cd8c14), color-stop(100%, #9c4cc2));
+  background-image: -webkit-linear-gradient(left, #2ac363, #cd8c14, #9c4cc2);
+  background-image: -moz-linear-gradient(left, #2ac363, #cd8c14, #9c4cc2);
+  background-image: -o-linear-gradient(left, #2ac363, #cd8c14, #9c4cc2);
+  background-image: linear-gradient(left, #2ac363, #cd8c14, #9c4cc2);
+  width: 80px;
+  height: 80px;
+}
+
+</style>
+</head>
+<body class=' demo' id='examples-compass-css3-gradient'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<article><div id="reference"><a href="../../../../reference/compass/css3/images/index.html">Reference Documentation</a></div>
+<h1>Demo: Background Gradients</h1>
+<div id="demo">
+<div class="ex">
+  <div class="gradient-example"></div>
+  <p>
+    This box has no gradients
+  </p>
+</div>
+<div class="ex">
+  <div class="gradient-example" id="radial-gradient"></div>
+  <p>
+    This will yield a radial gradient with an apparent specular highlight
+  </p>
+</div>
+<div class="ex">
+  <div class="gradient-example" id="linear-gradient"></div>
+  <p>
+    This yields a linear gradient spanning from $start to $end coordinates
+  </p>
+</div>
+<div class="ex">
+  <div class="gradient-example" id="v-gradient"></div>
+  <p>
+    This yields a gradient starting at the top with #fff, ending in #aaa
+  </p>
+</div>
+<div class="ex">
+  <div class="gradient-example" id="v-gradient-2"></div>
+  <p>
+    Same as above but with a #ccc at the halfway point
+  </p>
+</div>
+<div class="ex">
+  <div class="gradient-example" id="v-gradient-3"></div>
+  <p>
+    Same as the first example but with #ccc at the
+    30% from the top, and #bbb at 70% from the top
+  </p>
+</div>
+<div class="ex">
+  <div class="gradient-example" id="h-gradient"></div>
+  <p>
+    This yields a horizontal linear gradient spanning from left to right.
+  </p>
+</div>
+<div class="ex">
+  <div class="gradient-example" id="svg-gradient"></div>
+  <p>
+    This gradient has SVG support enabled for opera and IE9.
+  </p>
+</div>
+</div>
+
+<div id="how">
+<section id="markup"><div class="syntax_pref">
+<a href="index.html#" rel="html">html</a>
+<a href="index.html#" rel="haml">haml</a>
+</div>
+<div class="example-source">
+<pre class="brush: html source-code html">&lt;div class='ex'&gt;
+  &lt;div class='gradient-example'&gt;&lt;/div&gt;
+  &lt;p&gt;
+    This box has no gradients
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class='ex'&gt;
+  &lt;div class='gradient-example' id='radial-gradient'&gt;&lt;/div&gt;
+  &lt;p&gt;
+    This will yield a radial gradient with an apparent specular highlight
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class='ex'&gt;
+  &lt;div class='gradient-example' id='linear-gradient'&gt;&lt;/div&gt;
+  &lt;p&gt;
+    This yields a linear gradient spanning from $start to $end coordinates
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class='ex'&gt;
+  &lt;div class='gradient-example' id='v-gradient'&gt;&lt;/div&gt;
+  &lt;p&gt;
+    This yields a gradient starting at the top with #fff, ending in #aaa
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class='ex'&gt;
+  &lt;div class='gradient-example' id='v-gradient-2'&gt;&lt;/div&gt;
+  &lt;p&gt;
+    Same as above but with a #ccc at the halfway point
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class='ex'&gt;
+  &lt;div class='gradient-example' id='v-gradient-3'&gt;&lt;/div&gt;
+  &lt;p&gt;
+    Same as the first example but with #ccc at the
+    30% from the top, and #bbb at 70% from the top
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class='ex'&gt;
+  &lt;div class='gradient-example' id='h-gradient'&gt;&lt;/div&gt;
+  &lt;p&gt;
+    This yields a horizontal linear gradient spanning from left to right.
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class='ex'&gt;
+  &lt;div class='gradient-example' id='svg-gradient'&gt;&lt;/div&gt;
+  &lt;p&gt;
+    This gradient has SVG support enabled for opera and IE9.
+  &lt;/p&gt;
+&lt;/div&gt;
+</pre>
+<pre class="brush: haml source-code haml">.ex
+  .gradient-example
+  %p
+    This box has no gradients
+
+.ex
+  #radial-gradient.gradient-example
+  %p
+    This will yield a radial gradient with an apparent specular highlight  
+
+.ex
+  #linear-gradient.gradient-example
+  %p
+    This yields a linear gradient spanning from $start to $end coordinates  
+
+.ex
+  #v-gradient.gradient-example
+  %p
+    This yields a gradient starting at the top with #fff, ending in #aaa  
+
+.ex
+  #v-gradient-2.gradient-example
+  %p
+    Same as above but with a #ccc at the halfway point  
+
+.ex
+  #v-gradient-3.gradient-example
+  %p
+    Same as the first example but with #ccc at the
+    30% from the top, and #bbb at 70% from the top  
+
+
+.ex
+  #h-gradient.gradient-example
+  %p
+    This yields a horizontal linear gradient spanning from left to right.
+
+.ex
+  #svg-gradient.gradient-example
+  %p
+    This gradient has SVG support enabled for opera and IE9.
+</pre>
+</div>
+</section><section id="styles"><div class="syntax_pref">
+<a href="index.html#" rel="scss">scss</a>
+<a href="index.html#" rel="sass">sass</a>
+<a href="index.html#" rel="css">css</a>
+</div>
+<div class="example-source">
+<pre class="brush: scss source-code scss">@import "compass";
+
+.ex {
+  width: 48%;
+  margin-right: 2%;
+  float: left;
+  @include clearfix;
+}
+
+.gradient-example {
+  width: 80px;
+  height: 80px;
+  background: red;
+  float: left;
+  margin: 1em 1em 0 0;
+}
+
+// This will yield a radial gradient with an apparent specular highlight
+#radial-gradient {
+  @include background-image(radial-gradient(45px 45px, cyan 10px, dodgerblue 30px));
+}
+
+// This yields a linear gradient spanning from the upper left corner to the lower right corner
+#linear-gradient {
+  @include background-image(linear-gradient(left top, white, #dddddd));
+}
+
+// This yields a gradient starting at the top with #fff, ending in #aaa
+#v-gradient {
+  @include background-image(linear-gradient(white, #aaaaaa));
+}
+
+// Same as above but with a #ccc at the halfway point
+#v-gradient-2 {
+  @include background-image(linear-gradient(white, #cccccc, #aaaaaa));
+}
+
+// Same as the first example but with #ccc at the 30% from the top, and #bbb at 70% from the top
+#v-gradient-3 {
+  @include background-image(linear-gradient(white, #cccccc 30%, #bbbbbb 70%, #aaaaaa));
+}
+
+// This yields a horizontal linear gradient spanning from left to right.
+#h-gradient {
+  @include background-image(linear-gradient(left, white, #dddddd));
+}
+
+#svg-gradient {
+  $experimental-support-for-svg: true;
+  @include background-image(linear-gradient(left, #2ac363, #cd8c14, #9c4cc2));
+  width: 80px;
+  height: 80px;
+}
+</pre>
+<pre class="brush: sass source-code sass">@import compass
+.ex
+  width: 48%
+  margin-right: 2%
+  float: left
+  +clearfix
+
+.gradient-example
+  width: 80px
+  height: 80px
+  background: red
+  float: left
+  margin: 1em 1em 0 0
+
+// This will yield a radial gradient with an apparent specular highlight  
+#radial-gradient
+  +background-image(radial-gradient(45px 45px, #0ff 10px, #1e90ff 30px))
+
+// This yields a linear gradient spanning from the upper left corner to the lower right corner
+#linear-gradient
+  +background-image(linear-gradient(left top, #fff, #ddd))
+
+// This yields a gradient starting at the top with #fff, ending in #aaa  
+#v-gradient
+  +background-image(linear-gradient(#fff, #aaa))
+
+// Same as above but with a #ccc at the halfway point  
+#v-gradient-2
+  +background-image(linear-gradient(#fff, #ccc, #aaa))
+
+// Same as the first example but with #ccc at the 30% from the top, and #bbb at 70% from the top  
+#v-gradient-3
+  +background-image(linear-gradient(#fff, #ccc 30%, #bbb 70%, #aaa))
+
+// This yields a horizontal linear gradient spanning from left to right.
+#h-gradient
+  +background-image(linear-gradient(left, #fff, #ddd))
+
+#svg-gradient
+  $experimental-support-for-svg: true
+  +background-image(linear-gradient(left, #2ac363, #cd8c14, #9c4cc2))
+  width: 80px
+  height: 80px
+</pre>
+<pre class="brush: css source-code css">.ex {
+  width: 48%;
+  margin-right: 2%;
+  float: left;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.gradient-example {
+  width: 80px;
+  height: 80px;
+  background: red;
+  float: left;
+  margin: 1em 1em 0 0;
+}
+
+#radial-gradient {
+  background-image: -webkit-gradient(radial, 45px 45px, 0, 45px 45px, 30, color-stop(33.33333%, #00ffff), color-stop(100%, #1e90ff));
+  background-image: -webkit-radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+  background-image: -moz-radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+  background-image: -o-radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+  background-image: radial-gradient(45px 45px, #00ffff 10px, #1e90ff 30px);
+}
+
+#linear-gradient {
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(left top, #ffffff, #dddddd);
+  background-image: -moz-linear-gradient(left top, #ffffff, #dddddd);
+  background-image: -o-linear-gradient(left top, #ffffff, #dddddd);
+  background-image: linear-gradient(left top, #ffffff, #dddddd);
+}
+
+#v-gradient {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #aaaaaa));
+  background-image: -webkit-linear-gradient(#ffffff, #aaaaaa);
+  background-image: -moz-linear-gradient(#ffffff, #aaaaaa);
+  background-image: -o-linear-gradient(#ffffff, #aaaaaa);
+  background-image: linear-gradient(#ffffff, #aaaaaa);
+}
+
+#v-gradient-2 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(50%, #cccccc), color-stop(100%, #aaaaaa));
+  background-image: -webkit-linear-gradient(#ffffff, #cccccc, #aaaaaa);
+  background-image: -moz-linear-gradient(#ffffff, #cccccc, #aaaaaa);
+  background-image: -o-linear-gradient(#ffffff, #cccccc, #aaaaaa);
+  background-image: linear-gradient(#ffffff, #cccccc, #aaaaaa);
+}
+
+#v-gradient-3 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(30%, #cccccc), color-stop(70%, #bbbbbb), color-stop(100%, #aaaaaa));
+  background-image: -webkit-linear-gradient(#ffffff, #cccccc 30%, #bbbbbb 70%, #aaaaaa);
+  background-image: -moz-linear-gradient(#ffffff, #cccccc 30%, #bbbbbb 70%, #aaaaaa);
+  background-image: -o-linear-gradient(#ffffff, #cccccc 30%, #bbbbbb 70%, #aaaaaa);
+  background-image: linear-gradient(#ffffff, #cccccc 30%, #bbbbbb 70%, #aaaaaa);
+}
+
+#h-gradient {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(left, #ffffff, #dddddd);
+  background-image: -moz-linear-gradient(left, #ffffff, #dddddd);
+  background-image: -o-linear-gradient(left, #ffffff, #dddddd);
+  background-image: linear-gradient(left, #ffffff, #dddddd);
+}
+
+#svg-gradient {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iNTAlIiB4Mj0iMTAwJSIgeTI9IjUwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzJhYzM2MyIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjY2Q4YzE0Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOWM0Y2MyIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #2ac363), color-stop(50%, #cd8c14), color-stop(100%, #9c4cc2));
+  background-image: -webkit-linear-gradient(left, #2ac363, #cd8c14, #9c4cc2);
+  background-image: -moz-linear-gradient(left, #2ac363, #cd8c14, #9c4cc2);
+  background-image: -o-linear-gradient(left, #2ac363, #cd8c14, #9c4cc2);
+  background-image: linear-gradient(left, #2ac363, #cd8c14, #9c4cc2);
+  width: 80px;
+  height: 80px;
+}
+</pre>
+</div>
+</section>
+</div></article>
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

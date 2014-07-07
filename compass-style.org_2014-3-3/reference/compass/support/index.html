@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../blog/atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Compass Cross-Browser Support Configuration | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+</head>
+<body class=' reference core support' id='reference-compass-support'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='docs-nav' role='navigation'>
+<a href='../../blueprint/index.html' rel='blueprint'>Blueprint</a>
+<a href='../../../docs/index.html' rel='core'>Core</a>
+</nav>
+<nav id='module-nav'><ul><ul><li class=''>
+<a class='' href='../css3/index.html'>
+<span>CSS3</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../helpers/index.html'>
+<span>Helpers</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../layout/index.html'>
+<span>Layout</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../reset/index.html'>
+<span>Reset</span>
+</a>
+</li>
+<li class='deprecated'>
+<a class='deprecated' href='../reset-legacy/index.html'>
+<span>Reset (legacy)</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../typography/index.html'>
+<span>Typography</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../utilities/index.html'>
+<span>Utilities</span>
+</a>
+</li>
+</ul>
+</ul>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='syntax_pref'>
+<a href='index.html#' rel='scss'>scss</a>
+<a href='index.html#' rel='sass'>sass</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<aside role='sidebar'><nav id='local-nav'>
+<ul><li class='selected'>
+<h2>
+<a class='selected' href='../../../docs/index.html'>Compass Core</a>
+</h2>
+</li>
+<ul><li class=''>
+<a class='' href='../css3/index.html'>
+<span>CSS3</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../helpers/index.html'>
+<span>Helpers</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../layout/index.html'>
+<span>Layout</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../reset/index.html'>
+<span>Reset</span>
+</a>
+</li>
+<li class='deprecated'>
+<a class='deprecated' href='../reset-legacy/index.html'>
+<span>Reset (legacy)</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../typography/index.html'>
+<span>Typography</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../utilities/index.html'>
+<span>Utilities</span>
+</a>
+</li>
+</ul>
+</ul>
+</nav>
+<div class='advertisement'>
+<script type="text/javascript">(function(){ var fusion = document.createElement('script'); fusion.src = window.location.protocol + '//adn.fusionads.net/api/1.0/ad.js?zoneid=158&rand=' + Math.floor(Math.random()*9999999); fusion.async = true; (document.head || document.getElementsByTagName('head')[0]).appendChild(fusion); })(); $(function(){ $(".advertisement").addClass("visible")});</script>
+<div id='fusion_ad'>
+<a class='pagerankspam' href='http://fusionads.net'>Powered by Fusion</a>
+</div>
+</div>
+
+</aside>
+<article><a href="http://github.com/chriseppstein/compass/blob/stable/frameworks/compass/stylesheets/compass/_support.scss" rel="github-source" title="view source for this module on github">Source on Github</a>
+<h1>Compass Cross-Browser Support Configuration</h1>
+<p>
+You can configure the compass default browser support matrix by
+setting these variables as needed.
+</p>
+
+<p>
+This file can be imported using:
+<code>@import "compass/support"</code>
+</p>
+
+
+<h2>
+Configurable Variables
+<a class="help" href="../../../help/tutorials/configurable-variables/index.html">help</a>
+</h2>
+<h3 class="constant" id="const-legacy-support-for-ie">
+<a class="permalink" href="index.html#const-legacy-support-for-ie">$legacy-support-for-ie</a>
+<code>true</code>
+</h3>
+<p></p><p>Usually compass hacks apply to both ie6 &amp; 7 -- set this to false to disable support for both.</p>
+
+<h3 class="constant" id="const-legacy-support-for-ie6">
+<a class="permalink" href="index.html#const-legacy-support-for-ie6">$legacy-support-for-ie6</a>
+<code>$legacy-support-for-ie</code>
+</h3>
+<p></p><p>Setting this to false will result in smaller output, but no support for ie6 hacks</p>
+
+<h3 class="constant" id="const-legacy-support-for-ie7">
+<a class="permalink" href="index.html#const-legacy-support-for-ie7">$legacy-support-for-ie7</a>
+<code>$legacy-support-for-ie</code>
+</h3>
+<p></p><p>Setting this to false will result in smaller output, but no support for ie7 hacks</p>
+
+<h3 class="constant" id="const-legacy-support-for-ie8">
+<a class="permalink" href="index.html#const-legacy-support-for-ie8">$legacy-support-for-ie8</a>
+<code>$legacy-support-for-ie</code>
+</h3>
+<p></p><p>Setting this to false will result in smaller output, but no support for legacy ie8 hacks</p>
+
+<h3 class="constant" id="const-experimental-support-for-mozilla">
+<a class="permalink" href="index.html#const-experimental-support-for-mozilla">$experimental-support-for-mozilla</a>
+<code>true</code>
+</h3>
+<p></p><p>Support for mozilla in experimental css3 properties (-moz).</p>
+
+<h3 class="constant" id="const-experimental-support-for-webkit">
+<a class="permalink" href="index.html#const-experimental-support-for-webkit">$experimental-support-for-webkit</a>
+<code>true</code>
+</h3>
+<p></p><p>Support for webkit in experimental css3 properties (-webkit).</p>
+
+<h3 class="constant" id="const-support-for-original-webkit-gradients">
+<a class="permalink" href="index.html#const-support-for-original-webkit-gradients">$support-for-original-webkit-gradients</a>
+<code>true</code>
+</h3>
+<p></p><p>Support for webkit's original (non-standard) gradient syntax.</p>
+
+<h3 class="constant" id="const-experimental-support-for-opera">
+<a class="permalink" href="index.html#const-experimental-support-for-opera">$experimental-support-for-opera</a>
+<code>true</code>
+</h3>
+<p></p><p>Support for opera in experimental css3 properties (-o).</p>
+
+<h3 class="constant" id="const-experimental-support-for-microsoft">
+<a class="permalink" href="index.html#const-experimental-support-for-microsoft">$experimental-support-for-microsoft</a>
+<code>true</code>
+</h3>
+<p></p><p>Support for microsoft in experimental css3 properties (-ms).</p>
+
+<h3 class="constant" id="const-experimental-support-for-khtml">
+<a class="permalink" href="index.html#const-experimental-support-for-khtml">$experimental-support-for-khtml</a>
+<code>false</code>
+</h3>
+<p></p><p>Support for khtml in experimental css3 properties (-khtml).</p>
+
+<h3 class="constant" id="const-experimental-support-for-svg">
+<a class="permalink" href="index.html#const-experimental-support-for-svg">$experimental-support-for-svg</a>
+<code>false</code>
+</h3>
+<p></p><p>Support for svg in experimental css3 properties.
+Setting this to true might add significant size to your
+generated stylesheets.</p>
+
+<h3 class="constant" id="const-experimental-support-for-pie">
+<a class="permalink" href="index.html#const-experimental-support-for-pie">$experimental-support-for-pie</a>
+<code>false</code>
+</h3>
+<p></p><p>Support for CSS PIE in experimental css3 properties (-pie).</p>
+
+
+<h2>Constants</h2>
+<h3 class="constant" id="const-legacy-support-for-mozilla">
+<a class="permalink" href="index.html#const-legacy-support-for-mozilla">$legacy-support-for-mozilla</a>
+<code>true</code>
+</h3>
+<p></p><p>Whether to output legacy support for mozilla.
+Usually this means hacks to support Firefox 3.6 or earlier.</p>
+</article>
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

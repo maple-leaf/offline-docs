@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../../atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Compass Versioning Change | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+</head>
+<body class='' id='posts-2013-11-27-compass-versioning-change'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../../index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='docs-nav' role='navigation'>
+<a href='../../../../2012/05/20/removing-blueprint/index.html' title='Removing Blueprint from Compass in 0.13'>&laquo; Previous Post</a>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<h1>Compass Versioning Change</h1>
+<h2>
+By
+<a href='http://chriseppstein.github.com/'>Chris Eppstein</a>
+</h2>
+<p>When I created compass I imagined a particular set of features Compass
+would have when it was done with the initial build out. I assigned that
+release a number of 1.0 and expected it would only take a few releases to
+get there.</p>
+
+<p>But then there was users and their needs and the features they wanted.
+And so there have been 77 releases at the time that I'm writing this
+post. And you know what? I don't know when, or if, compass will ever
+achieve the mythical feature set I imagined.</p>
+
+<p>Furthermore, it's been way too long since the last stable release.
+There was a hiatus, and then there was a mountain of bugs and feature
+requests that built up that I desperately wanted to get into the next
+release. And instead of just releasing incrementally better software
+every few weeks, I've been making a bigger and bigger release that is
+harder and harder to release.</p>
+
+<p>And so I've fallen into the trap that so many software developers fall
+into. I'm working hard every day and I'm not shipping because it's not
+done. But we all know, software is never done (unless you are Donald
+Knuth).</p>
+
+<p>And so I've decided to make a few changes. Sass 3.3 is ready for release
+and I want to get it out. Compass has to be released with it and there's
+no way I will get everything bug fix and new feature I need to get done.
+But what Compass development has right right now, is really a huge
+improvement. It's time to ship, even though it's not done and get this
+train moving. So here's what I'm doing to address these issues:</p>
+
+<h3>1.0.0 is the next release</h3>
+
+<p>The next release will be version 1.0.0. This number doesn't mean
+anything. It's just an acknowledgement that compass is a mature project
+that has tens of thousands of users and that it is not in any way "not
+done".</p>
+
+<h3>Semantic Versioning</h3>
+
+<p>Semantic versioning is a <a href="http://semver.org/">standard versioning scheme</a>
+with standard expectations about what a change to a version means. From
+the site:</p>
+
+<blockquote><p>Given a version number MAJOR.MINOR.PATCH, increment the:</p>
+
+<p>MAJOR version when you make incompatible API changes,<br>
+MINOR version when you add functionality in a backwards-compatible manner, and<br>
+PATCH version when you make backwards-compatible bug fixes.</p>
+
+<p>Additional labels for pre-release and build metadata are available as
+extensions to the MAJOR.MINOR.PATCH format.</p></blockquote>
+
+<br>
+
+
+<br>
+
+
+<p>Compass releases will follow semantic versioning going forward.</p>
+
+<h3>Compass Core</h3>
+
+<p>The core stylesheets and configuration of Compass have been extracted to
+their own gem named <code>compass-core</code>. This gem allows projects that don't
+need Compass's command line tools, extension management, and compilation
+services, to work very simply using pure sass for much of configurable
+bits of compass. The compass core framework will have it's own version
+and will be released on it's own release train. If you don't care about
+this, don't worrry; <code>gem install compass</code> still works exactly like it
+used to.</p>
+
+<h3>Regular Releases</h3>
+
+<p>Once Compass 1.0.0 is released. There are a ton of bug fixes and new
+features we'll be releasing. Instead of waiting until there's a critical
+mass, we'll just release whenever new features land and ship
+non-critical bug fixes every two weeks.</p>
+
+<h3>Gem Version Dependencies</h3>
+
+<p>If you are the owner of a compass extension that declares a version
+dependency on compass, you need to update your gemspec to allow compass
+1.0.0. Hit me up on <a href="http://twitter.com/chriseppstein">twitter</a> if
+you're not sure how to do this.</p>
+
+<h3>Install it now, help QA!</h3>
+
+<p>There's a 1.0.0 preview release available right now (1.0.0.alpha.13)</p>
+
+<p><code>gem install compass --pre</code> to get it.</p>
+
+<p>If you find a bug, please make sure to mention 1.0 in the description.</p>
+
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+</body>
+</html>

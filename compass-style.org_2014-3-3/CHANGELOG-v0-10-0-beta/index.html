@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../blog/atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Compass v0.10.0 Beta History | Compass Documentation
+</title>
+<link charset='utf-8' href='../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+</head>
+<body class='' id='changelog'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<article><h2>0.10.0.rc6 (May 8, 2010)</h2>
+
+<ul>
+<li>[Compass Core] The configuration constant <code>$firefox2-ellipsis</code> has been
+renamed to <code>$use-mozilla-ellipsis-binding</code> to reflect the fact that
+it must be used for any version of mozilla less than 3.6.</li>
+<li>[CLI] The the new Sub-command based CLI will now recognize abbreviated
+commands as long as the abbreviation is unambiguous.
+For instance, <code>compass w</code> is a shortcut for <code>compass watch</code> and
+<code>compass com</code> for <code>compass compile</code> but <code>compas co</code> will not work
+for compile because it also matches <code>compass config</code>.</li>
+<li>[Rails] When configuring Sass during initialization,
+Compass now passes the template locations as an array of tuples
+instead of as a hash. This preserves ordering in all versions
+of ruby and ensures that the deprecated imports do not take precedence.</li>
+</ul>
+
+
+<h2>0.10.0.rc5 (May 2, 2010)</h2>
+
+<ul>
+<li>[Rails] The default location for compass extensions has moved from
+<code>vendor/plugins/compass/extensions</code> to <code>vendor/plugins/compass_extensions</code>.</li>
+<li>[Rails] The rails template has been updated to use the latest haml and compass versions.</li>
+<li>[Compass Core] Global reset no longer automatically resets the *:focus.
+This allows browsers to use their default :focus styles which is considered
+a best practice. If you wish to reset :focus styles simply include this in
+your stylesheets:
+<code>*:focus { @include reset-focus; }</code></li>
+<li>[Compass Core] A new mixin <code>replace-text-with-dimensions</code> has been added.
+This is the same as the <code>replace-text</code> mixin except that it will read the
+dimensions from the image and set them for you on the element.</li>
+<li>[Compass Core] If you want Firefox 2 Support (via -moz-binding) for the
+<code>ellipsis</code> mixin, you must now set <code>$firefox2-ellipsis</code> to <code>true</code> before
+importing the module.</li>
+<li>[Compass Core] The <code>compass/text/ellipsis</code> module is now imported
+automatically by the <code>compass/text</code> module.</li>
+<li>[Compass Core] The gradient mixins now accept a background image that will
+be placed over the gradient. Credit: <a href="http://bitfission.com/">Will Leinweber</a></li>
+<li>[Compass Core] You can now opt out of support for specific browsers in
+the css3 module. See <a href="../reference/compass/css3/shared/index.html">the docs</a>
+for more details.</li>
+</ul>
+
+
+<h2>0.10.0.rc4 (April 27, 2010)</h2>
+
+<ul>
+<li>Lot of new docs can be found at: <a href="../index.html">http://compass-style.org/</a>.</li>
+<li>The <code>unobtrusive-logo</code> mixin is deprecated and will be removed.
+If you use this, please move the source to your project.</li>
+<li>The CSS3 modules were refactored to share a common implementation that
+abstracts the browser prefixes that are supported and gives
+greater control to the user over which prefixes are generated.
+Depending on what mixins you were using you might see some changes to
+what prefixes get generated by default and the order that they are
+emitted. The goal of this change is to provide a more future-proof
+implementation.</li>
+<li>The unnecessary import of the <code>float</code> module from the <code>hacks</code> module
+was removed. If you were relying on this, you'll need to
+import the float module explicitly now.</li>
+<li>The <code>pretty-bullets</code> mixin will now infer the image dimensions by
+reading the image file if the image dimensions are not provided.</li>
+<li>The old CLI is now deprecated and a warning message will be printed
+out if you use it. The new CLI is better and can be learned
+by typing <code>compass help</code>. Credit: <a href="http://akahn.net">Alexander Kahn</a></li>
+<li>The <code>background-clip</code> mixin now accepts the value of <code>text</code>. Credit: <a href="index.html">Thomas Reynolds</a></li>
+<li>The display: box model and associated properties are now part of the
+css3 module. Credit: <a href="http://blog.lorintackett.com/">Lorin Tackett</a></li>
+<li>The compass gem is now built with a simple <code>gem build compass.gemspec</code>.
+This should make it play nicer with tools like
+<a href="http://gembundler.org/">bundler</a>.</li>
+</ul>
+
+
+<h2>0.10.0.rc3 (April 13, 2010)</h2>
+
+<ul>
+<li>This release addresses several bugs in rc2.</li>
+</ul>
+
+
+<h2>0.10.0.rc2 (April 12, 2010)</h2>
+
+<p><strong>IMPORTANT:</strong></p>
+
+<ul>
+<li>Compass now depends on Sass 3 -- Please be prepared to upgrade.
+Things won't break but you'll have a lot of deprecation warnings.
+Upgrading is pretty easy thanks to the <code>sass-convert</code> tool. See the
+<a href="http://beta.sass-lang.com/yardoc/file.SASS_CHANGELOG.html">Sass Changelog</a>
+for more information.</li>
+<li>All compass stylesheets are now written in the SCSS syntax,
+if you import compass framework stylesheets with an explicit
+<code>.sass</code> extension, then you'll receive deprecation warnings
+directing you to update your stylesheets.</li>
+<li>A new command line switch <code>--syntax</code> (or <code>-x</code>) has been added
+to commands that install stylesheets into your project that
+allows you to select the syntax to use (scss or sass)</li>
+<li>A new configuration option <code>preferred_syntax</code> now exists
+and defaults to <code>:scss</code>. Please update your project's configuration
+file with <code>preferred_syntax = :sass</code> if you prefer to use the
+indentation-based syntax.</li>
+<li>You may silence deprecation warnings by adding
+<code>sass_options = {:quiet =&gt; true}</code> to your configuration.</li>
+</ul>
+
+
+<h2>0.10.0.pre9 (March 6, 2010)</h2>
+
+<ul>
+<li>Fix a ruby 1.9 bug in the image_size helper functions for jpeg images.</li>
+<li>Silence a deprecation warning.</li>
+</ul>
+
+
+<h2>0.10.0.pre7 &amp; 0.10.0.pre8 (February 23, 2010)</h2>
+
+<ul>
+<li>Rails 3 compatibility fixes</li>
+<li>Fix for rgba colors with the new gradient mixins</li>
+<li>A better error message if a color stop list is not passed in to the gradient mixins.</li>
+</ul>
+
+
+<h2>0.10.0.pre6 (February 22, 2010)</h2>
+
+<p><strong>IMPORTANT:</strong></p>
+
+<ul>
+<li>Rails users need to update their compass initializer.</li>
+<li>The CSS 3 Gradient mixins were re-written and their usage has changed.</li>
+</ul>
+
+
+<p>Read on for the details:</p>
+
+<h3>CLI</h3>
+
+<ul>
+<li>Fixed some issues with colorized output.</li>
+<li>Don't force the user to specify the configuration path when calling compass config</li>
+</ul>
+
+
+<h3>Compass Core</h3>
+
+<ul>
+<li>Fix to the bang_hack mixin (Credit: Mark Rajcok)</li>
+<li>Support :first-child and :last-child pseudo selectors for +horizontal-list. (Credit: Cody Robbins)</li>
+<li>Clear the sticky footer so that it works correctly with grid layouts.</li>
+<li>The css3 gradient module has been re-written and has a new, much simpler mixins. If you have been using the css3 gradient mixins, you'll need to update your sass stylesheets. The new mixins can be seen in action <a href="http://compass-style.org/examples/css3/gradients.html">here</a>.</li>
+<li>Added new helper functions: <code>image_width("path/to/image.png")</code> &amp; <code>image_height("path/to/image.png")</code> that return the size in pixels. (Credit: Deepak Jois &amp; Richard Aday)</li>
+</ul>
+
+
+<h3>Blueprint</h3>
+
+<ul>
+<li>Take margins into account in liquid grid. (Credit: Christoffer Eliesen)</li>
+</ul>
+
+
+<h3>Rails</h3>
+
+<ul>
+<li>Several Rails 3 bug fixes (Credit: Jacques Crocker)</li>
+<li>Don't set unset options on the Sass::Plugin</li>
+<li>Fixed a setup bug and handle compass configuration changes at rails boot.</li>
+</ul>
+
+
+<p><strong>IMPORTANT:</strong> Existing rails projects <em>must</em> change their compass initializer file to:</p>
+
+<pre><code>require 'compass'
+rails_root = (defined?(Rails) ? Rails.root : RAILS_ROOT).to_s
+Compass.add_project_configuration(File.join(rails_root, "config", "compass.rb"))
+Compass.configure_sass_plugin!
+Compass.handle_configuration_change!
+</code></pre>
+
+<h3>Internals</h3>
+
+<ul>
+<li>New APIs for dealing with configuration changes and accessing a compiler instance.</li>
+<li>Provide a convenience function for discovering extensions: <code>Compass.discover_extensions!</code> that can be called during project configuration w/ other ruby frameworks.</li>
+</ul>
+
+
+<h3>Extensions</h3>
+
+<ul>
+<li>Don't force an extension to register itself just because it has ruby code.
+This makes it easier for extensions to provide Sass functions from ruby.</li>
+</ul>
+
+
+<p>Special thanks to Daniel Hofstetter for fixing my typos.</p>
+
+<h2>0.10.0.pre5 (January 18, 2010)</h2>
+
+<ul>
+<li>Fixed a bug in the grid builder in ruby 1.8.6 (Credit: [Richard Wöber][der-rich])</li>
+<li>Better sudo handling for the rails installer via environment variables or prompt. (Credit: Ryan Shaw, Evan Sharp)</li>
+<li>Removed support for the rip package manager.</li>
+<li>Support for scss files in the compass watcher.</li>
+<li>Cache buster timestamps were not working in some cases.</li>
+<li>Make ANSI color output work on windows.</li>
+<li>Command line switch (--boring) to turn off colorized output.</li>
+<li>Strip trailing slash from directory and path configuration variables.</li>
+<li>Added a --poll option to the compass watch subcommand to force polling.</li>
+<li>Fixed a test failure in ruby 1.9 due to faulty test code.</li>
+<li>Move the frameworks directory back to the top level. There's not actually a good reason for it to be buried in the ruby source.</li>
+<li>Upgrade FSSM. (Hopfully) Fixes a watcher issue that caused the watcher to not trigger for some users.</li>
+<li>Silence a deprecation warning in Rails 3.</li>
+</ul>
+
+
+<h2>0.10.0.pre4 (January 04, 2010)</h2>
+
+<ul>
+<li>Fixed an FSSM loading issue that broke the compass watcher.</li>
+<li>Fixed some compatibility issues with edge versions of Sass.</li>
+</ul>
+
+
+<h2>0.10.0.pre3 (January 02, 2010)</h2>
+
+<p>Bug fixes:</p>
+
+<ul>
+<li>[Blueprint] Bug Fix: variable referenced in a non-script context within the
+dquo mixin in the fancy_type module.</li>
+<li>[Rails] fixed win32 sudo incompatibility issue in the rails installer template.
+(Credit: [Jonathan Silverman][jsilver])</li>
+<li>[Rails] Update the gem dependencies for the rails installer template.</li>
+<li>If the configuration file changes, wipe out the sass cache and force compilation</li>
+<li>Upgrade the vendored version of FSSM to version 0.1.2.
+Fixes some bugs with jruby and adds inotify support for linux.
+(Credit: [Travis Tilley][ttilley])</li>
+<li>Patched hide-text to account for items that are not left aligned.
+(Credit: [Josh Pyles][pixelmatrix])</li>
+</ul>
+
+
+<p>Minor Enhancements:</p>
+
+<ul>
+<li>Support for SCSS files if haml edge is installed.</li>
+<li>Color any stderr or stdout output from the <code>Sass::Engine</code> red during compilation.</li>
+<li>[Configuration] The sass cache location can now be set in the compass config
+file using the <code>cache_dir</code> property and the cache can be disabled by setting
+<code>cache = false</code>.</li>
+<li>[Compass Core] <code>+min-height</code>, <code>+min-width</code>, and <code>+bang-hack</code> mixins in the
+compass/utilities/general/min.sass module.
+(Credit: [Adam Stacoviak][adamstac])</li>
+<li>[Command Line] If you only want to compile certain files, you can now
+specify them when invoking compass compile. E.g. <code>compass compile src/foo.sass</code></li>
+<li>[Compass Core] Split out <code>+hide-text</code> as its own mixin.
+(Credit: [Andrew Vit][avit])</li>
+<li>Some code cleanup for the compass project compiler.</li>
+<li>Removed the dependency on RMagic for grid image generation.
+(Credit: [Richard Wöber][der-rich])</li>
+</ul>
+
+
+<h2>0.10.0.pre2 (November 30, 2009)</h2>
+
+<p>Bug fixes:</p>
+
+<ul>
+<li>The line-height in the compass reset should have been 1 and not 1em.</li>
+<li>Fixed the reference in the rails initializer to the compass configuration file.</li>
+<li>Use the correct error formatting function based on what sass version is installed.</li>
+<li>Boolean properties like line_comments can now be set to false in configuration files</li>
+</ul>
+
+
+<h2>0.10.0.pre1 (November 29, 2009)</h2>
+
+<p>Deprecated in this release:</p>
+
+<ul>
+<li>The usless blueprint "modules" folder will be removed. Please update your
+blueprint imports by removing the modules folder. Deprecation warnings will be
+emitted if you use the old imports.</li>
+<li>Blueprint mixins that used to accept a "body selector" argument, are now
+deprecated, instead you should pass <code>true</code> to them and mix them into
+the selector of your choice.</li>
+<li>If you are using the <code>+opacity</code> or <code>+inline-block</code> mixins, you may need to update your imports.</li>
+<li>In your configuration file, setting <code>http_images_path</code> to <code>:relative</code> is
+deprecated in favor of setting <code>relative_assets</code> to <code>true</code></li>
+<li>The YUI framework has been extracted to a plugin.
+If you use it, please follow the <a href="http://github.com/chriseppstein/yui-compass-plugin">installation instructions</a></li>
+</ul>
+
+
+<p>Command-Line:</p>
+
+<ul>
+<li>The compass command-line tool has been re-written to allow be easier to
+use and be more flexible. The old command line is still supported at
+this time. "compass help" will get you started on using the new
+command line syntax.</li>
+<li>Allow specification of a height for the grid image</li>
+<li>For the truly hardcore compass users, you may now create a
+compass project using "compass create my_project --bare"
+and you'll have a completely bare project created for you with no
+sass files provided for you.</li>
+<li>Get stats on your compass project with "compass stats". You'll
+need to install the "css_parser" ruby gem to get stats on your
+css files.</li>
+</ul>
+
+
+<p>Configuration:</p>
+
+<ul>
+<li>The entire configuration infrastructure has been re-written to make it
+easier to support the various sources of configuration data (project type,
+config file, command line, and hard coded defaults)</li>
+<li>Whether to generate relative links to assets is now controlled by a
+separate boolean configuration flag called <code>relative_assets</code> in the
+configuration file and <code>--relative-assets</code> on the command line.
+Setting <code>http_images_path</code> to <code>:relative</code> is deprecated.</li>
+<li>You may now configure the http locations for your project by simply setting
+<code>http_path</code> for the top level path of the project. You
+may also set <code>http_images_dir</code>, <code>http_stylesheets_dir</code>, and
+<code>http_javascripts_dir</code> relative to the <code>http_path</code> instead of
+setting the absolute <code>http_XXX_path</code> counterparts.</li>
+<li>You may now configure the fonts directory for your project (fonts_dir).
+By default, for standalone projects, it is the "fonts" subdirectory of
+  your css directory. Rails projects will default to "public/fonts".</li>
+</ul>
+
+
+<p>Compass Core:</p>
+
+<ul>
+<li>A new helper function <code>stylesheet_url(path)</code> can now be used to refer
+to assets that are relative to the css directory.</li>
+<li>Compass sprite mixins are now more flexible and feature rich.</li>
+<li>Fixed the append_selector function to allow comma-delimited selectors
+for both arguments instead of just the first</li>
+<li>There is no longer any outline on unstyled links in the :active and :focused states.</li>
+<li>IE6 bug fixes for sticky-footer</li>
+<li>New CSS3 Compatibility Mixins. You can import them all with <code>@import compass/css3.sass</code>
+
+<ul>
+<li><code>+opacity(amount)</code> where amount should be between 0 and 1, where 0 is transparent and 1 is opaque.</li>
+<li><code>+opaque</code> and <code>+transparent</code> mixins for convenience. Built on top of the opacity mixin.</li>
+<li><code>+border-radius(amount)</code> as well as the following convenience mixins:
+
+<ul>
+<li><code>+border-top-left-radius(amount)</code></li>
+<li><code>+border-top-right-radius(amount)</code></li>
+<li><code>+border-top-right-radius(amount)</code>,</li>
+<li><code>+border-bottom-left-radius(amount)</code></li>
+<li><code>+border-bottom-right-radius(amount)</code></li>
+<li><code>+border-top-radius(amount)</code></li>
+<li><code>+border-right-radius(amount)</code></li>
+<li><code>+border-left-radius(amount)</code></li>
+<li><code>+border-bottom-radius(amount)</code></li>
+</ul>
+</li>
+<li><code>+box-shadow(!horiz_offset, !vert_offset, !blur, !color)</code></li>
+<li><code>+box-sizing(!sizing_mode)</code></li>
+<li>Column support via the following mixins:
+
+<ul>
+<li><code>+column-count</code></li>
+<li><code>+column-gap</code></li>
+<li><code>+column-width</code></li>
+<li><code>+column-rule-width</code></li>
+<li><code>+column-rule-style</code></li>
+<li><code>+column-rule-color</code></li>
+<li><code>+column-rule</code></li>
+</ul>
+</li>
+<li><code>+background-clip(clip)</code> where clip can be <code>padding-box</code> or <code>border-box</code></li>
+<li><code>+background-origin(origin)</code> where origin can be <code>padding-box</code>, <code>border-box</code>, or <code>content-box</code></li>
+<li><code>+background-size(size)</code> where size is a width and height. E.g. "50% 75%"</li>
+<li><code>+font-face</code> should be mixed into the top level of your document.
+Usage Example: <code>+font-face("this name", font-files("this.woff", "woff", "this.otf", "opentype"), "fonts/this.eot", "thisname")</code></li>
+<li>Simple Background Gradient Support:
+
+<ul>
+<li><code>+gradient</code> - Generic background gradient mixin</li>
+<li><code>+radial-gradient</code> - Radial gradient mixin</li>
+<li><code>+linear-gradient</code> - Linear gradient mixin</li>
+<li><code>+h-gradient</code> - Horizontal linear gradient mixin</li>
+<li><code>+v-gradient</code> - Vertical linear gradient mixin</li>
+</ul>
+</li>
+<li><code>+text-shadow</code> - Create a text shadow effect.</li>
+<li>Transforms Support:
+
+<ul>
+<li><code>+transform</code></li>
+<li><code>+scale</code></li>
+<li><code>+rotate</code></li>
+<li><code>+translate</code></li>
+<li><code>+skew</code></li>
+</ul>
+</li>
+<li>Transition Support:
+
+<ul>
+<li><code>+transition-property</code></li>
+<li><code>+transition-duration</code></li>
+<li><code>+transition-timing-function</code></li>
+<li><code>+transition-delay</code></li>
+<li><code>+transition</code></li>
+</ul>
+</li>
+<li>The import for <code>+inline-block</code> has moved from compass/utilities/general/inline_block
+to compass/css3/inline_block</li>
+<li>The import for <code>+opacity</code> has moved from compass/utilities/general/opacity
+to compass/css3/opacity</li>
+<li>Note: If you are using the <code>+opacity</code> or <code>+inline-block</code> mixins,
+you may need to update your imports.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Blueprint:</p>
+
+<ul>
+<li>Make the primary blueprint mixins easier to use by allowing them to be nested when passing true as the first argument.
+The old approach of passing a selector as the first argument is now deprecated in favor of a simple flag to indicate nesting or not.</li>
+</ul>
+
+
+<p>YUI:</p>
+
+<ul>
+<li>YUI was upgraded to 2.7.0</li>
+<li>Yahoo has deprecated the YUI CSS framework, as such YUI has been extracted to a plugin.
+If you use it, please install it with: <code>sudo gem install compass-yui</code></li>
+</ul>
+
+
+<p>Extensions:</p>
+
+<ul>
+<li>Extensions can now be installed locally by unpacking them into a project's
+"extensions" directory. Rails projects use "vendor/plugins/compass/extenstions".</li>
+<li>Extensions can deliver html to projects if they like. The html can be in
+haml and will be transformed to html and can contain inline, compass-enabled
+  sass.</li>
+<li>All files can be processed using ERB before being copied into the user's
+project.</li>
+<li>Compass extensions can now add support for other application frameworks.
+These extensions can help compass understand the project structure of that
+framework as well as provide runtime integration for ruby-based apps.
+Contact me if you plan to do this -- the first couple times may be a little
+rough.</li>
+<li>Compass extensions can now add new command line commands. Contact me if you
+plan to do this -- the first couple times may be a little rough.</li>
+<li>Extensions can now provide help documentation just after a project is
+created and on demand when the user uses the command line help system.
+This can be done via the manifest file or by adding a USAGE.markdown file
+at the top level of the framework template.</li>
+</ul>
+
+
+<p>Miscellaneous:</p>
+
+<ul>
+<li>The compass configuration object is no longer a singleton, this makes it
+possible for other ruby software to manage multiple compass projects at a
+time.</li>
+<li>Compass no longer requires rubygems in order to work, this is a ruby
+best-practice.</li>
+<li>All sass provided by compass now uses css-style property syntax.</li>
+<li>The command line tool is now tested using the cucumber testing framework.</li>
+</ul>
+
+
+<p>Many thanks to the following Contributors:</p>
+
+<ul>
+<li>Brandon Mathis - CSS3 (+opacity, +border-radius) and sprites</li>
+<li>Eric Meyer - CSS3 (+box-shadow, +columns, +box-sizing)</li>
+<li>Jacques Crocker - Merb Compatibility fixes</li>
+<li>Gabriel Mansour - Fixes to +unstyled-link</li>
+<li>John Debs - IE6 Fixes for +sticky-footer</li>
+<li>Brian Johnson - Upgraded to YUI 2.7.0</li>
+<li>Beau Smith - fixing my dyslexia.</li>
+</ul>
+
+</article>
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../../atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Removing Blueprint from Compass in 0.13 | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+</head>
+<body class='' id='posts-2012-05-20-removing-blueprint'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../../index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='docs-nav' role='navigation'>
+<a href='../../../03/11/anthony-short-joins-the-compass-core-team/index.html' title='Anthony Short joins the Compass core team'>&laquo; Previous Post</a>
+<a href='../../../../2013/11/27/compass-versioning-change/index.html' title='Compass Versioning Change'>Next Post &raquo;</a>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<h1>Removing Blueprint from Compass in 0.13</h1>
+<h2>
+By
+<a href='http://chriseppstein.github.com/'>Chris Eppstein</a>
+</h2>
+<p>Five years ago, <a href="http://blueprintcss.org/">Blueprint CSS</a> was an
+innovative CSS Framework. It was a boilerplate before
+<a href="http://html5boilerplate.com/">H5BP</a> and it was the most popular CSS
+Grid Framework when the concept was still young.</p>
+
+<p>Blueprint's regular structure and common-sense approach, together with
+its inherent weaknesses, was a major inspiration for the development of
+Compass. In fact, Compass started solely as a rejected sass-based
+toolchain for the blueprint project.</p>
+
+<p>Sadly, the blueprint core team, while having never officially announced
+that the project is over, has through negligence, caused the project to
+fall behind. It has not kept up with layout and responsive approaches
+that are essential to web design in 2012.</p>
+
+<p>Furthermore, there are many new layout mechanisms coming in CSS:
+<a href="http://www.w3.org/TR/css3-multicol/">columns</a>, <a href="http://caniuse.com/css3-boxsizing">box-sizing</a>, <a href="http://dev.w3.org/csswg/css3-regions/">regions</a>,
+<a href="http://dev.w3.org/csswg/css3-grid-layout/">grid layout</a>, and <a href="http://www.w3.org/TR/css3-flexbox/">flexbox</a>. The future of
+layout looks bright and we want Sass users to be at the forefront of
+their adoption, establishing the best practices of 2015 instead using
+the best practices from 2009.</p>
+
+<p>Given these developments, we have decided that it is time for Compass to
+get out of the "Grid Business". Starting in 0.13 (our next major
+release) we will have removed Blueprint from Compass. The stylesheets
+will be extracted as a plugin so that our users can continue to
+use it, if they need to. At that time, you can install it with two
+simple steps:</p>
+
+<ol>
+<li><code>gem install compass-blueprint</code></li>
+<li>Edit your compass configuration and add: <code>require 'compass-blueprint'</code></li>
+</ol>
+
+
+<p>We hope that this means that the Compass community will think more
+carefully about the grids that they use and whether they meet their
+project's specific needs.</p>
+
+<p>If you are looking for a grid system for your next site, or to replace
+blueprint with something more modern. We suggest you look into
+<a href="http://susy.oddbird.net/">Susy</a>. It is written by Compass core team
+member, <a href="http://twitter.com/eriiicam">Eric Meyer</a>. Susy 1.0 has been
+completely overhauled to take advantage of modern browsers and the very
+latest features in Sass 3.2 and Compass 0.13. If you have a favorite
+grid framework, please feel free to mention it in the comments.</p>
+
+<p><strong>TL;DR</strong> Starting in Compass 0.13, blueprint will be extracted from compass
+and available as a compass extension named <code>compass-blueprint</code>.</p>
+
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+</body>
+</html>

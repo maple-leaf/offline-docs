@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Compass Blog</title>
+  <link href="http://compass-style.org/blog/atom.xml" rel="self" />
+  <link href="http://compass-style.org/blog/" />
+  <updated>2013-11-27T12:57:36-08:00</updated>
+  <id>http://compass-style.org/blog/</id>
+  <author>
+    <name>Compass Core Team</name>
+  </author>
+  <entry>
+    <title>Compass Versioning Change</title>
+    <link href="http://compass-style.org/blog/2013/11/27/compass-versioning-change/" />
+    <updated>2013-11-27T00:00:00-08:00</updated>
+    <id>http://compass-style.org/blog/2013/11/27/compass-versioning-change</id>
+    <content type="html">
+      Compass follows semantic versioning now. Chris shakes off his fear of releasing imperfect software.
+    </content>
+  </entry>
+  <entry>
+    <title>Removing Blueprint from Compass in 0.13</title>
+    <link href="http://compass-style.org/blog/2012/05/20/removing-blueprint/" />
+    <updated>2012-05-20T00:00:00-07:00</updated>
+    <id>http://compass-style.org/blog/2012/05/20/removing-blueprint</id>
+    <content type="html">
+      Blueprint will be extracted to a plugin
+    </content>
+  </entry>
+  <entry>
+    <title>Anthony Short joins the Compass core team</title>
+    <link href="http://compass-style.org/blog/2012/03/11/anthony-short-joins-the-compass-core-team/" />
+    <updated>2012-03-11T00:00:00-08:00</updated>
+    <id>http://compass-style.org/blog/2012/03/11/anthony-short-joins-the-compass-core-team</id>
+    <content type="html">
+      We're excited to announce a new team member: Anthony Short
+    </content>
+  </entry>
+  <entry>
+    <title>Compass v0.12 is Released</title>
+    <link href="http://compass-style.org/blog/2012/02/01/compass-0-12-is-released/" />
+    <updated>2012-02-01T00:00:00-08:00</updated>
+    <id>http://compass-style.org/blog/2012/02/01/compass-0-12-is-released</id>
+    <content type="html">
+      Compass 0.12: Flexible Sprites, Rails Integration
+    </content>
+  </entry>
+  <entry>
+    <title>Compass/Rails Integration in v0.12</title>
+    <link href="http://compass-style.org/blog/2012/01/29/compass-and-rails-integration/" />
+    <updated>2012-01-29T00:00:00-08:00</updated>
+    <id>http://compass-style.org/blog/2012/01/29/compass-and-rails-integration</id>
+    <content type="html">
+      Starting in Compass v0.12 compass's rails integration is done via a new project called compass-rails.
+    </content>
+  </entry>
+  <entry>
+    <title>How to use Compass/Sass with Django.</title>
+    <link href="http://compass-style.org/blog/2011/05/09/compass-django/" />
+    <updated>2011-05-09T00:00:00-07:00</updated>
+    <id>http://compass-style.org/blog/2011/05/09/compass-django</id>
+    <content type="html">
+      All the documentation is for Ruby/Rails development, so how does it work for the rest of us?
+    </content>
+  </entry>
+  <entry>
+    <title>Compass Release Strategy</title>
+    <link href="http://compass-style.org/blog/2011/04/26/compass-release-strategy/" />
+    <updated>2011-04-26T00:00:00-07:00</updated>
+    <id>http://compass-style.org/blog/2011/04/26/compass-release-strategy</id>
+    <content type="html">
+      An overview of how Compass will be managing ongoing releases.
+    </content>
+  </entry>
+  <entry>
+    <title>Compass v0.11 is Released!</title>
+    <link href="http://compass-style.org/blog/2011/04/24/v011-release/" />
+    <updated>2011-04-24T00:00:00-07:00</updated>
+    <id>http://compass-style.org/blog/2011/04/24/v011-release</id>
+    <content type="html">
+      Months in the making, Compass v0.11 continues to revolutionize CSS Frameworks.
+    </content>
+  </entry>
+</feed>

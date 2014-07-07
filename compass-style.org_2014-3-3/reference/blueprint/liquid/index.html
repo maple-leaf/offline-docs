@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../blog/atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Blueprint Liquid | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+</head>
+<body class=' reference blueprint' id='reference-blueprint-liquid'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='docs-nav' role='navigation'>
+<a href='../index.html' rel='blueprint'>Blueprint</a>
+<a href='../../../docs/index.html' rel='core'>Core</a>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='syntax_pref'>
+<a href='index.html#' rel='scss'>scss</a>
+<a href='index.html#' rel='sass'>sass</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<aside role='sidebar'><nav id='local-nav'>
+<ul><li class='selected'>
+<h2>
+<a class='selected' href='../index.html'>Blueprint</a>
+</h2>
+</li>
+<ul><li class=''>
+<a class='' href='../buttons/index.html'>
+<span>Buttons</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../colors/index.html'>
+<span>Colors</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../debug/index.html'>
+<span>Debug</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../fancy_type/index.html'>
+<span>Fancy Type</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../form/index.html'>
+<span>Form</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../grid/index.html'>
+<span>Grid</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../interaction/index.html'>
+<span>Interaction</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../ie/index.html'>
+<span>Internet Explorer</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../link_icons/index.html'>
+<span>Link Icons</span>
+</a>
+</li>
+<li class='selected'>
+<a class='selected' href='index.html'>
+<span>Liquid</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../print/index.html'>
+<span>Print</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../reset/index.html'>
+<span>Reset</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../rtl/index.html'>
+<span>Rtl</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../scaffolding/index.html'>
+<span>Scaffolding</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../typography/index.html'>
+<span>Typography</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../utilities/index.html'>
+<span>Utilities</span>
+</a>
+</li>
+</ul>
+</ul>
+</nav>
+<div class='advertisement'>
+<script type="text/javascript">(function(){ var fusion = document.createElement('script'); fusion.src = window.location.protocol + '//adn.fusionads.net/api/1.0/ad.js?zoneid=158&rand=' + Math.floor(Math.random()*9999999); fusion.async = true; (document.head || document.getElementsByTagName('head')[0]).appendChild(fusion); })(); $(function(){ $(".advertisement").addClass("visible")});</script>
+<div id='fusion_ad'>
+<a class='pagerankspam' href='http://fusionads.net'>Powered by Fusion</a>
+</div>
+</div>
+
+</aside>
+<article><a href="http://github.com/chriseppstein/compass/blob/stable/frameworks/blueprint/stylesheets/blueprint/_liquid.scss" rel="github-source" title="view source for this module on github">Source on Github</a>
+<h1>Blueprint Liquid</h1>
+<p>Import this to have a liquid grid.</p>
+
+<p>The original liquid grid documentation is
+<a href="http://groups.google.com/group/blueprintcss/msg/d7171a8bef20b9a2">here</a>.</p>
+
+<p>By default the container takes 80% of the canvas, you can override this:</p>
+
+<pre class="brush: scss source-code scss">
+.container {
+  width: 99%
+}</pre>
+
+<p>
+This file can be imported using:
+<code>@import "blueprint/liquid"</code>
+</p>
+
+<h2>Imports</h2>
+<ol>
+<li>
+<a href="../../compass/utilities/general/clearfix/index.html" title="@import compass/utilities/general/clearfix">Clearfix</a>
+– Mixins for clearfixing.
+</li>
+<li>
+<a href="../../compass/utilities/general/float/index.html" title="@import compass/utilities/general/float">Float</a>
+– Mixins for cross-browser floats.
+</li>
+</ol><h2>
+Configurable Variables
+<a class="help" href="../../../help/tutorials/configurable-variables/index.html">help</a>
+</h2>
+<h3 class="constant" id="const-blueprint-liquid-grid-columns">
+<a class="permalink" href="index.html#const-blueprint-liquid-grid-columns">$blueprint-liquid-grid-columns</a>
+<code>24</code>
+</h3>
+<p></p><p>Main layout grid, override these constants to build your grid and container sizes.
+The width shown gives the right floored percentage values.</p>
+
+<h3 class="constant" id="const-blueprint-liquid-grid-width">
+<a class="permalink" href="index.html#const-blueprint-liquid-grid-width">$blueprint-liquid-grid-width</a>
+<code>3.167%</code>
+</h3>
+<h3 class="constant" id="const-blueprint-liquid-grid-margin">
+<a class="permalink" href="index.html#const-blueprint-liquid-grid-margin">$blueprint-liquid-grid-margin</a>
+<code>1.042%</code>
+</h3>
+<h3 class="constant" id="const-blueprint-liquid-container-width">
+<a class="permalink" href="index.html#const-blueprint-liquid-container-width">$blueprint-liquid-container-width</a>
+<code>80%</code>
+</h3>
+<p></p><p>Do not edit below this line unless you really know what you're doing.</p>
+
+<h3 class="constant" id="const-blueprint-liquid-container-min-width">
+<a class="permalink" href="index.html#const-blueprint-liquid-container-min-width">$blueprint-liquid-container-min-width</a>
+<code>950px</code>
+</h3>
+<h3 class="constant" id="const-blueprint-liquid-grid-push-pull">
+<a class="permalink" href="index.html#const-blueprint-liquid-grid-push-pull">$blueprint-liquid-grid-push-pull</a>
+<code>-($blueprint-liquid-grid-margin + $blueprint-liquid-grid-width)</code>
+</h3>
+
+
+<h2>Functions</h2>
+<a href="index.html#function-span-fluid-source" rel="view source">view source</a>
+<h3 class="function" id="function-span-fluid">
+<a class="permalink" href="index.html#function-span-fluid">span-fluid(<span class="arg">$n</span>)</a>
+</h3>
+<div class="function-source" id="function-span-fluid-source">
+<pre class="brush: sass source-code sass">@function span-fluid($n)
+  @return $blueprint-liquid-grid-width * $n + $blueprint-liquid-grid-margin * ($n - 1)
+</pre>
+<pre class="brush: scss source-code scss">@function span-fluid($n) {
+  @return $blueprint-liquid-grid-width * $n + $blueprint-liquid-grid-margin * ($n - 1);
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Return the width of <code>$n</code> columns in percents.</p>
+
+</div>
+
+<h2>Mixins</h2>
+<a href="index.html#mixin-blueprint-liquid-grid-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-blueprint-liquid-grid">
+<a class="permalink" href="index.html#mixin-blueprint-liquid-grid">blueprint-liquid-grid</a>
+</h3>
+<div class="mixin-source" id="mixin-blueprint-liquid-grid-source">
+<pre class="brush: sass source-code sass">=blueprint-liquid-grid
+  // A container should group all your columns
+  .container
+    +container
+  // Use these classes (or mixins) to set the width of a column.
+  @for $n from 1 to $blueprint-liquid-grid-columns + 1
+    .span-#{$n}
+      width: span-fluid($n)
+    div
+      &amp;.span-#{$n}
+        +column($n, $n == $blueprint-liquid-grid-columns)
+  // The last column in a row needs this class (or mixin) or it will end up on the next row.
+  div.last
+    +last
+  // Add these to a column to append empty cols.
+  @for $n from 1 to $blueprint-liquid-grid-columns
+    .append-#{$n}
+      +append($n)
+  // Add these to a column to prepend empty cols.
+  @for $n from 1 to $blueprint-liquid-grid-columns
+    .prepend-#{$n}
+      +prepend($n)
+  // Use these classes on an element to push it into the
+  // next column, or to pull it into the previous column.
+  @for $n from 1 to $blueprint-liquid-grid-columns + 1
+    .pull-#{$n}
+      +pull($n)
+  @for $n from 1 to $blueprint-liquid-grid-columns + 1
+    .push-#{$n}
+      +push($n)
+</pre>
+<pre class="brush: scss source-code scss">@mixin blueprint-liquid-grid {
+  // A container should group all your columns
+  .container {
+    @include container;
+  }
+  // Use these classes (or mixins) to set the width of a column.
+  @for $n from 1 to $blueprint-liquid-grid-columns + 1 {
+    .span-#{$n} {
+      width: span-fluid($n);
+    }
+    div {
+      &amp;.span-#{$n} {
+        @include column($n, $n == $blueprint-liquid-grid-columns);
+      }
+    }
+  }
+  // The last column in a row needs this class (or mixin) or it will end up on the next row.
+  div.last {
+    @include last;
+  }
+  // Add these to a column to append empty cols.
+  @for $n from 1 to $blueprint-liquid-grid-columns {
+    .append-#{$n} {
+      @include append($n);
+    }
+  }
+  // Add these to a column to prepend empty cols.
+  @for $n from 1 to $blueprint-liquid-grid-columns {
+    .prepend-#{$n} {
+      @include prepend($n);
+    }
+  }
+  // Use these classes on an element to push it into the
+  // next column, or to pull it into the previous column.
+  @for $n from 1 to $blueprint-liquid-grid-columns + 1 {
+    .pull-#{$n} {
+      @include pull($n);
+    }
+  }
+  @for $n from 1 to $blueprint-liquid-grid-columns + 1 {
+    .push-#{$n} {
+      @include push($n);
+    }
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-container-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-container">
+<a class="permalink" href="index.html#mixin-container">container</a>
+</h3>
+<div class="mixin-source" id="mixin-container-source">
+<pre class="brush: sass source-code sass">=container
+  min-width: $blueprint-liquid-container-min-width
+  width: $blueprint-liquid-container-width
+  margin: 0 auto
+  +clearfix
+</pre>
+<pre class="brush: scss source-code scss">@mixin container {
+  min-width: $blueprint-liquid-container-min-width;
+  width: $blueprint-liquid-container-width;
+  margin: 0 auto;
+  @include clearfix;
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-span-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-span">
+<a class="permalink" href="index.html#mixin-span">span(<span class="arg">$n</span>, <span class="arg" data-default-value="false">$important</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-span-source">
+<pre class="brush: sass source-code sass">=span($n, $important: false)
+  @warn "The span mixin is deprecated. Please use the span-fluid function instead. E.g. width: span-fluid(#{$n})"
+  $width: span-fluid($n)
+  @if $important
+    width: $width !important
+  @else
+    width: $width
+</pre>
+<pre class="brush: scss source-code scss">@mixin span($n, $important: false) {
+  @warn "The span mixin is deprecated. Please use the span-fluid function instead. E.g. width: span-fluid(#{$n})";
+  $width: span-fluid($n);
+  @if $important {
+    width: $width !important;
+  }
+  @else {
+    width: $width;
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-last-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-last">
+<a class="permalink" href="index.html#mixin-last">last</a>
+</h3>
+<div class="mixin-source" id="mixin-last-source">
+<pre class="brush: sass source-code sass">=last
+  margin-right: 0
+</pre>
+<pre class="brush: scss source-code scss">@mixin last {
+  margin-right: 0;
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-column-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-column">
+<a class="permalink" href="index.html#mixin-column">column(<span class="arg">$n</span>, <span class="arg" data-default-value="false">$last</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-column-source">
+<pre class="brush: sass source-code sass">=column($n, $last: false)
+  +float-left
+  overflow: hidden
+  width: span-fluid($n)
+  @if $last
+    +last
+  @else
+    margin-right: $blueprint-liquid-grid-margin
+</pre>
+<pre class="brush: scss source-code scss">@mixin column($n, $last: false) {
+  @include float-left;
+  overflow: hidden;
+  width: span-fluid($n);
+  @if $last {
+    @include last;
+  }
+  @else {
+    margin-right: $blueprint-liquid-grid-margin;
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-append-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-append">
+<a class="permalink" href="index.html#mixin-append">append(<span class="arg">$n</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-append-source">
+<pre class="brush: sass source-code sass">=append($n)
+  padding-right: ($blueprint-liquid-grid-width + $blueprint-liquid-grid-margin) * $n
+</pre>
+<pre class="brush: scss source-code scss">@mixin append($n) {
+  padding-right: ($blueprint-liquid-grid-width + $blueprint-liquid-grid-margin) * $n;
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-prepend-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-prepend">
+<a class="permalink" href="index.html#mixin-prepend">prepend(<span class="arg">$n</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-prepend-source">
+<pre class="brush: sass source-code sass">=prepend($n)
+  padding-left: ($blueprint-liquid-grid-width + $blueprint-liquid-grid-margin) * $n
+</pre>
+<pre class="brush: scss source-code scss">@mixin prepend($n) {
+  padding-left: ($blueprint-liquid-grid-width + $blueprint-liquid-grid-margin) * $n;
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-pull-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-pull">
+<a class="permalink" href="index.html#mixin-pull">pull(<span class="arg">$n</span>, <span class="arg" data-default-value="false">$last</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-pull-source">
+<pre class="brush: sass source-code sass">=pull($n, $last: false)
+  margin-left: $blueprint-liquid-grid-push-pull * $n
+</pre>
+<pre class="brush: scss source-code scss">@mixin pull($n, $last: false) {
+  margin-left: $blueprint-liquid-grid-push-pull * $n;
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-push-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-push">
+<a class="permalink" href="index.html#mixin-push">push(<span class="arg">$n</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-push-source">
+<pre class="brush: sass source-code sass">=push($n)
+  +float-right
+  margin:
+    top: 0
+    left: $blueprint-liquid-grid-margin
+    right: $blueprint-liquid-grid-push-pull * $n
+    bottom: 0
+</pre>
+<pre class="brush: scss source-code scss">@mixin push($n) {
+  @include float-right;
+  margin: {
+    top: 0;
+    left: $blueprint-liquid-grid-margin;
+    right: $blueprint-liquid-grid-push-pull * $n;
+    bottom: 0;
+  };
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-border-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-border">
+<a class="permalink" href="index.html#mixin-border">border</a>
+</h3>
+<div class="mixin-source" id="mixin-border-source">
+<pre class="brush: sass source-code sass">=border
+  border-right: 1px solid #eeeeee
+</pre>
+<pre class="brush: scss source-code scss">@mixin border {
+  border-right: 1px solid #eeeeee;
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-colborder-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-colborder">
+<a class="permalink" href="index.html#mixin-colborder">colborder</a>
+</h3>
+<div class="mixin-source" id="mixin-colborder-source">
+<pre class="brush: sass source-code sass">=colborder
+  padding-right: $blueprint-liquid-grid-margin * 2
+  margin-right: $blueprint-liquid-grid-margin * 2
+  +border
+</pre>
+<pre class="brush: scss source-code scss">@mixin colborder {
+  padding-right: $blueprint-liquid-grid-margin * 2;
+  margin-right: $blueprint-liquid-grid-margin * 2;
+  @include border;
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-colruler-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-colruler">
+<a class="permalink" href="index.html#mixin-colruler">colruler</a>
+</h3>
+<div class="mixin-source" id="mixin-colruler-source">
+<pre class="brush: sass source-code sass">=colruler
+  background: #dddddd
+  color: #dddddd
+  clear: both
+  width: 100%
+  height: 0.083em
+  margin: 0
+  margin-left: $blueprint-liquid-grid-margin * 2
+  margin-right: $blueprint-liquid-grid-margin * 2
+  border: none
+</pre>
+<pre class="brush: scss source-code scss">@mixin colruler {
+  background: #dddddd;
+  color: #dddddd;
+  clear: both;
+  width: 100%;
+  height: 0.083em;
+  margin: 0;
+  margin-left: $blueprint-liquid-grid-margin * 2;
+  margin-right: $blueprint-liquid-grid-margin * 2;
+  border: none;
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-colspacer-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-colspacer">
+<a class="permalink" href="index.html#mixin-colspacer">colspacer</a>
+</h3>
+<div class="mixin-source" id="mixin-colspacer-source">
+<pre class="brush: sass source-code sass">=colspacer
+  +colruler
+  background: white
+  color: white
+</pre>
+<pre class="brush: scss source-code scss">@mixin colspacer {
+  @include colruler;
+  background: white;
+  color: white;
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div></article>
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

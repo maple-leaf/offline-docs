@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../blog/atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Blueprint Rtl | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+</head>
+<body class=' reference blueprint' id='reference-blueprint-rtl'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='docs-nav' role='navigation'>
+<a href='../index.html' rel='blueprint'>Blueprint</a>
+<a href='../../../docs/index.html' rel='core'>Core</a>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='syntax_pref'>
+<a href='index.html#' rel='scss'>scss</a>
+<a href='index.html#' rel='sass'>sass</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<aside role='sidebar'><nav id='local-nav'>
+<ul><li class='selected'>
+<h2>
+<a class='selected' href='../index.html'>Blueprint</a>
+</h2>
+</li>
+<ul><li class=''>
+<a class='' href='../buttons/index.html'>
+<span>Buttons</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../colors/index.html'>
+<span>Colors</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../debug/index.html'>
+<span>Debug</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../fancy_type/index.html'>
+<span>Fancy Type</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../form/index.html'>
+<span>Form</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../grid/index.html'>
+<span>Grid</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../interaction/index.html'>
+<span>Interaction</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../ie/index.html'>
+<span>Internet Explorer</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../link_icons/index.html'>
+<span>Link Icons</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../liquid/index.html'>
+<span>Liquid</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../print/index.html'>
+<span>Print</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../reset/index.html'>
+<span>Reset</span>
+</a>
+</li>
+<li class='selected'>
+<a class='selected' href='index.html'>
+<span>Rtl</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../scaffolding/index.html'>
+<span>Scaffolding</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../typography/index.html'>
+<span>Typography</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../utilities/index.html'>
+<span>Utilities</span>
+</a>
+</li>
+</ul>
+</ul>
+</nav>
+<div class='advertisement'>
+<script type="text/javascript">(function(){ var fusion = document.createElement('script'); fusion.src = window.location.protocol + '//adn.fusionads.net/api/1.0/ad.js?zoneid=158&rand=' + Math.floor(Math.random()*9999999); fusion.async = true; (document.head || document.getElementsByTagName('head')[0]).appendChild(fusion); })(); $(function(){ $(".advertisement").addClass("visible")});</script>
+<div id='fusion_ad'>
+<a class='pagerankspam' href='http://fusionads.net'>Powered by Fusion</a>
+</div>
+</div>
+
+</aside>
+<article><a href="http://github.com/chriseppstein/compass/blob/stable/frameworks/blueprint/stylesheets/blueprint/_rtl.scss" rel="github-source" title="view source for this module on github">Source on Github</a>
+<h1>Blueprint Rtl</h1>
+<p>
+For grids with use in right-to-left languages.
+</p>
+
+<p>
+This file can be imported using:
+<code>@import "blueprint/rtl"</code>
+</p>
+
+<h2>Imports</h2>
+<ol>
+<li>
+<a href="../../compass/utilities/general/float/index.html" title="@import compass/utilities/general/float">Float</a>
+– Mixins for cross-browser floats.
+</li>
+<li>
+<a href="../grid/index.html" title="@import grid">Grid</a>
+</li>
+</ol><h2>
+Configurable Variables
+<a class="help" href="../../../help/tutorials/configurable-variables/index.html">help</a>
+</h2>
+<h3 class="constant" id="const-blueprint-grid-columns">
+<a class="permalink" href="index.html#const-blueprint-grid-columns">$blueprint-grid-columns</a>
+<code>24</code>
+</h3>
+<p></p><p>Main layout grid, override these constants to build your grid and container sizes.</p>
+
+<h3 class="constant" id="const-blueprint-grid-width">
+<a class="permalink" href="index.html#const-blueprint-grid-width">$blueprint-grid-width</a>
+<code>30px</code>
+</h3>
+<h3 class="constant" id="const-blueprint-grid-margin">
+<a class="permalink" href="index.html#const-blueprint-grid-margin">$blueprint-grid-margin</a>
+<code>10px</code>
+</h3>
+
+<h2>Constants</h2>
+<h3 class="constant" id="const-blueprint-grid-outer-width">
+<a class="permalink" href="index.html#const-blueprint-grid-outer-width">$blueprint-grid-outer-width</a>
+<code>$blueprint-grid-width + $blueprint-grid-margin</code>
+</h3>
+<h3 class="constant" id="const-blueprint-container-size">
+<a class="permalink" href="index.html#const-blueprint-container-size">$blueprint-container-size</a>
+<code>$blueprint-grid-outer-width * $blueprint-grid-columns - $blueprint-grid-margin</code>
+</h3>
+
+
+
+<h2>Mixins</h2>
+<a href="index.html#mixin-container-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-container">
+<a class="permalink" href="index.html#mixin-container">container</a>
+</h3>
+<div class="mixin-source" id="mixin-container-source">
+<pre class="brush: sass source-code sass">=container
+  width: $blueprint-container-size
+  margin: 0 auto
+  direction: rtl
+  +clearfix
+</pre>
+<pre class="brush: scss source-code scss">@mixin container {
+  width: $blueprint-container-size;
+  margin: 0 auto;
+  direction: rtl;
+  @include clearfix;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Columns
+Note: If you use this mixin without the class and want to support ie6</p>
+
+<pre><code>  you must set text-align left on your container element in an IE stylesheet.
+</code></pre>
+
+</div>
+<a href="index.html#mixin-last-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-last">
+<a class="permalink" href="index.html#mixin-last">last</a>
+</h3>
+<div class="mixin-source" id="mixin-last-source">
+<pre class="brush: sass source-code sass">=last
+  margin-left: 0
+</pre>
+<pre class="brush: scss source-code scss">@mixin last {
+  margin-left: 0;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>The last column in a row needs this mixin or it will end up on the next row.
+TODO add this to span mixin when we have optional arguments</p>
+
+</div>
+<a href="index.html#mixin-column-base-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-column-base">
+<a class="permalink" href="index.html#mixin-column-base">column-base(<span class="arg" data-default-value="false">$last</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-column-base-source">
+<pre class="brush: sass source-code sass">=column-base($last: false)
+  +float-right
+  @if $last
+    +last
+  @else
+    margin-left: $blueprint-grid-margin
+  text-align: right
+  * html &amp;
+    overflow-x: hidden
+</pre>
+<pre class="brush: scss source-code scss">@mixin column-base($last: false) {
+  @include float-right;
+  @if $last {
+    @include last;
+  }
+  @else {
+    margin-left: $blueprint-grid-margin;
+  }
+  text-align: right;
+  * html &amp; {
+    overflow-x: hidden;
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-append-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-append">
+<a class="permalink" href="index.html#mixin-append">append(<span class="arg">$n</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-append-source">
+<pre class="brush: sass source-code sass">=append($n)
+  padding-left: $blueprint-grid-outer-width * $n
+</pre>
+<pre class="brush: scss source-code scss">@mixin append($n) {
+  padding-left: $blueprint-grid-outer-width * $n;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Mixin to a column to append n empty cols.</p>
+
+</div>
+<a href="index.html#mixin-prepend-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-prepend">
+<a class="permalink" href="index.html#mixin-prepend">prepend(<span class="arg">$n</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-prepend-source">
+<pre class="brush: sass source-code sass">=prepend($n)
+  padding-right: $blueprint-grid-outer-width * $n
+</pre>
+<pre class="brush: scss source-code scss">@mixin prepend($n) {
+  padding-right: $blueprint-grid-outer-width * $n;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Mixin to a column to prepend n empty cols.</p>
+
+</div>
+<a href="index.html#mixin-pull-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-pull">
+<a class="permalink" href="index.html#mixin-pull">pull(<span class="arg">$n</span>, <span class="arg" data-default-value="false">$last</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-pull-source">
+<pre class="brush: sass source-code sass">=pull($n, $last: false)
+  position: relative
+  @if $last
+    margin-right: -$blueprint-grid-outer-width * $n + $blueprint-grid-margin
+  @else
+    margin-right: -$blueprint-grid-outer-width * $n
+</pre>
+<pre class="brush: scss source-code scss">@mixin pull($n, $last: false) {
+  position: relative;
+  @if $last {
+    margin-right: -$blueprint-grid-outer-width * $n + $blueprint-grid-margin;
+  }
+  @else {
+    margin-right: -$blueprint-grid-outer-width * $n;
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>mixin to a column to move it n columns to the left</p>
+
+</div>
+<a href="index.html#mixin-push-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-push">
+<a class="permalink" href="index.html#mixin-push">push(<span class="arg">$n</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-push-source">
+<pre class="brush: sass source-code sass">=push($n)
+  +float-right
+  position: relative
+  margin:
+    top: 0
+    left: -$blueprint-grid-outer-width * $n
+    bottom: 1.5em
+    right: $blueprint-grid-outer-width * $n
+</pre>
+<pre class="brush: scss source-code scss">@mixin push($n) {
+  @include float-right;
+  position: relative;
+  margin: {
+    top: 0;
+    left: -$blueprint-grid-outer-width * $n;
+    bottom: 1.5em;
+    right: $blueprint-grid-outer-width * $n;
+  };
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>mixin to a column to push it n columns to the right</p>
+
+</div>
+<a href="index.html#mixin-border-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-border">
+<a class="permalink" href="index.html#mixin-border">border</a>
+</h3>
+<div class="mixin-source" id="mixin-border-source">
+<pre class="brush: sass source-code sass">=border
+  padding-left: $blueprint-grid-margin / 2 - 1
+  margin-left: $blueprint-grid-margin / 2
+  border-left: 1px solid #eeeeee
+</pre>
+<pre class="brush: scss source-code scss">@mixin border {
+  padding-left: $blueprint-grid-margin / 2 - 1;
+  margin-left: $blueprint-grid-margin / 2;
+  border-left: 1px solid #eeeeee;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Border on left hand side of a column.</p>
+
+</div>
+<a href="index.html#mixin-colborder-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-colborder">
+<a class="permalink" href="index.html#mixin-colborder">colborder</a>
+</h3>
+<div class="mixin-source" id="mixin-colborder-source">
+<pre class="brush: sass source-code sass">=colborder
+  padding-left: ($blueprint-grid-width - 2 * $blueprint-grid-margin - 1) / 2
+  margin-left: ($blueprint-grid-width - 2 * $blueprint-grid-margin) / 2
+  border-left: 1px solid #eeeeee
+</pre>
+<pre class="brush: scss source-code scss">@mixin colborder {
+  padding-left: ($blueprint-grid-width - 2 * $blueprint-grid-margin - 1) / 2;
+  margin-left: ($blueprint-grid-width - 2 * $blueprint-grid-margin) / 2;
+  border-left: 1px solid #eeeeee;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Border with more whitespace, spans one column.</p>
+
+</div>
+<a href="index.html#mixin-rtl-typography-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-rtl-typography">
+<a class="permalink" href="index.html#mixin-rtl-typography">rtl-typography(<span class="arg" data-default-value="false">$nested</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-rtl-typography-source">
+<pre class="brush: sass source-code sass">=rtl-typography($nested: false)
+  @if $nested
+    html &amp;
+      font-family: Arial, sans-serif
+    +rtl-typography-defaults
+  @else
+    html body
+      font-family: Arial, sans-serif
+    body
+      +rtl-typography-defaults
+</pre>
+<pre class="brush: scss source-code scss">@mixin rtl-typography($nested: false) {
+  @if $nested {
+    html &amp; {
+      font-family: Arial, sans-serif;
+    }
+    @include rtl-typography-defaults;
+  }
+  @else {
+    html body {
+      font-family: Arial, sans-serif;
+    }
+    body {
+      @include rtl-typography-defaults;
+    }
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Usage examples:
+As a top-level mixin, apply to any page that includes the stylesheet:</p>
+
+<pre class="brush: sass source-code sass">
++rtl-typography
+</pre>
+
+
+<p>Scoped by a presentational class:</p>
+
+<pre class="brush: sass source-code sass">
+body.blueprint
+ +rtl-typography(true)
+</pre>
+
+
+<p>Scoped by semantic selectors:</p>
+
+<pre class="brush: sass source-code sass">
+body#page-1, body#page-2, body.a-special-page-type
+  +rtl-typography(true)
+</pre>
+
+
+</div>
+<a href="index.html#mixin-rtl-typography-defaults-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-rtl-typography-defaults">
+<a class="permalink" href="index.html#mixin-rtl-typography-defaults">rtl-typography-defaults</a>
+</h3>
+<div class="mixin-source" id="mixin-rtl-typography-defaults-source">
+<pre class="brush: sass source-code sass">=rtl-typography-defaults
+  h1, h2, h3, h4, h5, h6
+    font-family: Arial, sans-serif
+  pre, code, tt
+    font-family: monospace
+  .right
+    +float-left
+    margin: 1.5em 1.5em 1.5em 0
+    padding: 0
+  .left
+    +float-right
+    margin: 1.5em 0 1.5em 1.5em
+    padding: 0
+  dd, ul, ol
+    margin-left: 0
+    margin-right: 1.5em
+  td, th
+    text-align: right
+</pre>
+<pre class="brush: scss source-code scss">@mixin rtl-typography-defaults {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, sans-serif;
+  }
+  pre, code, tt {
+    font-family: monospace;
+  }
+  .right {
+    @include float-left;
+    margin: 1.5em 1.5em 1.5em 0;
+    padding: 0;
+  }
+  .left {
+    @include float-right;
+    margin: 1.5em 0 1.5em 1.5em;
+    padding: 0;
+  }
+  dd, ul, ol {
+    margin-left: 0;
+    margin-right: 1.5em;
+  }
+  td, th {
+    text-align: right;
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div></article>
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

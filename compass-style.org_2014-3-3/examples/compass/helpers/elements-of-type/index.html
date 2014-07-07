@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../../blog/atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Compass Helper: elements-of-type | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+<style type='text/css'>.example address, .example article, .example aside, .example blockquote, .example center, .example dir, .example div, .example dd, .example details, .example dl, .example dt, .example fieldset, .example figcaption, .example figure, .example form, .example footer, .example frameset, .example h1, .example h2, .example h3, .example h4, .example h5, .example h6, .example hr, .example header, .example hgroup, .example isindex, .example menu, .example nav, .example noframes, .example noscript, .example ol, .example p, .example pre, .example section, .example summary, .example ul {
+  border: 1px solid #777777;
+  margin: 1em 3em;
+}
+.example a, .example abbr, .example acronym, .example audio, .example b, .example basefont, .example bdo, .example big, .example br, .example canvas, .example cite, .example code, .example command, .example datalist, .example dfn, .example em, .example embed, .example font, .example i, .example img, .example input, .example keygen, .example kbd, .example label, .example mark, .example meter, .example output, .example progress, .example q, .example rp, .example rt, .example ruby, .example s, .example samp, .example select, .example small, .example span, .example strike, .example strong, .example sub, .example sup, .example textarea, .example time, .example tt, .example u, .example var, .example video, .example wbr {
+  color: #cc0000;
+}
+
+</style>
+</head>
+<body class=' demo' id='examples-compass-helpers-elements-of-type'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<article><h1>Demo: Compass Helper: elements-of-type</h1>
+<div id="demo">
+<div class="example">
+  <div>
+    This is a block element.
+    It has an
+    <span>inline span</span>
+    and an
+    <em>inline em</em>
+    and a
+    <blockquote>
+      Nested blockquote element
+    </blockquote>
+  </div>
+</div>
+</div>
+
+<div id="how">
+<section id="markup"><div class="syntax_pref">
+<a href="index.html#" rel="html">html</a>
+<a href="index.html#" rel="haml">haml</a>
+</div>
+<div class="example-source">
+<pre class="brush: html source-code html">&lt;div class='example'&gt;
+  &lt;div&gt;
+    This is a block element.
+    It has an
+    &lt;span&gt;inline span&lt;/span&gt;
+    and an
+    &lt;em&gt;inline em&lt;/em&gt;
+    and a
+    &lt;blockquote&gt;
+      Nested blockquote element
+    &lt;/blockquote&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<pre class="brush: haml source-code haml">.example
+  %div
+    This is a block element.
+    It has an
+    %span inline span
+    and an
+    %em inline em
+    and a
+    %blockquote
+      Nested blockquote element
+</pre>
+</div>
+</section><section id="styles"><div class="syntax_pref">
+<a href="index.html#" rel="scss">scss</a>
+<a href="index.html#" rel="sass">sass</a>
+<a href="index.html#" rel="css">css</a>
+</div>
+<div class="example-source">
+<pre class="brush: scss source-code scss">.example {
+  #{elements-of-type(block)} {
+    border: 1px solid #777777;
+    margin: 1em 3em;
+  }
+  #{elements-of-type(inline)} {
+    color: #cc0000;
+  }
+}
+</pre>
+<pre class="brush: sass source-code sass">.example
+  #{elements-of-type(block)}
+    border: 1px solid #777
+    margin: 1em 3em
+  #{elements-of-type(inline)}
+    color: #c00
+  </pre>
+<pre class="brush: css source-code css">.example address, .example article, .example aside, .example blockquote, .example center, .example dir, .example div, .example dd, .example details, .example dl, .example dt, .example fieldset, .example figcaption, .example figure, .example form, .example footer, .example frameset, .example h1, .example h2, .example h3, .example h4, .example h5, .example h6, .example hr, .example header, .example hgroup, .example isindex, .example menu, .example nav, .example noframes, .example noscript, .example ol, .example p, .example pre, .example section, .example summary, .example ul {
+  border: 1px solid #777777;
+  margin: 1em 3em;
+}
+.example a, .example abbr, .example acronym, .example audio, .example b, .example basefont, .example bdo, .example big, .example br, .example canvas, .example cite, .example code, .example command, .example datalist, .example dfn, .example em, .example embed, .example font, .example i, .example img, .example input, .example keygen, .example kbd, .example label, .example mark, .example meter, .example output, .example progress, .example q, .example rp, .example rt, .example ruby, .example s, .example samp, .example select, .example small, .example span, .example strike, .example strong, .example sub, .example sup, .example textarea, .example time, .example tt, .example u, .example var, .example video, .example wbr {
+  color: #cc0000;
+}
+</pre>
+</div>
+</section>
+</div></article>
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../blog/atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Install the Compass Stylesheet Authoring Framework | Compass Documentation
+</title>
+<link charset='utf-8' href='../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+</head>
+<body class='' id='install'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='docs-nav' role='navigation'>
+<a href='../reference/blueprint/index.html' rel='blueprint'>Blueprint</a>
+<a href='../docs/index.html' rel='core'>Core</a>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='syntax_pref'>
+<a href='index.html#' rel='scss'>scss</a>
+<a href='index.html#' rel='sass'>sass</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<h2>Installing Ruby</h2>
+<p>
+Compass runs on any computer that has
+<a href="http://www.ruby-lang.org/en/downloads/">ruby installed</a>.
+</p>
+<p>
+For more advanced users you may want to install
+<a href="https://rvm.io/rvm/install">rvm</a>.
+</p>
+<h2>Setting up the ruby environment</h2>
+<ol>
+<li><code>$ gem update --system</code></li>
+<li><code>$ gem install compass</code></li>
+</ol>
+<h2>Tell us about your project and we'll help you get it set up:</h2>
+<blockquote class='madlib customizable'>I would like to set up my
+<select id='existence'>
+<option value='create'>new</option>
+<option value='init'>existing</option>
+</select>
+<select id='app-type'>
+<option value='stand-alone'>compass</option>
+<option value='rails'>rails</option>
+<option value='other'>other</option>
+</select>
+project
+<span class='creating'>
+named
+<input id='project_name' placeholder='&lt;myproject&gt;' />
+</span>
+with
+<select id='framework'>
+<option value='compass'>compass's</option>
+<option value='blueprint'>blueprint's</option>
+<option value='bare'>no</option>
+</select>
+starter stylesheets.
+<br />
+I prefer the
+<select id='syntax'>
+<option value='scss'>CSS based (SCSS)</option>
+<option value='sass'>Indent based (Sass)</option>
+</select>
+syntax<span class="customization">
+and would like to
+<select id='options'>
+<option value='default'>use compass's recommended</option>
+<option value='customized'>customize my project's</option>
+</select>
+directory structure<span id="directories" style="display:none;">
+using
+<input id='sassdir' placeholder='sass' />
+for the sass source directory,
+<input id='cssdir' placeholder='css' />
+for the css output directory,
+<input id='jsdir' placeholder='javascripts' />
+for the javascripts directory,
+and
+<input id='imagesdir' placeholder='images' />
+for the images directory</span></span>.</blockquote>
+<h4>Thanks. Now run the following steps in your terminal:</h4>
+<p class='note'>
+Terminal newbies, read <a href="http://wiseheartdesign.com/articles/2010/11/12/the-designers-guide-to-the-osx-command-prompt/">the Designer’s Guide to the OSX Command Prompt</a> first!
+</p>
+<div id='steps'>
+Loading...
+</div>
+<p class='note'>Note: <code>$</code> is a placeholder for your terminal's prompt. You don't type it.</p>
+<h4>Then follow the instructions that compass provides in the output.</h4>
+<h2>Hate the Command Line?</h2>
+<p>Try one of these Community supported GUI applications:</p>
+<ul>
+<li><a href="http://compass.handlino.com/">Compass.app</a> from <a href="http://handlino.com/">Handlino</a>.</li>
+<li><a href="http://mhs.github.com/scout-app/">Scout</a> from <a href="http://mutuallyhuman.com/">Mutually Human</a>.</li>
+</ul>
+<h2>Next Steps</h2>
+<ul>
+<li>
+<a href='http://sass-lang.com' target='_blank'>Learn about Sass</a>
+</li>
+<li>
+<a href='../help/tutorials/index.html'>Read our tutorials</a>
+</li>
+<li>
+<a href='../docs/index.html'>Study the reference documentation</a>
+</li>
+</ul>
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+<script src='../javascripts/install.js'></script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

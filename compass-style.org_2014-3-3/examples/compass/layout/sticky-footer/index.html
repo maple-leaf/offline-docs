@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../../blog/atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Compass Sticky Footer Example | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+<style type='text/css'>html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+}
+
+#layout {
+  clear: both;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -72px;
+}
+#layout #layout_footer {
+  height: 72px;
+}
+
+#footer {
+  clear: both;
+  position: relative;
+  height: 72px;
+}
+
+#header {
+  background: #999999;
+  height: 72px;
+}
+
+#footer {
+  background: #cccccc;
+}
+
+.example {
+  height: 500px;
+  border: 3px solid red;
+}
+.example p {
+  margin: 1em 0.5em;
+}
+
+</style>
+</head>
+<body class=' demo' id='examples-compass-layout-sticky-footer'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<article><div id="reference"><a href="../../../../reference/compass/layout/sticky_footer/index.html">Reference Documentation</a></div>
+<h1>Demo: Compass Sticky Footer Example</h1>
+<div id="demo">
+<div class="example">
+  <div id="layout">
+    <div id="header">
+      <h1>Sticky Footer Example</h1>
+    </div>
+    <p>
+      This is the main content area.
+    </p>
+    <p>
+      In this example you should pretend that the red box
+      is actually the browser window.
+    </p>
+    <p>
+      Because, being a contrived example, it's not actually sticking
+      to the bottom of the page.
+    </p>
+    <div id="layout_footer"></div>
+  </div>
+  <div id="footer">
+    This is the footer area.
+  </div>
+</div>
+</div>
+
+<div id="how">
+<section id="markup"><div class="syntax_pref">
+<a href="index.html#" rel="html">html</a>
+<a href="index.html#" rel="haml">haml</a>
+</div>
+<div class="example-source">
+<pre class="brush: html source-code html">&lt;div class='example'&gt;
+  &lt;div id='layout'&gt;
+    &lt;div id='header'&gt;
+      &lt;h1&gt;Sticky Footer Example&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      This is the main content area.
+    &lt;/p&gt;
+    &lt;p&gt;
+      In this example you should pretend that the red box
+      is actually the browser window.
+    &lt;/p&gt;
+    &lt;p&gt;
+      Because, being a contrived example, it's not actually sticking
+      to the bottom of the page.
+    &lt;/p&gt;
+    &lt;div id='layout_footer'&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div id='footer'&gt;
+    This is the footer area.
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<pre class="brush: haml source-code haml">.example
+  #layout
+    #header
+      %h1 Sticky Footer Example
+
+    %p
+      This is the main content area.
+    %p
+      In this example you should pretend that the red box
+      is actually the browser window.
+    %p
+      Because, being a contrived example, it's not actually sticking
+      to the bottom of the page.
+    #layout_footer
+  #footer
+    This is the footer area.
+</pre>
+</div>
+</section><section id="styles"><div class="syntax_pref">
+<a href="index.html#" rel="scss">scss</a>
+<a href="index.html#" rel="sass">sass</a>
+<a href="index.html#" rel="css">css</a>
+</div>
+<div class="example-source">
+<pre class="brush: scss source-code scss">@import "compass/reset.scss";
+@import "compass/layout.scss";
+
+@include sticky-footer(72px, "#layout", "#layout_footer", "#footer");
+
+#header {
+  background: #999999;
+  height: 72px;
+}
+
+#footer {
+  background: #cccccc;
+}
+
+.example {
+  height: 500px;
+  border: 3px solid red;
+  p {
+    margin: 1em 0.5em;
+  }
+}
+</pre>
+<pre class="brush: sass source-code sass">@import compass/reset.scss
+@import compass/layout.scss
+
++sticky-footer(72px, "#layout", "#layout_footer", "#footer")
+
+#header
+  :background #999
+  :height 72px
+
+#footer
+  :background #ccc
+
+.example
+  height: 500px
+  border: 3px solid red
+  
+  p
+    margin: 1em 0.5em
+</pre>
+<pre class="brush: css source-code css">html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+}
+
+#layout {
+  clear: both;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -72px;
+}
+#layout #layout_footer {
+  height: 72px;
+}
+
+#footer {
+  clear: both;
+  position: relative;
+  height: 72px;
+}
+
+#header {
+  background: #999999;
+  height: 72px;
+}
+
+#footer {
+  background: #cccccc;
+}
+
+.example {
+  height: 500px;
+  border: 3px solid red;
+}
+.example p {
+  margin: 1em 0.5em;
+}
+</pre>
+</div>
+</section>
+</div></article>
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

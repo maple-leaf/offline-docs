@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<title>
+Contributing Stylesheets | Compass Documentation
+</title>
+<link charset='utf-8' href='../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../javascripts/fixups.js' type='text/javascript'></script>
+
+</head>
+<body class='site tutorial' id='help-tutorials-contributing'>
+<div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='module-nav'>
+<ul>
+<li class='getting-started'>
+<a href='../index.html' rel='getting started'><span>Getting Started</span></a>
+</li>
+<li class='tutorials'>
+<a href='index.html' rel='getting started'><span>Tutorials</span></a>
+</li>
+<li class='support'>
+<a href='http://groups.google.com/group/compass-users' rel='support'><span>Support</span></a>
+</li>
+<li>
+<a href='http://github.com/chriseppstein/compass/issues' rel='bugs'><span>Bugs</span></a>
+</li>
+</ul>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='contributing.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<aside role='sidebar'>
+<nav id='local-nav'>
+<ul><li class='selected'>
+<h2>
+<a class='selected' href='index.html'>Tutorials</a>
+</h2>
+</li>
+<ul><li>
+<h3>
+<a href='integration/index.html'>Application Integration</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='best_practices/index.html'>Best practices</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='blueprint/index.html'>Blueprint Framework</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='command-line/index.html'>Compass Command Line Documentation</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='configuration-reference/index.html'>Configuration Reference</a>
+</h3>
+</li>
+<li class='selected'>
+<h3>
+<a class='selected' href='contributing.html'>Contributing</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='extensions.html'>Creating Compass Extensions</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='extending.1.html'>Extending Compass</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='production-css/index.html'>Production Stylesheets</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='exclude_vendor_prefixes/index.html'>Removing Vendor Prefixes from Compass</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='spriting/index.html'>Spriting</a>
+</h3>
+</li>
+<ul><li class=''>
+<a class='' href='spriting/customization-options.1.html'>
+<span>Customization</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='spriting/magic-selectors.1.html'>
+<span>Magic Selectors</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='spriting/sprite-layouts.1.html'>
+<span>Sprite layouts</span>
+</a>
+</li>
+</ul>
+<li>
+<h3>
+<a href='testing/index.html'>Testing</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='upgrading/index.html'>Upgrading</a>
+</h3>
+</li>
+<ul><li class=''>
+<a class='' href='upgrading/lemonade_upgrade_guide/index.html'>
+<span>Lemonade Upgrade</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='upgrading/im-scared/index.html'>
+<span>Scared to Upgrade?</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='upgrading/antares/index.html'>
+<span>Upgrading to v0.11</span>
+</a>
+</li>
+</ul>
+<li>
+<h3>
+<a href='configurable-variables/index.html'>Working with Configurable Variables</a>
+</h3>
+</li>
+</ul>
+</ul>
+</nav>
+</aside>
+<article><h1>Contributing Stylesheets to Compass</h1>
+
+<p>Thank you for your interest in contributing to Compass. Our goal is to make it as easy
+as we can for you to contribute changes to compass -- So if there's something here that
+seems harder than it ought to be, please let us know.</p>
+
+<p>If you find a bug <strong>in this document</strong>, you are bound to contribute a fix. Stop reading now
+if you do not wish to abide by this rule.</p>
+
+<p><strong>Step 1</strong>: If you do not have a github account, create one.</p>
+
+<p><strong>Step 2</strong>: Fork Compass to your account. Go to the <a href="http://github.com/chriseppstein/compass">main repo</a>
+and click the fork button.</p>
+
+<p><img src="http://img.skitch.com/20101015-n4ssnfyj16e555cnn7wp2pg717.png" alt="Fork Me" /></p>
+
+<p>Now we're at a decision point. What kind of change do you intend to make?</p>
+
+<ul>
+<li><a href="contributing.html#trivial-changes">Fix a typo (or some other trivial change)</a></li>
+<li><a href="contributing.html#documentation-changes">Documentation Changes</a></li>
+<li><a href="contributing.html#stylesheet-bugs">Fixing Stylesheet Bugs</a></li>
+<li><a href="contributing.html#stylesheet-changes">New Stylesheet Features</a></li>
+<li><a href="contributing.html#ruby-changes">Ruby Changes</a></li>
+</ul>
+
+
+<p>Here's some general information about the project you might find useful along the way:</p>
+
+<ul>
+<li><a href="contributing.html#patches">Submitting Patches</a></li>
+<li><a href="contributing.html#project-structure">Project Structure</a></li>
+</ul>
+
+
+<!-- * Project Architecture
+  * [Command Line](/help/tutorials/command-line)
+  * [Extensions](/help/tutorials/extensions)
+  * [Configuration](help/tutorials/configuration-reference) -->
+
+
+<ul>
+<li><a href="contributing.html#project-philosophy">General Philosophy</a></li>
+<li><a href="contributing.html#stylesheet-conventions">Stylesheet Conventions</a></li>
+<li><a href="contributing.html#faq">Miscellaneous Stuff</a>
+
+<ul>
+<li><a href="contributing.html#setting-up-git">Setting up Git</a></li>
+<li><a href="contributing.html#running-local-code">Using Compass while Under Development</a></li>
+<li><a href="contributing.html#running-tests">Running Tests</a></li>
+<li><a href="contributing.html#recovering-from-rebased-or-cherry-picked-changesets">Recovering from a cherry-pick or a rebase</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h2 id="trivial-changes">Making Trivial Changes</h2>
+
+
+<p>Thanks to Github, making small changes is super easy. After forking the project navigate
+to the file you want to change and click the edit link.</p>
+
+<p><img src="http://img.skitch.com/20101015-n2x2iaric7wkey2x7u4fa2m1hj.png" alt="Edit Me" /></p>
+
+<p>Change the file, write a commit message, and click the <code>Commit</code> button.</p>
+
+<p><img src="http://img.skitch.com/20101015-br74tfwtd1ur428mq4ejt12kfc.png" alt="Commit Me" />
+Now you need to get your change <a href="contributing.html#patches">accepted</a>.</p>
+
+<h2 id="documentation-changes">Making Documentation Changes</h2>
+
+
+<p>The compass documentation is stored in two places. First, the <code>doc-src</code> directory is
+where the documentation lives -- however much of the documentation is generated
+from comments in the Sass files themselves. More information on <a href="http://github.com/chriseppstein/compass/blob/stable/doc-src/README.markdown">changing
+documentation</a>. Once your changes are pushed, please
+<a href="contributing.html#patches">submit them</a>.</p>
+
+<h2 id="stylesheet-bugs">Fixing Stylesheet Bugs</h2>
+
+
+<p><strong>Step 3</strong>: If this is a bug you discovered. Please <a href="http://github.com/chriseppstein/compass/issues">report it</a> before working on a fix.
+This helps us better understand the patch.</p>
+
+<p><strong>Step 4</strong>: Get <a href="contributing.html#setting-up-git">the code</a> if you haven't yet done so.</p>
+
+<p><strong>Step 5</strong>: Fix the bug and commit the changes. Please make sure to mention the bug
+id in your commit message like so:</p>
+
+<pre><code>Fixed the display of the fizzlebuzz in IE6.
+
+Closes GH-123.
+</code></pre>
+
+<p><strong>Step 6</strong>: Verify the fix in as many browsers as you can as well as against your own
+project. How to <a href="contributing.html#running-local-code">use compass while changing it</a>.</p>
+
+<p><strong>Step 7</strong>: Make sure the tests pass. More info on <a href="contributing.html#running-tests">running tests</a>
+If the tests fail, fix the tests or the stylesheets accordingly. If the tests, don't
+fail, that means this aspect was not well enough tested. Please <a href="contributing.html#writing-tests">add or augment
+a test</a>.</p>
+
+<p>You're done. Please <a href="contributing.html#patches">submit your changes</a>.</p>
+
+<h2 id="stylesheet-changes">Making Stylesheet Changes</h2>
+
+
+<p>It is a good idea to discuss new features ideas with the compass users and developers
+before building something. Please don't be shy; send an email to the <a href="http://groups.google.com/group/compass-users">compass mailing
+list</a>.</p>
+
+<p>Many feature ideas are good but not obviously a good fit for the compass core library.
+In these cases, you can and should create a <a href="extensions.html">compass extension</a>. Sometimes
+this is because the concept does not align with the <a href="contributing.html#project-philosophy">compass philosophy</a>.
+But sometimes it's just because we think the idea needs time to bake. <a href="extensions.html">Documentation on
+making extensions.</a></p>
+
+<p><strong>Step 3</strong>: Get <a href="contributing.html#setting-up-git">the code</a> if you haven't yet done so.</p>
+
+<p><strong>Step 4</strong>: Add the feature -- contact the mailing list if you have any questions.</p>
+
+<p><strong>Step 5</strong>: Add a test case. More info on <a href="contributing.html#writing-tests">writing tests for compass</a>.</p>
+
+<p><strong>Step 6</strong>: Documentation - Add or update the reference documentation. Add
+an example of using the feature. See the <a href="http://github.com/chriseppstein/compass/blob/stable/doc-src/README.markdown">doc readme for details</a>.</p>
+
+<p>You're done. Please <a href="contributing.html#patches">submit your changes</a>.</p>
+
+<h2 id="ruby-changes">Making Ruby Changes</h2>
+
+
+<p>At this time, if you're a rubyist who's planning on working on the ruby-side of
+things, it's assumed you know how to read code and use standard ruby tools like
+rake, gem, bundler, test/unit, cucumber, rspec, etc. If you have any questions,
+please ask. No changes will be accepted without accompanying tests.</p>
+
+<h2 id="patches">Submitting Patches</h2>
+
+
+<p>If you are submitting features that have more than one changeset, please create a
+topic branch to hold the changes while they are pending merge and also to track
+iterations to the original submission. To create a topic branch:</p>
+
+<pre><code>$ git checkout -b new_branch_name
+... make more commits if needed ...
+$ git push origin new_branch_name
+</code></pre>
+
+<p>You can now see these changes online at a url like:</p>
+
+<pre><code>http://github.com/your_user_name/compass/commits/new_branch_name
+</code></pre>
+
+<p>If you have single-commit patches, it is fine to keep them on master. But do keep in
+mind that these changesets might be
+<a href="contributing.html#recovering-from-rebased-or-cherry-picked-changesets">cherry-picked</a>.</p>
+
+<p>Once your changeset(s) are on github, select the appropriate branch containing your
+changes and send a pull request. Make sure to choose the same upstream branch that
+you developed against (probably stable or master). Most of the description of your
+changes should be in the commit messages -- so no need to write a whole lot in the
+pull request message. However, the pull request message is a good place to provide a
+rationale or use case for the change if you think one is needed. More info on <a href="http://help.github.com/pull-requests/">pull
+requests</a>.</p>
+
+<p><img src="http://img.skitch.com/20101015-rgfh43yhk7e61fchj9wccne9cq.png" alt="Pull Request Example" /></p>
+
+<p>Pull requests are then managed like an issue from the <a href="http://github.com/chriseppstein/compass/issues">compass issues page</a>.
+A code review will be performed by a compass core team member, and one of three outcomes
+will result:</p>
+
+<ol>
+<li>The change is rejected -- Not all changes are right for <a href="contributing.html#project-philosophy">compass's
+philosophy</a>. If your change is rejected it might be better
+suited for a plugin, at least until it matures and/or proves itself with the users.</li>
+<li>The change is rejected, <em>unless</em> -- Sometimes, there are missing pieces, or
+other changes that need to be made before the change can be accepted. Comments
+will be left on the commits indicating what issues need to be addressed.</li>
+<li>The change is accepted -- The change is merged into compass, sometimes minor
+changes are then applied by the committer after the merge.</li>
+</ol>
+
+
+<h2 id="project-structure">Project Structure</h2>
+
+
+<pre><code>compass/
+  bin/
+    compass             - CLI executable
+  devbin/               - development scripts after installing the bundle
+  doc-src/              - source for documentation
+  docs/                 - generated documentation
+  examples/             - fully working compass projects that you can explore
+  features/             - tests for compass
+  frameworks/           - All frameworks in this directory are loaded automatically
+    compass/            - The compass framework
+      stylesheets/      - The compass libraries
+      templates/        - The compass project templates and patterns
+    blueprint/
+      stylesheets/      - The blueprint libraries
+      templates/        - The blueprint project templates and patterns
+  lib/
+    compass.rb          - The main compass ruby library
+    compass/
+      app_integration/  - integration with app frameworks
+      commands/         - UI agnostic support for the CLI
+      configuration/    - support for project configuration
+      exec/             - UI code for the CLI
+      installers/       - support for installing templates
+      sass_extensions/  - enhancements to Sass
+        functions/      - Sass functions exposed by compass
+        monkey_patches/ - Changes to sass itself
+  test/                 - unit tests
+</code></pre>
+
+<h2 id="project-philosophy">General Philosophy</h2>
+
+
+<ol>
+<li>Users specify their own selectors. Compass never forces a user
+to use a presentational class name.</li>
+<li>Compass does not require javascript. It is a CSS framework.</li>
+<li>Compass core is "design agnostic". This is why compass core has no
+grid framework -- grids are not design agnostic.</li>
+<li>Compass frameworks are not special. If compass can do it, so should an extension
+be able.</li>
+<li>Sass is awesome -- Compass should make sass more accessible and
+demonstrate how to use Sass to its fullest potential.</li>
+<li>Developing across browsers is hard and will always be hard. It takes
+a community to get it right.</li>
+<li>By default, Compass supports as many browsers as it can. Where it can't
+it progressively enhances. Where it degrades, the documentation should
+make a note. Deviation from this requires an excellent reason.</li>
+<li>Compass is a proving ground for Sass features. The watcher and color
+functions are examples of features that started in Compass and got
+moved to Sass.</li>
+</ol>
+
+
+<h2 id="stylesheet-conventions">Stylesheet Conventions</h2>
+
+
+<ol>
+<li>All framework stylesheets are partials. Their filename begin with an underscore.
+Otherwise, Sass will create stylesheets directly into the user's CSS directory.</li>
+<li>Compass imports do not emit styles. There are a few limited exceptions to this like
+the resets and base classes for inheritance.</li>
+<li>Mixins with two-level defaults. Mixins often provide two levels of default
+values. The first is a global default that can be overridden once. The second
+is a default that can be overridden when the mixin is included.</li>
+<li>Mixin argument names are part of the public API, make sure they are understandable and not
+needlessly truncated or terse.</li>
+<li>If adding a new folder of stylesheets, add a single stylesheet with the same name that
+imports all of the stylesheets in the folder.</li>
+<li>Try to avoid passing selectors as arguments. This is what mixins are for.</li>
+</ol>
+
+
+<h2 id="faq">Common Problems &amp; Miscellaneous Info</h2>
+
+
+
+
+<h3 id="setting-up-git">Setting up Git</h3>
+
+
+<p>Please follow <a href="http://help.github.com/git-email-settings/">these instructions</a>
+to set up your email address and attribution information.</p>
+
+<p>Download your git repo:</p>
+
+<pre><code>git clone git@github.com:your_username/compass.git
+</code></pre>
+
+<p>Set up a remote to the main repo:</p>
+
+<pre><code>cd compass
+git remote add chriseppstein git://github.com/chriseppstein/compass.git
+</code></pre>
+
+<p>Getting recent changes from the main repo:</p>
+
+<pre><code>git fetch chriseppstein
+</code></pre>
+
+<h3 id="running-local-code">Using Compass while Under Development</h3>
+
+
+<ol>
+<li>Use the bin script. <code>/path/to/compass/bin/compass</code> is a version of the compass
+command line that uses the local changes you have made. You can add <code>/path/to/compass/bin</code>
+to your <code>$PATH</code>, or refer to it directly.</li>
+<li>Build and install a gem:
+
+<ol>
+<li><p>Edit VERSION.yml and add a build indicator like so (<strong>Do not commit this change</strong>):</p>
+
+<pre><code>---
+:major: 0
+:minor: 10
+:patch: 6
+:build: something-uniq-to-me.1
+</code></pre></li>
+<li><code>gem build compass.gemspec</code></li>
+<li><code>gem install compass-0.10.6.something-uniq-to-me.1.gem</code> -- If installing to your
+system gems, you'll probably need to add <code>sudo</code> to the front. If you don't know
+what that means, you probably need to add <code>sudo</code> to the front.</li>
+</ol>
+</li>
+<li><p>In a <a href="http://gembundler.com/">bundled</a> environment, you can configure your gem to use compass
+while you work on it like so:</p>
+
+<pre><code>gem 'compass', :path =&gt; "/Users/myusername/some/path/to/compass"
+</code></pre>
+
+<p>Bundler will perform some sort of charm on ruby to make it work.</p></li>
+<li><p>Configuring ruby directly. If you're a ruby pro, you probably don't need to be
+told that you can set compass on the load path like so:</p>
+
+<pre><code>export RUBYLIB=/Users/myusername/some/path/to/compass/lib
+</code></pre></li>
+</ol>
+
+
+<h3 id="running-tests">Running Tests</h3>
+
+
+<ol>
+<li><p>You must have Ruby installed on your system. After <a href="contributing.html#setting-up-git">setting up git</a>,
+change to the root directory of your git checkout of Compass.</p>
+
+<pre><code>cd compass
+</code></pre></li>
+<li><p>Install the bundler Ruby gem.</p>
+
+<pre><code>gem install bundler
+</code></pre>
+
+<p>If installing to your system gems, you'll probably need to add <code>sudo</code> to the
+front of that command. If you don't know what that means, you probably need
+to add <code>sudo</code> to the front.</p></li>
+<li><p>Install development dependencies:</p>
+
+<pre><code>bundle install --binstubs devbin
+</code></pre></li>
+<li><p>Running core library and stylesheet tests:</p>
+
+<pre><code>bundle exec rake test features
+</code></pre></li>
+<li><p>Running behavior tests</p>
+
+<pre><code>./devbin/cucumber
+</code></pre></li>
+</ol>
+
+
+<p>If stylesheet tests fail, the output of the test project is captured in
+<code>test/fixtures/stylesheets/&lt;project&gt;/saved/</code> and the error message will report where
+the error was. Here's an example:</p>
+
+<p><img src="http://img.skitch.com/20101015-k4t11k8n7xs2r53ftjhrji629d.png" alt="Stylesheet Test Failure" /></p>
+
+<h3 id="writing-tests">Writing Stylesheet Tests</h3>
+
+
+<p>Compass has stylesheet tests to ensure that each stylesheet compiles, can be imported directly
+without any other dependencies and that refactorings that should not affect the output, don't.</p>
+
+<p>At some point, it would be great to have a test system that verifies that the stylesheets
+<em>work correctly</em> in various browsers. If you have ideas for how to accomplish this in a sane
+way, please let us know.</p>
+
+<p>In the <code>test/fixtures/stylesheets</code> directory, there are a number of compass projects.
+The tests work by adding or updating the sass files, running the tests to make sure they fail,
+and then changing the expected css output to make the test pass. It is rudimentary, but as
+a safety net, it has caught a number of problems that might have been missed otherwise.
+If you add a new stylesheet to compass, please make sure to add a new test stylesheet
+that only imports the newly added stylesheet and add rules that use the new features in that
+stylesheet.</p>
+
+<h3 id="recovering-from-rebased-or-cherry-picked-changesets">You cherry-picked/rebased
+my changes. What should I do?</h3>
+
+
+<p>Depending on any number of reasons, including but not limited to the alignment of the stars,
+Your changes might not be merged into compass using a simple merge. For instance, we might
+decide to place a change against master into stable instead, or we might squish all your
+changes together into a single commit at the time of merge, or we might want a change you've
+submitted but not a change that it was placed onto top of. In these cases, there are
+a couple of ways you can react:</p>
+
+<ol>
+<li>If you have some changes on a branch that were not yet accepted, but other changes on that
+branch were accepted then you should run the following command (make sure to fetch first):
+<code>git checkout branch_name; git rebase chriseppstein/master</code> (assuming the change was applied
+to the master branch)</li>
+<li>If all your changes on the topic branch were accepted or you don't care to keep it around
+anymore: <code>git checkout master; git branch -D branch_name; git push origin :branch_name</code></li>
+</ol>
+
+</article>
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+</body>
+</html>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../blog/atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Blueprint Grid | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+</head>
+<body class=' reference blueprint' id='reference-blueprint-grid'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='docs-nav' role='navigation'>
+<a href='../index.html' rel='blueprint'>Blueprint</a>
+<a href='../../../docs/index.html' rel='core'>Core</a>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='syntax_pref'>
+<a href='index.html#' rel='scss'>scss</a>
+<a href='index.html#' rel='sass'>sass</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<aside role='sidebar'><nav id='local-nav'>
+<ul><li class='selected'>
+<h2>
+<a class='selected' href='../index.html'>Blueprint</a>
+</h2>
+</li>
+<ul><li class=''>
+<a class='' href='../buttons/index.html'>
+<span>Buttons</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../colors/index.html'>
+<span>Colors</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../debug/index.html'>
+<span>Debug</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../fancy_type/index.html'>
+<span>Fancy Type</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../form/index.html'>
+<span>Form</span>
+</a>
+</li>
+<li class='selected'>
+<a class='selected' href='index.html'>
+<span>Grid</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../interaction/index.html'>
+<span>Interaction</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../ie/index.html'>
+<span>Internet Explorer</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../link_icons/index.html'>
+<span>Link Icons</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../liquid/index.html'>
+<span>Liquid</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../print/index.html'>
+<span>Print</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../reset/index.html'>
+<span>Reset</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../rtl/index.html'>
+<span>Rtl</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../scaffolding/index.html'>
+<span>Scaffolding</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../typography/index.html'>
+<span>Typography</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../utilities/index.html'>
+<span>Utilities</span>
+</a>
+</li>
+</ul>
+</ul>
+</nav>
+<div class='advertisement'>
+<script type="text/javascript">(function(){ var fusion = document.createElement('script'); fusion.src = window.location.protocol + '//adn.fusionads.net/api/1.0/ad.js?zoneid=158&rand=' + Math.floor(Math.random()*9999999); fusion.async = true; (document.head || document.getElementsByTagName('head')[0]).appendChild(fusion); })(); $(function(){ $(".advertisement").addClass("visible")});</script>
+<div id='fusion_ad'>
+<a class='pagerankspam' href='http://fusionads.net'>Powered by Fusion</a>
+</div>
+</div>
+
+</aside>
+<article><a href="http://github.com/chriseppstein/compass/blob/stable/frameworks/blueprint/stylesheets/blueprint/_grid.scss" rel="github-source" title="view source for this module on github">Source on Github</a>
+<h1>Blueprint Grid</h1>
+<p>
+The blueprint grid.
+</p>
+
+<p>
+This file can be imported using:
+<code>@import "blueprint/grid"</code>
+</p>
+<h2>Examples</h2>
+<dl class="examples">
+<dt><a href="../../../examples/blueprint/grid/two_cols/index.html">Two Column Layout</a></dt>
+<dd>A semantic two-column layout</dd>
+</dl><h2>Imports</h2>
+<ol>
+<li>
+<a href="../../compass/utilities/general/clearfix/index.html" title="@import compass/utilities/general/clearfix">Clearfix</a>
+– Mixins for clearfixing.
+</li>
+<li>
+<a href="../../compass/utilities/general/float/index.html" title="@import compass/utilities/general/float">Float</a>
+– Mixins for cross-browser floats.
+</li>
+</ol><h2>
+Configurable Variables
+<a class="help" href="../../../help/tutorials/configurable-variables/index.html">help</a>
+</h2>
+<h3 class="constant" id="const-blueprint-grid-columns">
+<a class="permalink" href="index.html#const-blueprint-grid-columns">$blueprint-grid-columns</a>
+<code>24</code>
+</h3>
+<p></p><p>The number of columns in the grid.</p>
+
+<h3 class="constant" id="const-blueprint-grid-width">
+<a class="permalink" href="index.html#const-blueprint-grid-width">$blueprint-grid-width</a>
+<code>30px</code>
+</h3>
+<p></p><p>The width of a column</p>
+
+<h3 class="constant" id="const-blueprint-grid-margin">
+<a class="permalink" href="index.html#const-blueprint-grid-margin">$blueprint-grid-margin</a>
+<code>10px</code>
+</h3>
+<p></p><p>The amount of margin between columns</p>
+
+
+<h2>Constants</h2>
+<h3 class="constant" id="const-blueprint-grid-outer-width">
+<a class="permalink" href="index.html#const-blueprint-grid-outer-width">$blueprint-grid-outer-width</a>
+<code>$blueprint-grid-width + $blueprint-grid-margin</code>
+</h3>
+<p></p><p>The width of a column including the margin. With default settings this is <code>40px</code>.</p>
+
+<h3 class="constant" id="const-blueprint-container-size">
+<a class="permalink" href="index.html#const-blueprint-container-size">$blueprint-container-size</a>
+<code>$blueprint-grid-outer-width * $blueprint-grid-columns - $blueprint-grid-margin</code>
+</h3>
+<p></p><p>The width of the container. With default settings this is <code>950px</code>.</p>
+
+
+
+<h2>Functions</h2>
+<a href="index.html#function-span-source" rel="view source">view source</a>
+<h3 class="function" id="function-span">
+<a class="permalink" href="index.html#function-span">span(<span class="arg">$n</span>)</a>
+</h3>
+<div class="function-source" id="function-span-source">
+<pre class="brush: sass source-code sass">@function span($n)
+  @return $blueprint-grid-width * $n + $blueprint-grid-margin * ($n - 1)
+</pre>
+<pre class="brush: scss source-code scss">@function span($n) {
+  @return $blueprint-grid-width * $n + $blueprint-grid-margin * ($n - 1);
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Return the width in pixels of <code>$n</code> columns.</p>
+
+</div>
+
+<h2>Mixins</h2>
+<a href="index.html#mixin-blueprint-grid-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-blueprint-grid">
+<a class="permalink" href="index.html#mixin-blueprint-grid">blueprint-grid</a>
+</h3>
+<div class="mixin-source" id="mixin-blueprint-grid-source">
+<pre class="brush: sass source-code sass">=blueprint-grid
+  // A container should group all your columns
+  .container
+    +container
+  .column
+    +column-base
+  // The last column in a row needs this class (or mixin) or it will end up on the next row.
+  .last
+    +last
+  // Use these classes (or mixins) to set the width of a column.
+  @for $n from 1 to $blueprint-grid-columns
+    .span-#{$n}
+      @extend .column
+      width: span($n)
+  .span-#{$blueprint-grid-columns}
+    @extend .column
+    width: span($blueprint-grid-columns)
+    margin: 0
+  input, textarea, select
+    @for $n from 1 through $blueprint-grid-columns
+      &amp;.span-#{$n}
+        width: span($n)
+  // Add these to a column to append empty cols.
+  @for $n from 1 to $blueprint-grid-columns
+    .append-#{$n}
+      +append($n)
+  // Add these to a column to prepend empty cols.
+  @for $n from 1 to $blueprint-grid-columns
+    .prepend-#{$n}
+      +prepend($n)
+  // Use these classes on an element to push it into the
+  // next column, or to pull it into the previous column.
+  #{enumerate(".pull", 1, $blueprint-grid-columns)}
+    +pull-base
+  @for $n from 1 through $blueprint-grid-columns
+    .pull-#{$n}
+      +pull-margins($n)
+  #{enumerate(".push", 1, $blueprint-grid-columns)}
+    +push-base
+  @for $n from 1 through $blueprint-grid-columns
+    .push-#{$n}
+      +push-margins($n)
+  .prepend-top
+    +prepend-top
+  .append-bottom
+    +append-bottom
+</pre>
+<pre class="brush: scss source-code scss">@mixin blueprint-grid {
+  // A container should group all your columns
+  .container {
+    @include container;
+  }
+  .column {
+    @include column-base;
+  }
+  // The last column in a row needs this class (or mixin) or it will end up on the next row.
+  .last {
+    @include last;
+  }
+  // Use these classes (or mixins) to set the width of a column.
+  @for $n from 1 to $blueprint-grid-columns {
+    .span-#{$n} {
+      @extend .column;
+      width: span($n);
+    }
+  }
+  .span-#{$blueprint-grid-columns} {
+    @extend .column;
+    width: span($blueprint-grid-columns);
+    margin: 0;
+  }
+  input, textarea, select {
+    @for $n from 1 through $blueprint-grid-columns {
+      &amp;.span-#{$n} {
+        width: span($n);
+      }
+    }
+  }
+  // Add these to a column to append empty cols.
+  @for $n from 1 to $blueprint-grid-columns {
+    .append-#{$n} {
+      @include append($n);
+    }
+  }
+  // Add these to a column to prepend empty cols.
+  @for $n from 1 to $blueprint-grid-columns {
+    .prepend-#{$n} {
+      @include prepend($n);
+    }
+  }
+  // Use these classes on an element to push it into the
+  // next column, or to pull it into the previous column.
+  #{enumerate(".pull", 1, $blueprint-grid-columns)} {
+    @include pull-base;
+  }
+  @for $n from 1 through $blueprint-grid-columns {
+    .pull-#{$n} {
+      @include pull-margins($n);
+    }
+  }
+  #{enumerate(".push", 1, $blueprint-grid-columns)} {
+    @include push-base;
+  }
+  @for $n from 1 through $blueprint-grid-columns {
+    .push-#{$n} {
+      @include push-margins($n);
+    }
+  }
+  .prepend-top {
+    @include prepend-top;
+  }
+  .append-bottom {
+    @include append-bottom;
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Generates presentational class names that you can use
+in your html to layout your pages.</p>
+
+<h4>Note:</h4>
+
+<p>Best practices discourage using this mixin,
+but it is provided to support legacy websites
+and to test the sass port against blueprint's example pages.</p>
+
+</div>
+<a href="index.html#mixin-container-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-container">
+<a class="permalink" href="index.html#mixin-container">container</a>
+</h3>
+<div class="mixin-source" id="mixin-container-source">
+<pre class="brush: sass source-code sass">=container
+  width: $blueprint-container-size
+  margin: 0 auto
+  +clearfix
+</pre>
+<pre class="brush: scss source-code scss">@mixin container {
+  width: $blueprint-container-size;
+  margin: 0 auto;
+  @include clearfix;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>A container for your columns.</p>
+
+<h4>Note:</h4>
+
+<p>If you use this mixin without the class and want to support ie6
+you must set text-align left on your container element in an IE stylesheet.</p>
+
+</div>
+<a href="index.html#mixin-last-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-last">
+<a class="permalink" href="index.html#mixin-last">last</a>
+</h3>
+<div class="mixin-source" id="mixin-last-source">
+<pre class="brush: sass source-code sass">=last
+  margin-right: 0
+</pre>
+<pre class="brush: scss source-code scss">@mixin last {
+  margin-right: 0;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>The last column in a row needs this mixin or it will end up
+on the next row in some browsers.</p>
+
+</div>
+<a href="index.html#mixin-column-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-column">
+<a class="permalink" href="index.html#mixin-column">column(<span class="arg">$n</span>, <span class="arg" data-default-value="false">$last</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-column-source">
+<pre class="brush: sass source-code sass">=column($n, $last: false)
+  +column-base($last)
+  width: span($n)
+</pre>
+<pre class="brush: scss source-code scss">@mixin column($n, $last: false) {
+  @include column-base($last);
+  width: span($n);
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Use this mixins to set the width of n columns.</p>
+
+</div>
+<a href="index.html#mixin-span-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-span">
+<a class="permalink" href="index.html#mixin-span">span(<span class="arg">$n</span>, <span class="arg" data-default-value="false">$important</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-span-source">
+<pre class="brush: sass source-code sass">=span($n, $important: false)
+  @warn "The span mixin is deprecated. Please use the span function instead. E.g. width: span(#{$n})"
+  @if $important
+    width: span($n) !important
+  @else
+    width: span($n)
+</pre>
+<pre class="brush: scss source-code scss">@mixin span($n, $important: false) {
+  @warn "The span mixin is deprecated. Please use the span function instead. E.g. width: span(#{$n})";
+  @if $important {
+    width: span($n) !important;
+  }
+  @else {
+    width: span($n);
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Set only the width of an element to align it with the grid.
+Most of the time you'll want to use <code>+column</code> instead.</p>
+
+<p>This mixin is especially useful for aligning tables to the grid.</p>
+
+<p>@deprecated Please use the span function with the width property instead.</p>
+
+</div>
+<a href="index.html#mixin-column-base-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-column-base">
+<a class="permalink" href="index.html#mixin-column-base">column-base(<span class="arg" data-default-value="false">$last</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-column-base-source">
+<pre class="brush: sass source-code sass">=column-base($last: false)
+  +float-left
+  @if $last
+    +last
+  @else
+    margin-right: $blueprint-grid-margin
+  * html &amp;
+    overflow-x: hidden
+</pre>
+<pre class="brush: scss source-code scss">@mixin column-base($last: false) {
+  @include float-left;
+  @if $last {
+    @include last;
+  }
+  @else {
+    margin-right: $blueprint-grid-margin;
+  }
+  * html &amp; {
+    overflow-x: hidden;
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>The basic set of styles needed to make an element
+behave like a column:</p>
+
+<ul>
+<li>floated to left</li>
+<li>gutter margin on the right (unless the last column)</li>
+<li>Some IE fixes</li>
+</ul>
+<h4>Note:</h4>
+
+<p>This mixin gets applied automatically when using <code>+column</code>
+so you probably don't need to use it directly unless
+you need to deviate from the grid or are trying
+to reduce the amount of generated CSS.</p>
+
+</div>
+<a href="index.html#mixin-append-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-append">
+<a class="permalink" href="index.html#mixin-append">append(<span class="arg">$n</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-append-source">
+<pre class="brush: sass source-code sass">=append($n)
+  padding-right: $blueprint-grid-outer-width * $n
+</pre>
+<pre class="brush: scss source-code scss">@mixin append($n) {
+  padding-right: $blueprint-grid-outer-width * $n;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Mixin to a column to append n empty columns to the right
+by adding right padding to the column.</p>
+
+</div>
+<a href="index.html#mixin-prepend-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-prepend">
+<a class="permalink" href="index.html#mixin-prepend">prepend(<span class="arg">$n</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-prepend-source">
+<pre class="brush: sass source-code sass">=prepend($n)
+  padding-left: $blueprint-grid-outer-width * $n
+</pre>
+<pre class="brush: scss source-code scss">@mixin prepend($n) {
+  padding-left: $blueprint-grid-outer-width * $n;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Mixin to a column to append n empty columns to the left
+by adding left padding to the column.</p>
+
+</div>
+<a href="index.html#mixin-append-bottom-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-append-bottom">
+<a class="permalink" href="index.html#mixin-append-bottom">append-bottom(<span class="arg" data-default-value="1.5em">$amount</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-append-bottom-source">
+<pre class="brush: sass source-code sass">=append-bottom($amount: 1.5em)
+  margin-bottom: $amount
+</pre>
+<pre class="brush: scss source-code scss">@mixin append-bottom($amount: 1.5em) {
+  margin-bottom: $amount;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Adds trailing margin.</p>
+
+</div>
+<a href="index.html#mixin-prepend-top-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-prepend-top">
+<a class="permalink" href="index.html#mixin-prepend-top">prepend-top(<span class="arg" data-default-value="1.5em">$amount</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-prepend-top-source">
+<pre class="brush: sass source-code sass">=prepend-top($amount: 1.5em)
+  margin-top: $amount
+</pre>
+<pre class="brush: scss source-code scss">@mixin prepend-top($amount: 1.5em) {
+  margin-top: $amount;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Adds leading margin.</p>
+
+</div>
+<a href="index.html#mixin-pull-base-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-pull-base">
+<a class="permalink" href="index.html#mixin-pull-base">pull-base</a>
+</h3>
+<div class="mixin-source" id="mixin-pull-base-source">
+<pre class="brush: sass source-code sass">=pull-base
+  +float-left
+  position: relative
+</pre>
+<pre class="brush: scss source-code scss">@mixin pull-base {
+  @include float-left;
+  position: relative;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Base styles that make it possible to pull an element to the left.</p>
+
+<h4>Note:</h4>
+
+<p>This mixin gets applied automatically when using <code>+pull</code>
+so you probably don't need to use it directly unless
+you need to deviate from the grid or are trying
+to reduce the amount of generated CSS.</p>
+
+</div>
+<a href="index.html#mixin-pull-margins-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-pull-margins">
+<a class="permalink" href="index.html#mixin-pull-margins">pull-margins(<span class="arg">$n</span>, <span class="arg" data-default-value="false">$last</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-pull-margins-source">
+<pre class="brush: sass source-code sass">=pull-margins($n, $last: false)
+  @if $last
+    margin-left: -$blueprint-grid-outer-width * $n + $blueprint-grid-margin
+  @else
+    margin-left: -$blueprint-grid-outer-width * $n
+</pre>
+<pre class="brush: scss source-code scss">@mixin pull-margins($n, $last: false) {
+  @if $last {
+    margin-left: -$blueprint-grid-outer-width * $n + $blueprint-grid-margin;
+  }
+  @else {
+    margin-left: -$blueprint-grid-outer-width * $n;
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>The amount of pulling for element to the left.</p>
+
+<h4>Note:</h4>
+
+<p>This mixin gets applied automatically when using <code>+pull</code>
+so you probably don't need to use it directly unless
+you need to deviate from the grid or are trying
+to reduce the amount of generated CSS.</p>
+
+</div>
+<a href="index.html#mixin-pull-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-pull">
+<a class="permalink" href="index.html#mixin-pull">pull(<span class="arg">$n</span>, <span class="arg" data-default-value="false">$last</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-pull-source">
+<pre class="brush: sass source-code sass">=pull($n, $last: false)
+  +pull-base
+  +pull-margins($n, $last)
+</pre>
+<pre class="brush: scss source-code scss">@mixin pull($n, $last: false) {
+  @include pull-base;
+  @include pull-margins($n, $last);
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Moves a column <code>n</code> columns to the left.</p>
+
+<p>This mixin can also be used to change the display order of columns.</p>
+
+<p>If pulling past the last (visually) element in a row,
+pass <code>true</code> as the second argument so the calculations can adjust
+accordingly.
+For example:</p>
+
+<p>HTML:</p>
+
+<pre class="brush: html source-code html">
+<div id="one">One</div>
+<div id="two">Two</div>
+</pre>
+
+
+<p>Sass:</p>
+
+<pre class="brush: sass source-code sass">
+#one
+  +column(18, true)
+  +prepend(6)
+#two
+  +column(6)
+  +pull(18, true)
+</pre>
+
+
+<dl class="examples">
+<dt><a href="../../../examples/blueprint/grid/pull/index.html">Blueprint Pull Example</a></dt>
+<dd>Uses pull to change the display order of columns.</dd>
+</dl>
+</div>
+<a href="index.html#mixin-push-base-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-push-base">
+<a class="permalink" href="index.html#mixin-push-base">push-base</a>
+</h3>
+<div class="mixin-source" id="mixin-push-base-source">
+<pre class="brush: sass source-code sass">=push-base
+  +float-left
+  position: relative
+</pre>
+<pre class="brush: scss source-code scss">@mixin push-base {
+  @include float-left;
+  position: relative;
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-push-margins-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-push-margins">
+<a class="permalink" href="index.html#mixin-push-margins">push-margins(<span class="arg">$n</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-push-margins-source">
+<pre class="brush: sass source-code sass">=push-margins($n)
+  margin: 0 -$blueprint-grid-outer-width * $n 1.5em $blueprint-grid-outer-width * $n
+</pre>
+<pre class="brush: scss source-code scss">@mixin push-margins($n) {
+  margin: 0 -$blueprint-grid-outer-width * $n 1.5em $blueprint-grid-outer-width * $n;
+}
+</pre>
+</div>
+<div class="source-documentation">
+
+</div>
+<a href="index.html#mixin-push-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-push">
+<a class="permalink" href="index.html#mixin-push">push(<span class="arg">$n</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-push-source">
+<pre class="brush: sass source-code sass">=push($n)
+  +push-base
+  +push-margins($n)
+</pre>
+<pre class="brush: scss source-code scss">@mixin push($n) {
+  @include push-base;
+  @include push-margins($n);
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>mixin to a column to push it n columns to the right</p>
+
+</div>
+<a href="index.html#mixin-border-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-border">
+<a class="permalink" href="index.html#mixin-border">border(<span class="arg" data-default-value="$blueprint-border-color">$border-color</span>, <span class="arg" data-default-value="1px">$border-width</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-border-source">
+<pre class="brush: sass source-code sass">=border($border-color: $blueprint-border-color, $border-width: 1px)
+  padding-right: $blueprint-grid-margin / 2 - $border-width
+  margin-right: $blueprint-grid-margin / 2
+  border-right: #{$border-width} solid #{$border-color}
+</pre>
+<pre class="brush: scss source-code scss">@mixin border($border-color: $blueprint-border-color, $border-width: 1px) {
+  padding-right: $blueprint-grid-margin / 2 - $border-width;
+  margin-right: $blueprint-grid-margin / 2;
+  border-right: #{$border-width} solid #{$border-color};
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Border on right hand side of a column.</p>
+
+</div>
+<a href="index.html#mixin-colborder-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-colborder">
+<a class="permalink" href="index.html#mixin-colborder">colborder(<span class="arg" data-default-value="$blueprint-border-color">$border-color</span>, <span class="arg" data-default-value="1px">$border-width</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-colborder-source">
+<pre class="brush: sass source-code sass">=colborder($border-color: $blueprint-border-color, $border-width: 1px)
+  padding-right: floor(($blueprint-grid-width + 2 * $blueprint-grid-margin - $border-width) / 2)
+  margin-right: ceil(($blueprint-grid-width + 2 * $blueprint-grid-margin - $border-width) / 2)
+  border-right: #{$border-width} solid #{$border-color}
+</pre>
+<pre class="brush: scss source-code scss">@mixin colborder($border-color: $blueprint-border-color, $border-width: 1px) {
+  padding-right: floor(($blueprint-grid-width + 2 * $blueprint-grid-margin - $border-width) / 2);
+  margin-right: ceil(($blueprint-grid-width + 2 * $blueprint-grid-margin - $border-width) / 2);
+  border-right: #{$border-width} solid #{$border-color};
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Border with more whitespace, spans one column.</p>
+
+</div>
+<a href="index.html#mixin-colruler-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-colruler">
+<a class="permalink" href="index.html#mixin-colruler">colruler(<span class="arg" data-default-value="#dddddd">$border-color</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-colruler-source">
+<pre class="brush: sass source-code sass">=colruler($border-color: #dddddd)
+  background: $border-color
+  color: $border-color
+  clear: both
+  float: none
+  width: 100%
+  height: 0.1em
+  margin: 0 0 1.45em
+  border: none
+</pre>
+<pre class="brush: scss source-code scss">@mixin colruler($border-color: #dddddd) {
+  background: $border-color;
+  color: $border-color;
+  clear: both;
+  float: none;
+  width: 100%;
+  height: 0.1em;
+  margin: 0 0 1.45em;
+  border: none;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Mixin this to an hr to make a horizontal ruler across a column.</p>
+
+</div>
+<a href="index.html#mixin-colspacer-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-colspacer">
+<a class="permalink" href="index.html#mixin-colspacer">colspacer</a>
+</h3>
+<div class="mixin-source" id="mixin-colspacer-source">
+<pre class="brush: sass source-code sass">=colspacer
+  +colruler
+  background: white
+  color: white
+  visibility: hidden
+</pre>
+<pre class="brush: scss source-code scss">@mixin colspacer {
+  @include colruler;
+  background: white;
+  color: white;
+  visibility: hidden;
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Mixin this to an hr to make a horizontal spacer across a column.</p>
+
+</div></article>
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

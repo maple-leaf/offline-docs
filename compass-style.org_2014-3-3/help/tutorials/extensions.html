@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<title>
+Creating Compass Extensions | Compass Documentation
+</title>
+<link charset='utf-8' href='../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../javascripts/fixups.js' type='text/javascript'></script>
+
+</head>
+<body class='site tutorial' id='help-tutorials-extensions'>
+<div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='module-nav'>
+<ul>
+<li class='getting-started'>
+<a href='../index.html' rel='getting started'><span>Getting Started</span></a>
+</li>
+<li class='tutorials'>
+<a href='index.html' rel='getting started'><span>Tutorials</span></a>
+</li>
+<li class='support'>
+<a href='http://groups.google.com/group/compass-users' rel='support'><span>Support</span></a>
+</li>
+<li>
+<a href='http://github.com/chriseppstein/compass/issues' rel='bugs'><span>Bugs</span></a>
+</li>
+</ul>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='extensions.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<aside role='sidebar'>
+<nav id='local-nav'>
+<ul><li class='selected'>
+<h2>
+<a class='selected' href='index.html'>Tutorials</a>
+</h2>
+</li>
+<ul><li>
+<h3>
+<a href='integration/index.html'>Application Integration</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='best_practices/index.html'>Best practices</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='blueprint/index.html'>Blueprint Framework</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='command-line/index.html'>Compass Command Line Documentation</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='configuration-reference/index.html'>Configuration Reference</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='contributing.html'>Contributing</a>
+</h3>
+</li>
+<li class='selected'>
+<h3>
+<a class='selected' href='extensions.html'>Creating Compass Extensions</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='extending.1.html'>Extending Compass</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='production-css/index.html'>Production Stylesheets</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='exclude_vendor_prefixes/index.html'>Removing Vendor Prefixes from Compass</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='spriting/index.html'>Spriting</a>
+</h3>
+</li>
+<ul><li class=''>
+<a class='' href='spriting/customization-options.1.html'>
+<span>Customization</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='spriting/magic-selectors.1.html'>
+<span>Magic Selectors</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='spriting/sprite-layouts.1.html'>
+<span>Sprite layouts</span>
+</a>
+</li>
+</ul>
+<li>
+<h3>
+<a href='testing/index.html'>Testing</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='upgrading/index.html'>Upgrading</a>
+</h3>
+</li>
+<ul><li class=''>
+<a class='' href='upgrading/lemonade_upgrade_guide/index.html'>
+<span>Lemonade Upgrade</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='upgrading/im-scared/index.html'>
+<span>Scared to Upgrade?</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='upgrading/antares/index.html'>
+<span>Upgrading to v0.11</span>
+</a>
+</li>
+</ul>
+<li>
+<h3>
+<a href='configurable-variables/index.html'>Working with Configurable Variables</a>
+</h3>
+</li>
+</ul>
+</ul>
+</nav>
+</aside>
+<article><h1>Compass Extensions</h1>
+
+<p>Compass, at its heart, is a framework upon which sass-based stylesheet frameworks
+are built. It provides the tools for building, installing and using reusable
+stylesheets that provide anything from full-fledged layout frameworks to designs
+for widgets or even full page designs. All using the power of sass to keep the
+semantic meaning of the html pages clear and free of design details.</p>
+
+<p>This document describes the compass extension toolset so that you can build
+your own compass extension.</p>
+
+<h2>Basic Extension Layout</h2>
+
+<pre>
+<strong>my_extension</strong>
+|
+|- <strong>stylesheets</strong> (this directory will be on the sass load path)
+|  |
+|  |- my_extension (not technically required, but it's good to scope imports by the name of the extension)
+|  |  |
+|  |  |- _module_one.sass (this file would be imported using <code>@import my_extension/module_one.sass</code>)
+|  |  |- _module_two.sass (this file would be imported using <code>@import my_extension/module_two.sass</code>)
+|  |  |- ...
+|  |
+|  |- _my_extension.sass (This file will import the entire extension using <code>@import my_extension.sass</code>)
+|
+|- <strong>templates</strong> (this is where templates/patterns go)
+|  |
+|  |- <strong>project</strong> (this should be provided if you'd like people to be able to base their project on the extension)
+|  |  |
+|  |  |- <strong>manifest.rb</strong> (this file should declare the contents of the template)
+|  |  |- screen.sass (this would be the main stylesheet, importing from your extension and demonstrating its use)
+|  |  |- print.sass (this file would set up basic print styles)
+|  |  |- ie.sass (if you want, you can provide custom styles for IE)
+|  |
+|  |- some_pattern
+|     |
+|     |- <strong>manifest.rb</strong>
+|     |- some.sass (some sass is probably in order, always import from the extension library as much as possible)
+|     |- some_script.js (yes, you can provide javascript code)
+|     |- some_image.png (and images)
+|     |- some_content.html.haml (and even html and haml)
+|     |- some_other_file.txt (and other arbitrary files)
+|
+|- <strong>lib</strong> (optional ruby code)
+   |
+   |- <strong>my_extension.rb</strong> (this code can register your framework if you deviate from conventions and require sass extensions, etc.)
+   |
+   |- my_extension
+      |
+      |- sass_extensions.rb (this is the standard location to place sass functions)
+</pre>
+
+
+<p>Names in <strong>bold</strong> are part of the extension naming convention.</p>
+
+<h2>Generating an Extension</h2>
+
+<p>If you want a leg up to get started working on your extension,
+you can use compass to generate an extension with the following command:</p>
+
+<pre><code>compass create my_extension --using compass/extension 
+</code></pre>
+
+<p>This will create a few basic files and folders to get you started.</p>
+
+<p>If you prefer to use the scss syntax for your extension run the following command instead:</p>
+
+<pre><code>compass create my_extension --using compass/extension -x scss
+</code></pre>
+
+<h2>Advanced Layout Options</h2>
+
+<h3>Library File Location</h3>
+
+<p>The extension library file referenced above as <code>my_extension/lib/my_extension.rb</code>
+can actually be stored at any of the following three locations:</p>
+
+<ol>
+<li><code>my_extension/compass_init.rb</code></li>
+<li><code>my_extension/lib/my_extension.rb</code> (NOTE: You must use this one if you're distributing as a rubygem.)</li>
+<li><code>my_extension/my_extension.rb</code></li>
+</ol>
+
+
+<p>The first of those locations found (in the above order) will be loaded.
+The compass_init.rb file takes priority, so that extensions that want to work
+differently as compass extensions than they do as normal ruby libraries,
+have a way of targeting compass.</p>
+
+<p><a name="registration"></a></p>
+
+<h3>Stylesheet and Template Locations</h3>
+
+<p>If you'd like to store your stylesheets and/or templates in a non-standard location within your extension,
+you must provide a library file and register the extension explicitly like so:</p>
+
+<pre><code>base_directory  = File.join(File.dirname(__FILE__), '..')
+stylesheets_dir = File.join(base_directory, 'my', 'stylesheets')
+templates_dir   = File.join(base_directory, 'my', 'templates')
+Compass::Frameworks.register('my_extension', :stylesheets_directory =&gt; stylesheets_dir, :templates_directory =&gt; templates_dir)
+</code></pre>
+
+<p>If you're following the standard naming convention, but the stylesheet and
+template directories are not at the top level, you can just do this instead:</p>
+
+<pre><code># path from the library file to where you're keeping your compass stuff.
+base_directory  = File.join(File.dirname(__FILE__), '..', 'compass')
+Compass::Frameworks.register('my_extension', :path =&gt; base_directory)
+</code></pre>
+
+<h3>Adding Configuration Options to Compass</h3>
+
+<p>For details on how to add new configuration options to compass <a href="extending.1.html#adding-configuration-properties">read this</a>.</p>
+
+<h2>Conventions to Follow</h2>
+
+<p>The following are not required, but are standards that your framework
+should attempt to adhere to unless there's a good reason not to do so.</p>
+
+<ol>
+<li>Have a single import for your framework.</li>
+<li>Break up your framework into modules so that people can import just smaller
+pieces for faster load times when they're not using everything.</li>
+<li>Use partials (files starting with an underscore) for stylesheets that are meant
+to be imported. If you do not Sass will generate css
+files for your libraries in some configurations.</li>
+<li>Provide a project template. If you do not, your project should only be
+providing widgets or page designs, etc.</li>
+</ol>
+
+
+<h1>Building a Template (a.k.a. Pattern)</h1>
+
+<h2>Manifest Files</h2>
+
+<p>The manifest file declares the template contents and tells compass information
+about the files in the template.</p>
+
+<h3>An Example Manifest File</h3>
+
+<pre><code>description "My awesome compass plugin."
+
+stylesheet 'screen.sass', :media =&gt; 'screen, projection'
+stylesheet 'partials/_base.sass'
+stylesheet 'print.sass',  :media =&gt; 'print'
+stylesheet 'ie.sass',     :media =&gt; 'screen, projection', :condition =&gt; "lt IE 8"
+
+image 'grid.png'
+javascript 'script.js'
+
+html 'welcome.html.haml', :erb =&gt; true
+file 'README'
+
+help %Q{
+This is a message that users will see if they type
+
+  compass help my_extension
+
+You can use it to help them learn how to use your extension.
+}
+
+welcome_message %Q{
+This is a message that users will see after they install this pattern.
+Use this to tell users what to do next.
+}
+</code></pre>
+
+<p>You may also see some real manifest files here:</p>
+
+<ul>
+<li><a href="http://github.com/chriseppstein/compass/blob/master/frameworks/blueprint/templates/project/manifest.rb">blueprint</a></li>
+<li><a href="http://github.com/ericam/compass-css-lightbox/blob/master/templates/project/manifest.rb">compass-css-lightbox</a></li>
+</ul>
+
+
+<h3>Manifest Declarations</h3>
+
+<p><strong>Easy Mode:</strong> If you just have some basic files and nothing fancy going on, simply place this line in your manifest:</p>
+
+<pre><code>discover :all
+</code></pre>
+
+<p>If the file is missing <code>discover :all</code> is the default</p>
+
+<p>This will cause compass to find all the files in your template and use the files' extension to determine where they should go. Alternatively, you can request that compass only discover files of a certain type. For example, the following will only discover javascript and image assets, you could then declare other file types on your own.</p>
+
+<pre><code>discover :javascripts
+discover :images
+</code></pre>
+
+<p>The following types may be discovered: <code>:stylesheets</code>, <code>:images</code>, <code>:javascripts</code>, <code>:fonts</code>, <code>:html</code>, <code>:files</code>, and <code>:directories</code></p>
+
+<p><strong>Normal Mode:</strong> There are seven kinds of manifest declarations:</p>
+
+<ol>
+<li><code>stylesheet</code> - Declares a sass file.</li>
+<li><code>image</code> - Declares an image.</li>
+<li><code>javascript</code> - Declares a javascript file.</li>
+<li><code>font</code> - Declares a font file.</li>
+<li><code>html</code> - Declares an html file.</li>
+<li><code>file</code> - Declares a random file.</li>
+<li><code>directory</code> - Declares a directory should be created.</li>
+</ol>
+
+
+<p>All declarations take the path to the file as their first argument. Note that the
+normal slash <code>/</code> can and should be used in a manifest. Compass will take care of
+the cross platform issues. The path to the file will be reproduced in the user's
+project, so please keep that in mind when creating folders. The location where
+files are going to be installed is dictated by the user's project configuration,
+however, a template can place things into subdirectories relative to those locations.</p>
+
+<p>Common options:</p>
+
+<ul>
+<li><code>:erb</code> - When set to true, the file will be processed via the ERB templating language.
+See the "Advanced Manifests" section below for more details.</li>
+<li><code>:to</code> - The location where the file should be installed relative to the
+type-specific location.</li>
+<li><code>:like</code> - Most often used with a <code>file</code> declaration, this option allows you to
+install into the location of another manifest type (and also :css). E.g. :like => :css</li>
+</ul>
+
+
+<p>Stylesheet options:</p>
+
+<ul>
+<li><code>:media</code> - this is used as a hint to the user about the media attribute of the
+stylesheet link tag.</li>
+<li><code>:condition</code> - this is used to hint the user that a conditional comment should be
+used to import the stylesheet with the given condition.</li>
+</ul>
+
+
+<p>Directory options:</p>
+
+<ul>
+<li><code>:within</code> - where the directory should be created. If omitted, the directory
+will be relative to the project directory. Can be one of: the following
+
+<ul>
+<li><code>sass_dir</code></li>
+<li><code>javascripts_dir</code></li>
+<li><code>fonts_dir</code></li>
+<li><code>images_dir</code></li>
+</ul>
+</li>
+</ul>
+
+
+<p>HTML files:</p>
+
+<p>You can provide html as haml or as plain html. If you provide haml, the haml will be
+converted to html when it is installed, unless the project allows haml files.
+Providing html files is usually done to demonstrate how to use a more complicated
+design and to get the user started off with working product.</p>
+
+<h3>Advanced Manifests and Templates</h3>
+
+<ul>
+<li>ERB Processing - This can be used to customize the contents of the file in an
+extension template. The template will be processed in the context of a
+TemplateContext instance, which gives you access to the full project configuration
+information as well as the command line options. Since it's unlikely many templates
+will need this functionality, I leave it as an exercise of the user to figure it out
+and if they can't to contact the compass-devs mailing list for assistance.</li>
+<li><code>no_configuration_file!</code> - calling this method within the manifest will tell
+the installer to skip the creation of a configuration file.</li>
+<li><code>skip_compilation!</code> - calling this method within the manifest will tell the
+installer to skip compilation of sass files to css.</li>
+</ul>
+
+
+<h2>Distributing Extensions as Ruby Gems</h2>
+
+<p>Rubygems is a flexible, easy-to-use system for distributing ruby software.
+If you have any questions about rubygems, I suggest that you start looking
+for help <a href="http://help.rubygems.org/">here</a>.</p>
+
+<p>The big advantages of using rubygems to distribute your extension is that
+it allows your extension to be a dependency for other projects and that each
+install is versioned, which makes supporting your extension easier.</p>
+
+<h2>Tips for Developing Extensions</h2>
+
+<ul>
+<li>If you're developing a simple extension, you may find it convenient to place
+your extension within an existing compass project in the extension folder.</li>
+<li>Never specify an extension in your imports as this can cause issue when the
+syntax of a file changes.</li>
+</ul>
+
+
+<h2>Packaging an Extension as a RubyGem</h2>
+
+<p>You do not <em>have</em> to make your extension a ruby gem. But if you do, you get some benefits you would not have otherwise:</p>
+
+<ul>
+<li>Releases</li>
+<li>Versions</li>
+<li>A standard way of asking your users what release they are using.</li>
+<li>Better integration with ruby-based projects via tools like
+<a href="http://gembundler.com/">Bundler</a>.</li>
+</ul>
+
+
+<h3>Creating a Gem</h3>
+
+<p>Before you begin, please ensure you have gem version <code>1.3.6</code> or greater. <code>gem -v</code> will tell you the currently installed version.</p>
+
+<ol>
+<li>Define your gemspec file at the top of your extension. Here's <a href="http://github.com/ericam/compass-css-lightbox/blob/master/css-lightbox.gemspec">an example of
+one</a>.
+The gemspec should have the same name as your gem.</li>
+<li><p>Register your framework by adding <code>lib/my_extension.rb</code> and registering it:</p>
+
+<pre><code>require 'compass'
+extension_path = File.expand_path(File.join(File.dirname(__FILE__), ".."))
+Compass::Frameworks.register('my_extension', :path =&gt; extension_path)
+</code></pre>
+
+<p>This is how compass knows where to find your extension's files when a user requires it.
+For more options, go back up and read about <a href="extensions.html#registration">Stylesheet and Template Locations</a>.</p></li>
+<li>Build a gem: <code>gem build my_extension.gemspec</code>. This will build your gem file and
+add the current version to the name. E.g. <code>my_extension-0.0.1.gem</code></li>
+<li>Test your gem by installing it locally: <code>gem install my_extension-0.0.1.gem</code></li>
+</ol>
+
+
+<h3>Releasing a Gem</h3>
+
+<p>The ruby community is nice and will host your gem files for free. To release your gem:</p>
+
+<pre><code>gem push my_extension-0.0.1.gem
+</code></pre>
+
+<p>Your ruby gem will be hosted on <a href="http://rubygems.org/">rubygems.org</a>.
+Please familiarize yourself with <a href="http://rubygems.org/pages/gem_docs">their documentation</a>.</p>
+
+<h1>Installing Extensions</h1>
+
+<p>How extensions are installed varies according to the decisions you make about
+how you are packaging and releasing your gem. There will be a standard approach
+in a future release, but until then, it is suggested that you provide your users
+with succinct installation instructions.</p>
+
+<h2>Installing Extensions Released as RubyGems</h2>
+
+<p>When creating a new project:</p>
+
+<pre><code>sudo gem install my_extension
+compass create my_project -r my_extension --using my_extension
+</code></pre>
+
+<p>The <code>-r</code> option is annoying and will not be needed in a future version of compass.
+But for now, it tells compass to find and load the extension from the local
+rubygems repository.</p>
+
+<p>To install via rubygems into an existing project:</p>
+
+<pre><code>gem install my_extension
+# edit the project configuration file and add:
+require 'my_extension'
+compass install my_extension
+</code></pre>
+
+<p>Or if you have other patterns besides the project pattern:</p>
+
+<pre><code>compass install my_extension/pattern
+</code></pre>
+
+<h2>Installing Ad-hoc Extensions</h2>
+
+<p>Ad-hoc extensions are any set of files and folders following the basic conventions
+described above. They could be installed via a zip file or by checking the code out
+from source control. Ad-hoc extensions will be automatically found in the extensions
+directory of a project and registered for import without needing a <code>require</code> statement
+in the compass configuration file.</p>
+
+<p>Currently, ad-hoc extensions can only be installed into the extensions directory
+of an existing compass project. This will be fixed in a future release of compass.
+Until then, you may need to instruct your users to create a bare project to get started:</p>
+
+<pre><code>compass create my_project --bare
+</code></pre>
+
+<p>This will create a project directory, a sass directory (with no sass files) and a configuration file.</p>
+
+<p>The standard location for extensions is <code>project_root/extensions</code> for stand-alone
+projects and <code>project_root/vendor/plugins/compass_extensions</code> for rails projects.
+Additionally, the user may customize their extensions directory by setting
+<code>extensions_dir</code> in their compass configuration file.</p>
+
+<p>To install into an existing project, simply place the extension into a project's
+extension directory. This could be done via a git clone or by extracting an archive.
+The name of the directory it creates should be the name of the extension. The project
+will now have access to the extension.</p>
+
+<h2>Verifying that an Extension is Installed Correctly</h2>
+
+<p>The user can verify that they have access to your extension by typing:</p>
+
+<pre><code>compass help
+</code></pre>
+
+<p>And they should see the framework in the list of available frameworks.
+Alternatively, if you've provided a <code>help</code> message in the manifest, then
+the user can type:</p>
+
+<pre><code>compass help my_extension
+- or -
+compass help my_extension/pattern_name
+</code></pre>
+
+<p><em>Note:</em> The user might need to provide the <code>-r</code> option to help in order for compass to
+find a gem-based extension before a project exists. This is not needed for
+extensions installed into the extensions directory, or if the project is already
+required in the current directory's project configuration.</p>
+</article>
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+</body>
+</html>

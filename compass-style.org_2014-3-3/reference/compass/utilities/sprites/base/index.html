@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../../../blog/atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Compass Sprite Base | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+</head>
+<body class=' reference core utilities' id='reference-compass-utilities-sprites-base'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='docs-nav' role='navigation'>
+<a href='../../../../blueprint/index.html' rel='blueprint'>Blueprint</a>
+<a href='../../../../../docs/index.html' rel='core'>Core</a>
+</nav>
+<nav id='module-nav'><ul><ul><li class=''>
+<a class='' href='../../../css3/index.html'>
+<span>CSS3</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../../../helpers/index.html'>
+<span>Helpers</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../../../layout/index.html'>
+<span>Layout</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../../../reset/index.html'>
+<span>Reset</span>
+</a>
+</li>
+<li class='deprecated'>
+<a class='deprecated' href='../../../reset-legacy/index.html'>
+<span>Reset (legacy)</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../../../typography/index.html'>
+<span>Typography</span>
+</a>
+</li>
+<li class='selected'>
+<a class='selected' href='../../index.html'>
+<span>Utilities</span>
+</a>
+</li>
+</ul>
+</ul>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='syntax_pref'>
+<a href='index.html#' rel='scss'>scss</a>
+<a href='index.html#' rel='sass'>sass</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<aside role='sidebar'><nav id='local-nav'>
+<ul><li class='selected'>
+<h2>
+<a class='selected' href='../index.html'>Sprites</a>
+</h2>
+</li>
+<ul><li class='selected'>
+<a class='selected' href='index.html'>
+<span>Sprite Base</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../sprite_img/index.html'>
+<span>Sprite Image</span>
+</a>
+</li>
+</ul>
+</ul>
+</nav>
+<div class='advertisement'>
+<script type="text/javascript">(function(){ var fusion = document.createElement('script'); fusion.src = window.location.protocol + '//adn.fusionads.net/api/1.0/ad.js?zoneid=158&rand=' + Math.floor(Math.random()*9999999); fusion.async = true; (document.head || document.getElementsByTagName('head')[0]).appendChild(fusion); })(); $(function(){ $(".advertisement").addClass("visible")});</script>
+<div id='fusion_ad'>
+<a class='pagerankspam' href='http://fusionads.net'>Powered by Fusion</a>
+</div>
+</div>
+
+</aside>
+<article><a href="http://github.com/chriseppstein/compass/blob/stable/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss" rel="github-source" title="view source for this module on github">Source on Github</a>
+<h1>Compass Sprite Base</h1>
+<p>These mixins are useful for working with sprites. This file is imported by
+magic sprite imports.</p>
+
+<p>See the <a href="../../../../../help/tutorials/spriting/index.html">Spriting Tutorial</a> for more information.</p>
+
+<p>
+This file can be imported using:
+<code>@import "compass/utilities/sprites/base"</code>
+</p>
+
+
+<h2>
+Configurable Variables
+<a class="help" href="../../../../../help/tutorials/configurable-variables/index.html">help</a>
+</h2>
+<h3 class="constant" id="const-sprite-selectors">
+<a class="permalink" href="index.html#const-sprite-selectors">$sprite-selectors</a>
+<code>hover, target, active</code>
+</h3>
+<p></p><p>Determines those states for which you want to enable magic sprite selectors</p>
+
+<h3 class="constant" id="const-disable-magic-sprite-selectors">
+<a class="permalink" href="index.html#const-disable-magic-sprite-selectors">$disable-magic-sprite-selectors</a>
+<code>false</code>
+</h3>
+<p></p><p>Determines if you want to include magic selectors in your sprites</p>
+
+
+
+
+<h2>Mixins</h2>
+<a href="index.html#mixin-sprite-dimensions-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-sprite-dimensions">
+<a class="permalink" href="index.html#mixin-sprite-dimensions">sprite-dimensions(<span class="arg">$map</span>, <span class="arg">$sprite</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-sprite-dimensions-source">
+<pre class="brush: sass source-code sass">=sprite-dimensions($map, $sprite)
+  height: image-height(sprite-file($map, $sprite))
+  width: image-width(sprite-file($map, $sprite))
+</pre>
+<pre class="brush: scss source-code scss">@mixin sprite-dimensions($map, $sprite) {
+  height: image-height(sprite-file($map, $sprite));
+  width: image-width(sprite-file($map, $sprite));
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Set the width and height of an element to the original
+dimensions of an image before it was included in the sprite.</p>
+
+</div>
+<a href="index.html#mixin-sprite-background-position-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-sprite-background-position">
+<a class="permalink" href="index.html#mixin-sprite-background-position">sprite-background-position(<span class="arg">$map</span>, <span class="arg">$sprite</span>, <span class="arg" data-default-value="0">$offset-x</span>, <span class="arg" data-default-value="0">$offset-y</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-sprite-background-position-source">
+<pre class="brush: sass source-code sass">=sprite-background-position($map, $sprite, $offset-x: 0, $offset-y: 0)
+  background-position: sprite-position($map, $sprite, $offset-x, $offset-y)
+</pre>
+<pre class="brush: scss source-code scss">@mixin sprite-background-position($map, $sprite, $offset-x: 0, $offset-y: 0) {
+  background-position: sprite-position($map, $sprite, $offset-x, $offset-y);
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Set the background position of the given sprite <code>$map</code> to display the
+sprite of the given <code>$sprite</code> name. You can move the image relative to its
+natural position by passing <code>$offset-x</code> and <code>$offset-y</code>.</p>
+
+</div>
+<a href="index.html#mixin-sprite-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-sprite">
+<a class="permalink" href="index.html#mixin-sprite">sprite(<span class="arg">$map</span>, <span class="arg">$sprite</span>, <span class="arg" data-default-value="false">$dimensions</span>, <span class="arg" data-default-value="0">$offset-x</span>, <span class="arg" data-default-value="0">$offset-y</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-sprite-source">
+<pre class="brush: sass source-code sass">=sprite($map, $sprite, $dimensions: false, $offset-x: 0, $offset-y: 0)
+  +sprite-background-position($map, $sprite, $offset-x, $offset-y)
+  @if $dimensions
+    +sprite-dimensions($map, $sprite)
+  @if not $disable-magic-sprite-selectors
+    +sprite-selectors($map, $sprite, $sprite, $offset-x, $offset-y)
+</pre>
+<pre class="brush: scss source-code scss">@mixin sprite($map, $sprite, $dimensions: false, $offset-x: 0, $offset-y: 0) {
+  @include sprite-background-position($map, $sprite, $offset-x, $offset-y);
+  @if $dimensions {
+    @include sprite-dimensions($map, $sprite);
+  }
+  @if not $disable-magic-sprite-selectors {
+    @include sprite-selectors($map, $sprite, $sprite, $offset-x, $offset-y);
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Include the position and (optionally) dimensions of this <code>$sprite</code>
+in the given sprite <code>$map</code>. The sprite url should come from either a base
+class or you can specify the <code>sprite-url</code> explicitly like this:</p>
+
+<pre><code>background: $map no-repeat;
+</code></pre>
+
+</div>
+<a href="index.html#mixin-sprites-source" rel="view source">view source</a>
+<h3 class="mixin" id="mixin-sprites">
+<a class="permalink" href="index.html#mixin-sprites">sprites(<span class="arg">$map</span>, <span class="arg">$sprite-names</span>, <span class="arg" data-default-value="false">$base-class</span>, <span class="arg" data-default-value="false">$dimensions</span>, <span class="arg" data-default-value="sprite-map-name($map)">$prefix</span>, <span class="arg" data-default-value="0">$offset-x</span>, <span class="arg" data-default-value="0">$offset-y</span>)</a>
+</h3>
+<div class="mixin-source" id="mixin-sprites-source">
+<pre class="brush: sass source-code sass">=sprites($map, $sprite-names, $base-class: false, $dimensions: false, $prefix: sprite-map-name($map), $offset-x: 0, $offset-y: 0)
+  @each $sprite-name in $sprite-names
+    @if sprite_does_not_have_parent($map, $sprite-name)
+      $full-sprite-name: "#{$prefix}-#{$sprite-name}"
+      .#{$full-sprite-name}
+        @if $base-class
+          @extend #{$base-class}
+        +sprite($map, $sprite-name, $dimensions, $offset-x, $offset-y)
+</pre>
+<pre class="brush: scss source-code scss">@mixin sprites($map, $sprite-names, $base-class: false, $dimensions: false, $prefix: sprite-map-name($map), $offset-x: 0, $offset-y: 0) {
+  @each $sprite-name in $sprite-names {
+    @if sprite_does_not_have_parent($map, $sprite-name) {
+      $full-sprite-name: "#{$prefix}-#{$sprite-name}";
+      .#{$full-sprite-name} {
+        @if $base-class {
+          @extend #{$base-class};
+        }
+        @include sprite($map, $sprite-name, $dimensions, $offset-x, $offset-y);
+      }
+    }
+  }
+}
+</pre>
+</div>
+<div class="source-documentation">
+<p>Generates a class for each space separated name in <code>$sprite-names</code>.
+The class will be of the form .<map-name>-<sprite-name>.</sprite-name></map-name></p>
+
+<p>If a base class is provided, then each class will extend it.</p>
+
+<p>If <code>$dimensions</code> is <code>true</code>, the sprite dimensions will specified.</p>
+
+</div></article>
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

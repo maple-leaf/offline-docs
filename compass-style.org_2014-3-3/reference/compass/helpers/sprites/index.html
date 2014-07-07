@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../../blog/atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+CSS Sprite Helpers for Compass | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+</head>
+<body class=' reference core helpers' id='reference-compass-helpers-sprites'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='docs-nav' role='navigation'>
+<a href='../../../blueprint/index.html' rel='blueprint'>Blueprint</a>
+<a href='../../../../docs/index.html' rel='core'>Core</a>
+</nav>
+<nav id='module-nav'><ul><ul><li class=''>
+<a class='' href='../../css3/index.html'>
+<span>CSS3</span>
+</a>
+</li>
+<li class='selected'>
+<a class='selected' href='../index.html'>
+<span>Helpers</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../../layout/index.html'>
+<span>Layout</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../../reset/index.html'>
+<span>Reset</span>
+</a>
+</li>
+<li class='deprecated'>
+<a class='deprecated' href='../../reset-legacy/index.html'>
+<span>Reset (legacy)</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../../typography/index.html'>
+<span>Typography</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../../utilities/index.html'>
+<span>Utilities</span>
+</a>
+</li>
+</ul>
+</ul>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='syntax_pref'>
+<a href='index.html#' rel='scss'>scss</a>
+<a href='index.html#' rel='sass'>sass</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<aside role='sidebar'><nav id='local-nav'>
+<ul><li class='selected'>
+<h2>
+<a class='selected' href='../index.html'>Helpers</a>
+</h2>
+</li>
+<ul><li class=''>
+<a class='' href='../color-stops/index.html'>
+<span>Color Stops</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../colors/index.html'>
+<span>Colors</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../constants/index.html'>
+<span>Constants</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../cross-browser/index.html'>
+<span>Cross Browser</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../display/index.html'>
+<span>Display Helpers</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../font-files/index.html'>
+<span>Font Files</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../image-dimensions/index.html'>
+<span>Image Dimensions</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../inline-data/index.html'>
+<span>Inline Data</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../math/index.html'>
+<span>Math</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../selectors/index.html'>
+<span>Selectors</span>
+</a>
+</li>
+<li class='selected'>
+<a class='selected' href='index.html'>
+<span>Sprites</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../urls/index.html'>
+<span>URLs</span>
+</a>
+</li>
+</ul>
+</ul>
+</nav>
+<div class='advertisement'>
+<script type="text/javascript">(function(){ var fusion = document.createElement('script'); fusion.src = window.location.protocol + '//adn.fusionads.net/api/1.0/ad.js?zoneid=158&rand=' + Math.floor(Math.random()*9999999); fusion.async = true; (document.head || document.getElementsByTagName('head')[0]).appendChild(fusion); })(); $(function(){ $(".advertisement").addClass("visible")});</script>
+<div id='fusion_ad'>
+<a class='pagerankspam' href='http://fusionads.net'>Powered by Fusion</a>
+</div>
+</div>
+
+</aside>
+<article><h1>
+<strong>CSS Sprite</strong> Helpers for Compass</h1>
+<p>These helpers make it easier to build and to work with <em>css sprites</em>.</p>
+
+<p>While it is allowed to use these directly, to do so is considered "advanced usage".
+It is recommended that you instead use the css sprite mixins that are designed to work
+with these functions.</p>
+
+<p>See the <a href="../../../../help/tutorials/spriting/index.html">Spriting Tutorial</a> for more information.</p>
+<div class="helper" id="sprite-map">
+<h3>
+<a href="index.html#sprite-map">
+sprite-map(<span class="arg">$glob</span>, <span class="arg">...</span>)
+</a>
+</h3>
+<div class="details">
+<p>Generates a css sprite map from the files matching the glob pattern. Uses the
+keyword-style arguments passed in to control the placement.</p>
+
+<p>Only PNG files can be made into css sprites at this time.</p>
+
+<p>The <code>$glob</code> should be glob pattern relative to the images directory that specifies
+what files will be in the css sprite. For example:</p>
+
+<pre><code>$icons: sprite-map("icons/*.png");
+background: $icons;
+</code></pre>
+
+<p>This will generate a css sprite map and return a reference to it. It's important to
+capture this to a variable, because you will need to use it later when creating
+css sprites. In the above example you might end up with a new file named
+<code>images/sprites/icons-a2ef041.png</code> and your css stylesheet will have:</p>
+
+<pre><code>background: url('/images/sprites/icons-a2ef041.png?1234678') no-repeat;
+</code></pre>
+
+<p>The exact image name is not something you should depend on as it may change based on the
+arguments you pass in. Instead, you can use the <code>sprite-url()</code> function to create a
+reference to the css sprite map without generating the image again. Alternatively, simply
+using the sprite map variable in an property will have the same effect as calling
+<code>sprite-url()</code>.</p>
+
+<p>For each sprite in the css sprite map you can control the position, spacing, and whether or
+not it repeats. You do this by passing arguments to this function that tell each sprite
+how to behave. For instance if there is a icons/new.png then you can control it like so:</p>
+
+<pre><code>$icon-sprite: sprite-map("icons/*.png",
+                $new-position: 100%, $new-spacing: 15px, $new-repeat: no-repeat);
+</code></pre>
+
+<p>If you don't specify these options they will default to <code>0%</code> for <code>position</code>,
+<code>0px</code> for spacing, and <code>no-repeat</code> for <code>repeat</code>.</p>
+
+<p>Default values for all sprites can be specified by passing values for <code>$position</code>,
+<code>$spacing</code>, and <code>$repeat</code>.</p>
+</div>
+</div>
+<div class="helper" id="sprite">
+<h3>
+<a href="index.html#sprite">
+sprite(<span class="arg">$map</span>, <span class="arg">$sprite</span>, <span class="arg" data-default-value="0">$offset-x</span>, <span class="arg" data-default-value="0">$offset-y</span>)
+</a>
+</h3>
+<div class="details">
+<p>Returns the image and background position for use in a single shorthand property:</p>
+
+<pre><code>$icons: sprite-map("icons/*.png"); // contains icons/new.png among others.
+background: sprite($icons, new) no-repeat;
+</code></pre>
+
+<p>Becomes:</p>
+
+<pre><code>background: url('/images/icons.png?12345678') 0 -24px no-repeat;
+</code></pre>
+</div>
+</div>
+<div class="helper" id="sprite-map-name">
+<h3>
+<a href="index.html#sprite-map-name">
+sprite-map-name(<span class="arg">$map</span>)
+</a>
+</h3>
+<div class="details">
+<p>Returns the name of a css sprite map
+The name is derived from the folder than contains the css sprites.</p>
+</div>
+</div>
+<div class="helper" id="sprite-file">
+<h3>
+<a href="index.html#sprite-file">
+sprite-file(<span class="arg">$map</span>, <span class="arg">$sprite</span>)
+</a>
+</h3>
+<div class="details">
+<p>Returns the relative path (from the images directory) to the original file
+used when construction the sprite. This is suitable for passing to the
+<code>image-width</code> and <code>image-height</code> helpers.</p>
+</div>
+</div>
+<div class="helper" id="sprite-url">
+<h3>
+<a href="index.html#sprite-url">
+sprite-url(<span class="arg">$map</span>)
+</a>
+</h3>
+<div class="details">
+<p>Returns a url to the sprite image.</p>
+</div>
+</div>
+<div class="helper" id="sprite-position">
+<h3>
+<a href="index.html#sprite-position">
+sprite-position(<span class="arg">$map</span>, <span class="arg">$sprite</span>, <span class="arg" data-default-value="0">$offset-x</span>, <span class="arg" data-default-value="0">$offset-y</span>)
+</a>
+</h3>
+<div class="details">
+<p>Returns the position for the original image in the sprite.
+This is suitable for use as a value to background-position:</p>
+
+<pre><code>$icons: sprite-map("icons/*.png");
+background-position: sprite-position($icons, new);
+</code></pre>
+
+<p>Might generate something like:</p>
+
+<pre><code>background-position: 0 -34px;
+</code></pre>
+
+<p>You can adjust the background relative to this position by passing values for
+<code>$offset-x</code> and <code>$offset-y</code>:</p>
+
+<pre><code>$icons: sprite-map("icons/*.png");
+background-position: sprite-position($icons, new, 3px, -2px);
+</code></pre>
+
+<p>Would change the above output to:</p>
+
+<pre><code>background-position: 3px -36px;
+</code></pre>
+</div>
+</div></article>
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+</body>
+</html>

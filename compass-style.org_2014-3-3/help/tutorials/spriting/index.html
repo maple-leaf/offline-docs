@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<title>
+Spriting with Compass | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../javascripts/fixups.js' type='text/javascript'></script>
+
+</head>
+<body class='site tutorial' id='help-tutorials-spriting'>
+<div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../blog/index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='module-nav'>
+<ul>
+<li class='getting-started'>
+<a href='../../index.html' rel='getting started'><span>Getting Started</span></a>
+</li>
+<li class='tutorials'>
+<a href='../index.html' rel='getting started'><span>Tutorials</span></a>
+</li>
+<li class='support'>
+<a href='http://groups.google.com/group/compass-users' rel='support'><span>Support</span></a>
+</li>
+<li>
+<a href='http://github.com/chriseppstein/compass/issues' rel='bugs'><span>Bugs</span></a>
+</li>
+</ul>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<aside role='sidebar'>
+<nav id='local-nav'>
+<ul><li class='selected'>
+<h2>
+<a class='selected' href='../index.html'>Tutorials</a>
+</h2>
+</li>
+<ul><li>
+<h3>
+<a href='../integration/index.html'>Application Integration</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../best_practices/index.html'>Best practices</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../blueprint/index.html'>Blueprint Framework</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../command-line/index.html'>Compass Command Line Documentation</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../configuration-reference/index.html'>Configuration Reference</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../contributing.html'>Contributing</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../extensions.html'>Creating Compass Extensions</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../extending.1.html'>Extending Compass</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../production-css/index.html'>Production Stylesheets</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../exclude_vendor_prefixes/index.html'>Removing Vendor Prefixes from Compass</a>
+</h3>
+</li>
+<li class='selected'>
+<h3>
+<a class='selected' href='index.html'>Spriting</a>
+</h3>
+</li>
+<ul><li class=''>
+<a class='' href='customization-options.1.html'>
+<span>Customization</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='magic-selectors.1.html'>
+<span>Magic Selectors</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='sprite-layouts.1.html'>
+<span>Sprite layouts</span>
+</a>
+</li>
+</ul>
+<li>
+<h3>
+<a href='../testing/index.html'>Testing</a>
+</h3>
+</li>
+<li>
+<h3>
+<a href='../upgrading/index.html'>Upgrading</a>
+</h3>
+</li>
+<ul><li class=''>
+<a class='' href='../upgrading/lemonade_upgrade_guide/index.html'>
+<span>Lemonade Upgrade</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../upgrading/im-scared/index.html'>
+<span>Scared to Upgrade?</span>
+</a>
+</li>
+<li class=''>
+<a class='' href='../upgrading/antares/index.html'>
+<span>Upgrading to v0.11</span>
+</a>
+</li>
+</ul>
+<li>
+<h3>
+<a href='../configurable-variables/index.html'>Working with Configurable Variables</a>
+</h3>
+</li>
+</ul>
+</ul>
+</nav>
+</aside>
+<article><h1>Spriting with Compass</h1>
+
+<p>Spriting has never been easier with Compass. You place the sprite images in a folder,
+import them into your stylesheet, and then you can use the sprite in your selectors in one
+of several convenient ways.</p>
+
+<h2>Sprite Tutorial Contents</h2>
+
+<ul>
+<li><p><a href="customization-options.1.html">Customization Options</a></p></li>
+<li><p><a href="magic-selectors.1.html">Magic Selectors</a></p></li>
+<li><p><a href="sprite-layouts.1.html">Sprite Layouts</a></p></li>
+</ul>
+
+
+<h2>Setup</h2>
+
+<p>For this tutorial, let's imagine that in your project's image folder there are four icons:</p>
+
+<ul>
+<li><code>images/my-icons/new.png</code></li>
+<li><code>images/my-icons/edit.png</code></li>
+<li><code>images/my-icons/save.png</code></li>
+<li><code>images/my-icons/delete.png</code></li>
+</ul>
+
+
+<p>Each is an icon that is 32px square.
+<a name="basic-usage"></a></p>
+
+<h2>Basic Usage</h2>
+
+<p><strong>**Note</strong>: The use of <code>icon</code> is only for this example, "icon" represents the folder name that contains your sprites.</p>
+
+<p>The simplest way to use these icon sprites is to let compass give you a class for each sprite:</p>
+
+<pre><code>@import "compass/utilities/sprites";
+@import "my-icons/*.png";
+@include all-my-icons-sprites;
+</code></pre>
+
+<p>And you'll get the following CSS output:</p>
+
+<pre><code>.my-icons-sprite,
+.my-icons-delete,
+.my-icons-edit,
+.my-icons-new,
+.my-icons-save   { background: url('/images/my-icons-s34fe0604ab.png') no-repeat; }
+
+.my-icons-delete { background-position: 0 0; }
+.my-icons-edit   { background-position: 0 -32px; }
+.my-icons-new    { background-position: 0 -64px; }
+.my-icons-save   { background-position: 0 -96px; }
+</code></pre>
+
+<p>You can now apply the <code>my-icons-XXX</code> classes to your markup as needed.</p>
+
+<p>Let's go over what happened there. The import statement told compass to <a href="https://gist.github.com/729507">generate a
+stylesheet that is customized for your sprites</a>. This
+stylesheet is <a href="index.html#magic-imports">magic</a>, it is not written to disk, and it can be customized
+by setting configuration variables before you import it. See the section below on
+<a href="customization-options.1.html">Customization Options</a>. The goal of this stylesheet is to provide a
+simple naming convention for your sprites so that you they are easy to remember and use. You
+should never have to care what the is name of the generated sprite map, nor where a sprite
+is located within it.</p>
+
+<p><a name='nested-folders' id='nested-folders'></a></p>
+
+<h2>Nested Folders</h2>
+
+<p><strong>**Note</strong>: The use of <code>orange</code> is only for this example, "icon" represents the folder name that contains your sprites.</p>
+
+<p>Sprites stored in a nested folder will use the last folder name in the path as the sprite name.</p>
+
+<p>Example:</p>
+
+<pre><code>  @import "themes/orange/*.png";
+  @include all-orange-sprites;
+</code></pre>
+
+<p><a name="selector-control" id="selector-control"></a></p>
+
+<h2>Selector Control</h2>
+
+<p><strong>**Note</strong>: The use of <code>icon</code> is only for this example, "icon" represents the folder name that contains your sprites.</p>
+
+<p>If you want control over what selectors are generated, it is easy to do. In this example,
+this is done by using the magic <code>my-icons-sprite</code> mixin. Note that the mixin's name is dependent
+on the name of the folder in which you've placed your icons.</p>
+
+<pre><code>@import "my-icons/*.png";
+
+.actions {
+  .new    { @include my-icons-sprite(new);    }
+  .edit   { @include my-icons-sprite(edit);   }
+  .save   { @include my-icons-sprite(save);   }
+  .delete { @include my-icons-sprite(delete); }
+}
+</code></pre>
+
+<p>And your stylesheet will compile to:</p>
+
+<pre><code>.my-icons-sprite,
+.actions .new,
+.actions .edit,
+.actions .save,
+.actions .delete { background: url('/images/my-icons-s34fe0604ab.png') no-repeat; }
+
+.actions .new    { background-position: 0 -64px; }
+.actions .edit   { background-position: 0 -32px; }
+.actions .save   { background-position: 0 -96px; }
+.actions .delete { background-position: 0 0;     }
+</code></pre>
+
+<p><a name="sass_functions" id="sass_functions"></a></p>
+
+<h2>Sass Functions</h2>
+
+<p><strong>**Note</strong>: The use of <code>icon</code> is only for this example, "icon" represents the folder name that contains your sprites.</p>
+
+<p>Getting the image dimensions of a sprite</p>
+
+<p>You can get a unit value by using the magical dimension functions <code>&lt;map&gt;-sprite-height</code> and <code>&lt;map&gt;-sprite-width</code>
+If you are looking to just return the dimensions see the <a href="../../../reference/compass/utilities/sprites/base/index.html#mixin-sprite-dimensions">docs</a></p>
+
+<p>Example:</p>
+
+<pre><code>@import "icon/*.png";
+$box-padding: 5px;
+$height: icon-sprite-height(some_icon);
+$width: icon-sprite-width(some_icon);
+
+.somediv {
+  height:$height + $box-padding;
+  width:$width + $box-padding;
+}
+</code></pre>
+
+<p><a name="magic-imports" id="magic-imports"></a></p>
+
+<h2>Magic Imports</h2>
+
+<p><strong>**Note</strong>: The use of <code>icon</code> is only for this example, "icon" represents the folder name that contains your sprites.</p>
+
+<p>As noted above, compass will magically create sprite stylesheets for you. Some people like
+magic, some people are scared by it, and others are curious about how the magic works. If
+you would like to avoid the magic, you can use compass to generate an import for you. On the
+command line:</p>
+
+<pre><code>compass sprite "images/my-icons/*.png"
+</code></pre>
+
+<p>This will create file using your project's preferred syntax, or you can specify the
+output filename using the <code>-f</code> option and the syntax will be inferred from the extension.
+If you do this, you'll need to remember to regenerate the import whenever you rename, add,
+or remove sprites.</p>
+
+<p>Using the magic imports is recommended for most situations. But there are times when you
+might want to avoid it. For instance, if your sprite map has more than about 20 to 30
+sprites, you may find that hand crafting the import will speed up compilation times. See
+the section on <a href="index.html#performance">performance considerations</a> for more details.</p>
+
+<p><a name="performance" id="performance"></a></p>
+
+<h2>Performance Considerations</h2>
+
+<p>Reading PNG files and assembling new images and saving them to disk might have a non-trivial
+impact to your stylesheet compilation times. Especially for the first compile. Please keep
+this in mind.</p>
+
+<h2>Large numbers of sprites</h2>
+
+<p>The magic stylesheet can get very large when there are large numbers of sprites. 50 sprites
+will cause there to be over 150 variables created and then passed into the
+<code>sprite-map</code> <a href="../../../reference/compass/helpers/sprites/index.html#sprite-map">function</a>.
+You may find that customizing the sprite function call to only pass those values that you
+are overriding will provide a small performance boost.
+See a <a href="https://gist.github.com/747970">concrete example</a>.</p>
+
+<h2>Oily PNG</h2>
+
+<p>Compass generates PNG files using a pure-ruby library called
+<a href="https://github.com/wvanbergen/chunky_png"><code>chunky_png</code></a>. This library can be made faster by
+installing a simple C extension called <a href="https://github.com/wvanbergen/oily_png"><code>oily_png</code></a>.
+Add it to your <code>Gemfile</code> if you have one in your project:</p>
+
+<pre><code>gem 'oily_png'
+</code></pre>
+
+<p>Or install the Rubygem:</p>
+
+<pre><code>gem install oily_png
+</code></pre>
+
+<p>Compass will automatically detect its presence.</p>
+</article>
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+</body>
+</html>

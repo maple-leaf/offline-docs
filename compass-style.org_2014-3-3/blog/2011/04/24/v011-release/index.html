@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='utf-8' />
+<meta content='chrome=1' http-equiv='X-UA-Compatible' />
+<meta content='width=780' name='viewport' />
+<link href='../../../../../images/compass_icon.png' rel='shortcut icon' type='image/png' />
+<link href='../../../../atom.xml' rel='alternate' title='Compass Blog' type='application/atom+xml' />
+<title>
+Compass v0.11 is Released! | Compass Documentation
+</title>
+<link charset='utf-8' href='../../../../../stylesheets/screen.css' rel='stylesheet' type='text/css' />
+<script src='../../../../../javascripts/modernizr-1.6.min.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/jquery-1.3.2.min.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/jquery.cookie.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/placeholder.js' type='text/javascript'></script>
+<script src='../../../../../javascripts/site.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/fixups.js' type='text/javascript'></script>
+
+<script deferred='deferred' src='../../../../../javascripts/shCore.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushSass.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushCss.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushXml.js' type='text/javascript'></script>
+<script deferred='deferred' src='../../../../../javascripts/shBrushPlain.js' type='text/javascript'></script>
+
+<!--[if lte IE 8]>
+<link charset='utf-8' href='/stylesheets/ie.css' rel='stylesheet' type='text/css' />
+<![endif]-->
+</head>
+<body class='' id='posts-2011-04-24-v011-release'><div id='wrap'>
+<header id='banner' role='banner'>
+<form action='http://compass-style.org/search/' id='search-docs' method='GET'>
+<input id='search' name='q' placeholder='Search the docs' type='text' value='' />
+</form>
+<nav id='main-nav' role='navigation'>
+<ul>
+<li class='vcard'>
+<a class='fn org url uid' href='../../../../../index.html' rel='home'>Home</a>
+</li>
+<li>
+<a href='../../../../../docs/index.html' rel='documentation'>Reference</a>
+</li>
+<li>
+<a href='../../../../../help/index.html' rel='help'>Help</a>
+</li>
+<li>
+<a href='../../../../index.html' rel='blog'>Blog</a>
+</li>
+<li>
+<a href='../../../../../get-involved/index.html' rel='get-involved'>Get Involved</a>
+</li>
+<li>
+<a href='../../../../../install/index.html' rel='install'>Install</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<div id='sub-nav'>
+<nav id='docs-nav' role='navigation'>
+<a href='../../26/compass-release-strategy/index.html' title='Compass Release Strategy'>Next Post &raquo;</a>
+</nav>
+</div>
+<div id='page'>
+<div id='docs_panel'>
+<div id='theme_pref'>
+<a href='index.html#' rel='theme' title='switch theme'>Q</a>
+</div>
+<div id='version'>
+Version:
+<a class='number' href='../../../../../CHANGELOG/index.html'>0.12.2</a>
+</div>
+</div>
+<h1>Compass v0.11 is Released!</h1>
+<h2>
+By
+<a href='http://chriseppstein.github.com/'>Chris Eppstein</a>
+</h2>
+<p>The Compass team is proud to announce that v0.11 is released. With this release, Compass &amp; Sass continue to revolutionize the world of CSS Frameworks bringing never-before-seen features and unmatched simplicity, quality, and flexibility to your stylesheets.</p>
+
+<p>In this post, we summarize the new features. For all the nitty gritty details, see the <a href="../../../../../CHANGELOG/index.html">CHANGELOG</a>.</p>
+
+<p>Compass is Charityware. If you love this release, <a href="http://umdf.org/compass">please donate to the UMDF</a> on our behalf and help find a cure for thousands of children suffering from mitochondrial disease.</p>
+
+<h2>Sass 3.1</h2>
+
+<p>This release required you to upgrade to Sass 3.1. This release brings a ton of great new features that Compass now uses and you can too!</p>
+
+<ul>
+<li>Proper List Support: Space and Comma separated lists used to cause values to become strings
+when passing them to mixins. Now the values in lists are preserved as their original types.</li>
+<li>Sass-based Functions. Define your own value functions and use them anywhere.</li>
+<li>Keyword Style Argument passing to Functions and Mixins. It can be hard to understand what
+the values being passed to a mixin or function are for, use keyword style arguments to
+make it easier to understand remember and read mixin includes.</li>
+<li><code>@media</code> bubbling. Responsive design meets nested selectors! Use a media declaration anywhere and it
+will be bubbled to the top level for you.</li>
+</ul>
+
+
+<p>For more information about the new Sass features, see the <a href="http://sass-lang.com/docs/yardoc/file.SASS_CHANGELOG.html">Sass CHANGELOG</a>.</p>
+
+<h2>Embracing CSS3</h2>
+
+<p>The power and flexibility of CSS3 is well known and web developers and designers are finding many new and interesting ways to take advantage of it. In Compass v0.11 we have revisited each CSS3 feature to ensure the greatest ease of use and similarity to CSS3 syntax. The compass internals for managing cross-browser compatibility have been rewritten to provide a powerful platform for moving as fast as the browser implementors are. Going forward, <span style="text-decoration: underline;">expect small point releases to adapt to new browser support and changes much more rapidly</span>. By default, Compass provides out-of-the-box support for <strong>all</strong> modern and legacy browsers as far back as IE6 and Firefox 2. But if you want slimmer stylesheets, it is <a href="../../../../../reference/compass/support/index.html">simple to configure</a> which browser support we provide.</p>
+
+<p>In this release, we embraced the CSS3 syntax as much as possible. It might seem obvious, but the Compass convention is now that all CSS3 mixin arguments should match the CSS3 syntax for their corresponding properties so that you never have to <em>learn</em> a compass CSS3 mixin. If you ever find a case where this is not true, it is a bug and we would appreciate it if you would <a href="http://github.com/chriseppstein/compass/issues">provide the details in a bug report</a>. After upgrading, you will encounter a number of deprecation warnings guiding you through the syntax changes.</p>
+
+<h3>Gradients Evolved</h3>
+
+<p>The best example of the changes in the CSS3 module are related to gradients. In Compass v0.10 we provided two simple mixins: <code>linear-gradient</code> and <code>radial-gradient</code> for setting the <code>background-image</code> property:</p>
+
+<pre><code>.linear {
+  @include linear-gradient(#FFF, #000, color-stops(#C00 25%, #0C0 75%))
+}
+</code></pre>
+
+<p>This syntax was inspired by the original webkit gradient syntax but tried to simplify it to some extent. But the gradient specification has evolved and because gradients can be used anywhere an image can, so we now provide a mixin for each property that can accept gradients and the arguments
+can be any legal CSS3 value for the that property:</p>
+
+<pre><code>.linear {
+  @include background-image(linear-gradient(#FFF, #C00 25%, #0C0 75%, #000))
+}
+</code></pre>
+
+<p>Which produces:</p>
+
+<pre><code>.linear {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(25%, #cc0000), color-stop(75%, #00cc00), color-stop(100%, #000000));
+  background-image: -webkit-linear-gradient(#ffffff, #cc0000 25%, #00cc00 75%, #000000);
+  background-image: -moz-linear-gradient(#ffffff, #cc0000 25%, #00cc00 75%, #000000);
+  background-image: -o-linear-gradient(#ffffff, #cc0000 25%, #00cc00 75%, #000000);
+  background-image: linear-gradient(#ffffff, #cc0000 25%, #00cc00 75%, #000000);
+}
+</code></pre>
+
+<h2>Dead Simple Sprites</h2>
+
+<p>Spriting has never been easier with Compass. Nico Hagenburger joined the Compass team and we have built on his popular Lemonade plugin to make Compass sprites. Existing Lemonade users will need to upgrade.</p>
+
+<p>The way they work is you place the sprite images in a folder,
+import them into your stylesheet, and then you can use the sprite in your selectors in one
+of several convenient ways.</p>
+
+<p>For example, let's imagine that in your project's image folder there are four icons:</p>
+
+<ul>
+<li><code>&lt;images_dir&gt;/icon/new.png</code></li>
+<li><code>&lt;images_dir&gt;/icon/edit.png</code></li>
+<li><code>&lt;images_dir&gt;/icon/save.png</code></li>
+<li><code>&lt;images_dir&gt;/icon/delete.png</code></li>
+</ul>
+
+
+<p>The simplest way to use these icon sprites is to let compass give you a class for each sprite:</p>
+
+<pre><code>@import "icon/*.png";
+@include all-icon-sprites;
+</code></pre>
+
+<p>And you'll get the following CSS output:</p>
+
+<pre><code>.icon-sprite,
+.icon-delete,
+.icon-edit,
+.icon-new,
+.icon-save   { background: url('/images/icon-34fe0604ab.png') no-repeat; }
+
+.icon-delete { background-position: 0 0; }
+.icon-edit   { background-position: 0 -32px; }
+.icon-new    { background-position: 0 -64px; }
+.icon-save   { background-position: 0 -96px; }
+</code></pre>
+
+<p>You can now apply the <code>icon-XXX</code> classes to your markup as needed.</p>
+
+<p>Of course, this is Compass which means that underneath this simple veneer is a powerful system that you can use to customize your selectors and all kinds of other scenarios involving unicorns and rainbows. Get all the details in our <a href="../../../../../help/tutorials/spriting/index.html">Spriting Tutorial</a>.</p>
+
+<h2>New Typography Module</h2>
+
+<p>New in this release is a typography module. Many of our utility mixins related to typography have been moved here, but the really exciting development is the addition of the <a href="../../../../../reference/compass/typography/vertical_rhythm/index.html">vertical rhythm module</a>. Based on <a href="http://24ways.org/2006/compose-to-a-vertical-rhythm">this excellent tutorial</a> from 24ways, it is now simpler than ever to compose to a vertical rhythm.</p>
+
+<h2>Blueprint 1.0</h2>
+
+<p>Blueprint is 1.0 now and the Compass port is updated to match the changes there. Some of the changes that blueprint made might affect your design, so if you don't want to take this upgrade, you should unpack blueprint before you upgrade:</p>
+
+<pre><code>compass unpack blueprint
+</code></pre>
+
+<h2>New Website</h2>
+
+<p>As you can see, we have a spiffy new website design from Compass Core team member <a href="http://brandonmathis.com/">Brandon</a>. A testament to the separation of content and presentation, most of this redesign was done by throwing out our old stylesheets and building new ones. If you don't like the light text on dark background theme, you can turn on the lights by clicking the power button in the upper right hand corner of every page.</p>
+
+<h2>Much, Much More</h2>
+
+<p>There's more features in this release than would fit into this post. Here's some other things you'll find in this release:</p>
+
+<ul>
+<li>Custom directory and file watching (E.g. for pngcrush support)</li>
+<li>Compilation Callback support</li>
+<li>Trigonometric functions</li>
+</ul>
+
+
+<p>Read the <a href="../../../../../CHANGELOG/index.html">CHANGELOG</a> for all the details.</p>
+
+<p>Additionally, expect a point release to follow shortly with support for:</p>
+
+<ul>
+<li>Rails 3.1</li>
+</ul>
+
+
+<p>Lastly, Compass v0.11 will have point releases as needed to adapt to changes in browser support for the CSS3 module.</p>
+
+<h2>Many Thanks</h2>
+
+<p>Compass wouldn't be possible without Nathan Weizenbaum and his hard work on Sass. The latest Sass release
+provides a ton of great features that have made this Compass release possible.</p>
+
+<p>Compass is far to big for one person to manage it now. I'd like to thank the hard work of the Compass core team members:</p>
+
+<ul>
+<li><a href="http://eric.oddbird.net/">Eric Meyer</a></li>
+<li><a href="http://brandonmathis.com/">Brandon Mathis</a></li>
+<li><a href="https://github.com/jetviper21">Scott Davis</a></li>
+<li><a href="http://www.hagenburger.net/">Nico Hagenburger</a></li>
+</ul>
+
+
+<p>Additionally, there were commits from 10 other great folks in this release and there's been <a href="https://github.com/chriseppstein/compass/contributors">contributions from 68 people</a> in total so far.</p>
+
+<p>Lastly thanks to the hundreds, if not thousands, of users who have helped test this release and provided valuable feedback, bug reports, and documentation suggestions. Together, we are making a real stylesheet framework and simplifying the lives of web developers across the world.</p>
+
+
+</div>
+<footer role='contentinfo'><div class='links'>
+<ul>
+<li class='media'>
+<a rel="license" href="../../../../../copyright/index.html" id="cc-logo" class="m"><img alt="Creative Commons License" style="border-width:0;margin-top:7px" src="http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png" /></a>
+<div class='bd'>Christopher M.<br>Eppstein</div>
+</li>
+<li>
+Compass is Charityware -
+<br>
+Help the UMDF:
+<a href='http://umdf.org/compass'>Donate Now!</a>
+</li>
+<li>
+<strong>Problem with this page?</strong>
+<br>
+Please <a id="doc-issue" href="https://github.com/chriseppstein/compass/issues/new?labels=documentation">file a bug</a>.
+</li>
+</ul>
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    $(function() {
+      var href = $("#doc-issue").attr("href");
+      var body_contents = "On Page: ";
+      body_contents += document.location.toString();
+      body_contents += "\n\nI was looking for:\n<details>\n\nBut instead I found:\n<more details>\n"
+      href = href + "&body=" + encodeURIComponent(body_contents);
+      $("#doc-issue").attr("href", href)
+     });
+  //]]>
+</script>
+</footer>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6779438-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<script type="text/javascript">
+var disqus_shortname = 'compassbetadocs';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'http://disqus.com/forums/compassbetadocs/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+</body>
+</html>
